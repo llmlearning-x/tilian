@@ -18,6 +18,8 @@ __pycache__/
 # Uploads
 uploads/*
 !uploads/.gitkeep
+backend/uploads/*
+!backend/uploads/.gitkeep
 
 # Frontend
 frontend/node_modules/
