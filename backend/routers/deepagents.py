@@ -17,9 +17,8 @@ from models import User
 from security import get_current_admin
 
 # 避免循环导入：Agent 相关工具在运行时引入
-from deepagents_agent.agent import get_bank_import_agent
-from deepagents_agent.cli import extract_json_from_text, read_document
-from deepagents_agent.streaming import format_chunk
+from deepagents_agent.agent import organize_bank, organize_bank_stream
+from deepagents_agent.cli import read_document
 from deepagents_agent.tools import validate_bank_json
 
 router = APIRouter(prefix="/api/admin/bank-organizer", tags=["admin"])
@@ -74,24 +73,11 @@ async def organize_bank_document(
         if raw_text.startswith("错误："):
             raise HTTPException(status_code=400, detail=raw_text)
 
-        agent = get_bank_import_agent()
-        result = await agent.ainvoke(
-            {"messages": [{"role": "user", "content": _build_agent_prompt(raw_text)}]}
-        )
-        final_content = result["messages"][-1].content
+        result = await organize_bank(raw_text)
+        if not result["valid"]:
+            raise HTTPException(status_code=422, detail=result["validation"])
 
-        try:
-            bank_data = extract_json_from_text(final_content)
-        except Exception as exc:
-            raise HTTPException(
-                status_code=500,
-                detail=f"Agent 输出无法解析为 JSON：{exc}",
-            ) from exc
-
-        validation = validate_bank_json(bank_data)
-        if validation != "验证通过":
-            raise HTTPException(status_code=422, detail=validation)
-
+        bank_data = result["data"]
         return {
             "valid": True,
             "name": bank_data.get("name"),
@@ -122,36 +108,10 @@ async def organize_bank_document_stream(
             os.unlink(tmp_path)
         raise HTTPException(status_code=400, detail=raw_text)
 
-    prompt = _build_agent_prompt(raw_text)
-
     async def event_stream():
-        agent = get_bank_import_agent()
-        final_content = ""
         try:
-            async for chunk in agent.astream({"messages": [{"role": "user", "content": prompt}]}):
-                event = format_chunk(chunk)
-                if event["type"] == "thought":
-                    final_content = event["content"]
+            async for event in organize_bank_stream(raw_text):
                 yield f"data: {_safe_json(event)}\n\n"
-
-            # 流结束后，尝试解析最终结果并验证
-            try:
-                bank_data = extract_json_from_text(final_content)
-                validation = validate_bank_json(bank_data)
-                final_event = {
-                    "type": "final",
-                    "valid": validation == "验证通过",
-                    "validation": validation,
-                    "data": bank_data,
-                }
-            except Exception as exc:
-                final_event = {
-                    "type": "final",
-                    "valid": False,
-                    "validation": f"解析失败：{exc}",
-                    "data": None,
-                }
-            yield f"data: {_safe_json(final_event)}\n\n"
             yield "data: [DONE]\n\n"
         finally:
             if os.path.exists(tmp_path):

@@ -21,8 +21,9 @@ def get_kimi_model(temperature: float = 0.2) -> ChatOpenAI:
     并指定 base_url 即可。
 
     针对 kimi-k2.6 等 K2 系列模型做特殊处理：
-    - 固定 temperature=1（K2 系列不支持自定义 temperature）
-    - 启用 thinking 模式以发挥 agentic coding 能力
+    - K2 系列固定 temperature=0.6（API 限制）
+    - kimi-k2.6 关闭 thinking，避免 code-first 长 prompt 下响应过慢
+    - 其他 K2 模型（如 kimi-k2.7-code）保持 thinking 开启
     """
     settings = get_settings()
     if not settings.LLM_API_KEY:
@@ -42,14 +43,20 @@ def get_kimi_model(temperature: float = 0.2) -> ChatOpenAI:
         "model": model_name,
         "api_key": settings.LLM_API_KEY,
         "base_url": base_url,
-        "max_tokens": 8192,
     }
 
     if _is_kimi_k2(model_name):
-        # K2 系列目前只支持 temperature=1
-        kwargs["temperature"] = 1.0
-        kwargs["extra_body"] = {"thinking": {"type": "enabled"}}
+        # K2 系列 API 要求 temperature=0.6
+        kwargs["temperature"] = 0.6
+        kwargs["max_tokens"] = 16384
+        # kimi-k2.6 支持关闭 thinking，长 prompt 的 code-first 场景响应更快
+        if model_name == "kimi-k2.6":
+            kwargs["extra_body"] = {"thinking": {"type": "disabled"}}
+        else:
+            kwargs["extra_body"] = {"thinking": {"type": "enabled"}}
     else:
         kwargs["temperature"] = temperature
+        # 题库整理需要输出长 JSON，给足输出空间
+        kwargs["max_tokens"] = 32768
 
     return ChatOpenAI(**kwargs)

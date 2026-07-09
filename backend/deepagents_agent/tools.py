@@ -7,6 +7,7 @@ import subprocess
 import tempfile
 from typing import Union
 
+from langchain_core.tools import tool
 from pydantic import ValidationError
 
 from schemas import BankImportPayload
@@ -55,6 +56,7 @@ def validate_bank_json(data: dict) -> str:
         return "验证失败：\n" + "\n".join(errors)
 
 
+@tool
 def execute_python(code: str, input_text: str = "") -> str:
     """
     执行 Python 代码处理复杂文档内容，返回标准输出。
@@ -63,17 +65,17 @@ def execute_python(code: str, input_text: str = "") -> str:
     你可以调用本工具编写 Python 脚本完成预处理。
 
     Args:
-        code: 要执行的 Python 代码。可通过变量 `input_text` 读取输入文本，
-              使用 `print(...)` 输出结果。
+        code: 要执行的 Python 代码。可通过变量 `_bank_agent_input_text_` 读取输入文本，
+              使用 `print(...)` 输出结果。不要重新定义该变量。
         input_text: 输入的文档内容字符串
 
     Returns:
         代码执行的标准输出和错误输出。
     """
-    # 构造完整脚本，把 input_text 注入为字符串变量
+    # 构造完整脚本，把输入文本注入为特殊变量名，降低被 LLM 覆盖的概率
     script = f"""# -*- coding: utf-8 -*-
 import json, re, sys
-input_text = {json.dumps(input_text, ensure_ascii=False)}
+_bank_agent_input_text_ = {json.dumps(input_text, ensure_ascii=False)}
 
 {code}
 """
