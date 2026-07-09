@@ -111,35 +111,37 @@
           <el-icon><Refresh /></el-icon> 刷新
         </el-button>
       </div>
-      <el-table v-loading="bankLoading" :data="banks" stripe>
-        <el-table-column prop="id" label="ID" width="60" />
-        <el-table-column prop="name" label="题库名称" />
-        <el-table-column prop="question_count" label="题目数" width="80" />
-        <el-table-column prop="status" label="状态" width="90">
-          <template #default="{ row }">
-            <el-tag :type="row.status === 'ready' ? 'success' : 'info'">
-              {{ row.status === 'ready' ? '已上架' : '已下架' }}
-            </el-tag>
-          </template>
-        </el-table-column>
-        <el-table-column prop="created_at" label="创建时间" width="160">
-          <template #default="{ row }">
-            {{ formatDate(row.created_at) }}
-          </template>
-        </el-table-column>
-        <el-table-column label="操作" width="180">
-          <template #default="{ row }">
-            <el-button
-              size="small"
-              :type="row.status === 'ready' ? 'warning' : 'primary'"
-              @click="toggleBankStatus(row)"
-            >
-              {{ row.status === 'ready' ? '下架' : '上架' }}
-            </el-button>
-            <el-button size="small" type="danger" @click="deleteBank(row)">删除</el-button>
-          </template>
-        </el-table-column>
-      </el-table>
+      <div class="table-scroll">
+        <el-table v-loading="bankLoading" :data="banks" stripe>
+          <el-table-column prop="id" label="ID" width="60" />
+          <el-table-column prop="name" label="题库名称" min-width="140" />
+          <el-table-column prop="question_count" label="题目数" width="80" />
+          <el-table-column prop="status" label="状态" width="90">
+            <template #default="{ row }">
+              <el-tag :type="row.status === 'ready' ? 'success' : 'info'">
+                {{ row.status === 'ready' ? '已上架' : '已下架' }}
+              </el-tag>
+            </template>
+          </el-table-column>
+          <el-table-column prop="created_at" label="创建时间" width="160" class-name="hidden-xs">
+            <template #default="{ row }">
+              {{ formatDate(row.created_at) }}
+            </template>
+          </el-table-column>
+          <el-table-column label="操作" width="180">
+            <template #default="{ row }">
+              <el-button
+                size="small"
+                :type="row.status === 'ready' ? 'warning' : 'primary'"
+                @click="toggleBankStatus(row)"
+              >
+                {{ row.status === 'ready' ? '下架' : '上架' }}
+              </el-button>
+              <el-button size="small" type="danger" @click="deleteBank(row)">删除</el-button>
+            </template>
+          </el-table-column>
+        </el-table>
+      </div>
     </section>
   </div>
 </template>

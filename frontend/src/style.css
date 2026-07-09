@@ -782,6 +782,8 @@ button, input, textarea, select {
   font: 700 var(--text-2xl) / 1.55 var(--font-sans);
   margin: var(--space-4) 0 var(--space-6);
   color: var(--gray-900);
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .question-type {
@@ -832,6 +834,16 @@ button, input, textarea, select {
   border-radius: var(--radius-sm);
   font-weight: 700;
   margin-right: var(--space-3);
+  flex-shrink: 0;
+}
+
+/* Element Plus 单选/多选标签默认 white-space: nowrap，移动端需允许换行 */
+.option-list .el-radio__label,
+.option-list .el-checkbox__label {
+  white-space: normal;
+  line-height: 1.6;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .feedback {
@@ -1236,6 +1248,22 @@ button, input, textarea, select {
 
   .question-stage {
     grid-template-columns: 1fr;
+  }
+
+  /* 管理后台表格在窄屏下可横向滚动，避免列被压扁 */
+  .table-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 0 calc(-1 * var(--space-4));
+    padding: 0 var(--space-4);
+  }
+
+  .table-scroll .el-table {
+    min-width: 640px;
+  }
+
+  .el-table .hidden-xs {
+    display: none !important;
   }
 
   .question-rail {
