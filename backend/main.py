@@ -7,7 +7,7 @@ from routers import admin, banks, deepagents, documents, generation, questions, 
 # 创建数据库表
 init_db()
 
-app = FastAPI(title="TILIAN 题炼", description="面向学生的题库练习与文档生成题库系统")
+app = FastAPI(title="TILIAN 题炼", description="面向学习者的题库练习与文档生成题库系统")
 
 # 添加CORS中间件
 app.add_middleware(

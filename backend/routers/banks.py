@@ -13,7 +13,7 @@ router = APIRouter(prefix="/api/banks", tags=["banks"])
 
 
 def _can_read(bank: QuestionBank, user: User) -> bool:
-    # 学生只能看到已上架题库；管理员/所有者不受 status 限制
+    # 学习者只能看到已上架题库；管理员/所有者不受 status 限制
     is_visible = bank.status == "ready" or user.role == "admin" or bank.owner_id == user.id
     return is_visible and (bank.source_type == "platform" or bank.owner_id == user.id or user.role == "admin")
 

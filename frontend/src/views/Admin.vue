@@ -4,7 +4,7 @@
       <div>
         <p class="eyebrow">ADMINISTRATION</p>
         <h1>平台题库管理</h1>
-        <p>维护学生可直接使用的基础题库，支持标准 JSON 导入与 AI Agent 自动整理。</p>
+        <p>维护学习者可直接使用的基础题库，支持标准 JSON 导入与 AI Agent 自动整理。</p>
       </div>
     </header>
 

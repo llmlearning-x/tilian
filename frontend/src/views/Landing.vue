@@ -8,7 +8,7 @@
           把资料，炼成题库。
         </h1>
         <p class="hero-desc">
-          题炼是一款面向学生的题库练习产品。你可以直接使用平台题库刷题，也可以上传自己的学习资料，生成专属题库。
+          题炼是一款面向学习者的题库练习产品。你可以直接使用平台题库刷题，也可以上传自己的学习资料，生成专属题库。
         </p>
         <div class="hero-actions">
           <el-button type="primary" size="large" @click="start">

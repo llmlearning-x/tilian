@@ -1,6 +1,6 @@
 # TILIAN 题炼
 
-面向学生的基础题库刷题产品。平台题库没有所需内容时，学生可以上传 PDF、DOCX、TXT 或 Markdown 学习文档，由 AI 生成个人题库并在确认后刷题。
+面向学习者的基础题库刷题产品。平台题库没有所需内容时，学习者可以上传 PDF、DOCX、TXT 或 Markdown 学习文档，由 AI 生成个人题库并在确认后刷题。
 
 ## 功能
 
@@ -28,7 +28,7 @@ npm install
 npm run dev
 ```
 
-前端默认访问 `http://localhost:5173`，后端 API 为 `http://localhost:8001`。演示学生账号：`demo / demo123`。
+前端默认访问 `http://localhost:5173`，后端 API 为 `http://localhost:8001`。演示学习者账号：`demo / demo123`。
 
 ## 环境变量
 
@@ -47,7 +47,7 @@ LLM_MODEL=
 VITE_API_BASE_URL=http://localhost:8001/api
 ```
 
-所有自助注册账号均为学生。需要管理员时，在受信任的服务器终端执行：
+所有自助注册账号均为学习者。需要管理员时，在受信任的服务器终端执行：
 
 ```bash
 cd backend

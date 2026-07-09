@@ -7,7 +7,7 @@
           <span>题炼</span>
         </div>
         <h1>把资料，<br>炼成题库。</h1>
-        <p>题炼是一款面向学生的题库练习产品。你可以直接使用平台题库刷题，也可以上传自己的学习资料，生成专属题库。</p>
+        <p>题炼是一款面向学习者的题库练习产品。你可以直接使用平台题库刷题，也可以上传自己的学习资料，生成专属题库。</p>
         <div class="login-features">
           <div class="feature-item">
             <span class="feature-icon"><el-icon><Collection /></el-icon></span>
