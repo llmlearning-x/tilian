@@ -40,7 +40,12 @@ class Settings(BaseSettings):
     API_V1_PREFIX: str = "/api"
 
     # CORS 配置
-    CORS_ORIGINS: list[str] = ["http://localhost:5173"]
+    CORS_ORIGINS: list[str] = [
+        "http://localhost:5173",
+        "http://localhost:5174",
+        "http://127.0.0.1:5173",
+        "http://127.0.0.1:5174",
+    ]
 
     model_config = SettingsConfigDict(env_file=".env", case_sensitive=True, extra="ignore")
 

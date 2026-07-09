@@ -6,7 +6,7 @@ from models import User
 
 
 def main():
-    parser = argparse.ArgumentParser(description="将现有爱刷题账号提升为管理员")
+    parser = argparse.ArgumentParser(description="将现有 TILIAN 题炼账号提升为管理员")
     parser.add_argument("username", help="已注册的用户名")
     args = parser.parse_args()
     init_db()

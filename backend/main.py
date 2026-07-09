@@ -7,7 +7,7 @@ from routers import admin, banks, deepagents, documents, generation, questions, 
 # 创建数据库表
 init_db()
 
-app = FastAPI(title="爱刷题", description="面向学生的题库刷题与文档生成题库系统")
+app = FastAPI(title="TILIAN 题炼", description="面向学生的题库练习与文档生成题库系统")
 
 # 添加CORS中间件
 app.add_middleware(
@@ -31,7 +31,7 @@ app.include_router(deepagents.router)
 
 @app.get("/")
 async def root():
-    return {"message": "欢迎使用爱刷题"}
+    return {"message": "欢迎使用 TILIAN 题炼"}
 
 @app.get("/health")
 async def health_check():
