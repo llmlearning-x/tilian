@@ -57,6 +57,22 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Preserve runtime files on server
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.PROD_HOST }}
+          username: ${{ secrets.PROD_USERNAME }}
+          key: ${{ secrets.PROD_DEPLOY_KEY }}
+          script: |
+            set -e
+            REMOTE_DIR="/data/tilian"
+            BACKUP_DIR="/tmp/tilian-deploy-backup"
+            rm -rf "$BACKUP_DIR"
+            mkdir -p "$BACKUP_DIR"
+            # 保留生产环境配置和数据库，避免被仓库中的开发文件覆盖
+            [ -f "$REMOTE_DIR/backend/.env" ] && cp "$REMOTE_DIR/backend/.env" "$BACKUP_DIR/.env"
+            [ -f "$REMOTE_DIR/backend/aiquiz.db" ] && cp "$REMOTE_DIR/backend/aiquiz.db" "$BACKUP_DIR/aiquiz.db"
+
       - name: Deploy backend files to server
         uses: appleboy/scp-action@v0.1.7
         with:
@@ -76,9 +92,21 @@ jobs:
           script: |
             set -e
             REMOTE_DIR="/data/tilian"
+            BACKUP_DIR="/tmp/tilian-deploy-backup"
 
-            # 创建目录
+            # 恢复生产环境配置和数据库
+            if [ -n "$BACKUP_DIR" ] && [ -d "$BACKUP_DIR" ]; then
+              [ -f "$BACKUP_DIR/.env" ] && cp "$BACKUP_DIR/.env" "$REMOTE_DIR/backend/.env"
+              [ -f "$BACKUP_DIR/aiquiz.db" ] && cp "$BACKUP_DIR/aiquiz.db" "$REMOTE_DIR/backend/aiquiz.db"
+              rm -rf "$BACKUP_DIR"
+            fi
+
+            # 创建目录并修复权限
             mkdir -p "$REMOTE_DIR/uploads" /data/logs/tilian
+            chown -R www-data:www-data "$REMOTE_DIR/backend"
+            chown -R www-data:www-data "$REMOTE_DIR/uploads"
+            chmod 660 "$REMOTE_DIR/backend/aiquiz.db"
+            chmod 755 /data/logs/tilian
 
             # 创建/更新虚拟环境
             if [ ! -d "$REMOTE_DIR/venv" ]; then
