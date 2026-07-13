@@ -1,0 +1,8229 @@
+{
+  "name": "天翼云高级解决方案架构师",
+  "description": "Converted from 天翼云高级解决方案架构师.docx, 312 questions",
+  "questions": [
+    {
+      "type": "single",
+      "stem": "在天翼云中，可以用过弹性伸缩进行服务的灵活配置，下列关于弹性伸缩中错误的是（）",
+      "options": [
+        {
+          "label": "A",
+          "content": "伸缩组在冷却时间内，会拒绝由定时策略触发的伸缩活动"
+        },
+        {
+          "label": "B",
+          "content": "可以定时或根据告警触发伸缩"
+        },
+        {
+          "label": "C",
+          "content": "可以限定下限以保证伸缩组的性能"
+        },
+        {
+          "label": "D",
+          "content": "可以限定上限以限制伸缩组资源使用"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "企业中，为了提高数据的安全性，可以采用备份的方式来保护企业数据，下列关于备份方式LAN-BASE的描述不正确的是（）",
+      "options": [
+        {
+          "label": "A",
+          "content": "需要单独维护备份业务，增加管理和维护的难度"
+        },
+        {
+          "label": "B",
+          "content": "先配置一台服务器作为备份管理服务器"
+        },
+        {
+          "label": "C",
+          "content": "数据的传输是以局域网络为基础"
+        },
+        {
+          "label": "D",
+          "content": "指令流经过LAN网络，数据流不经过LAN网络"
+        }
+      ],
+      "answer": [
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "RMAN是如下哪一个数据库的备份与恢复管理器？",
+      "options": [
+        {
+          "label": "A",
+          "content": "MongoDB"
+        },
+        {
+          "label": "B",
+          "content": "SQL Server"
+        },
+        {
+          "label": "C",
+          "content": "MySQL"
+        },
+        {
+          "label": "D",
+          "content": "Oracle"
+        }
+      ],
+      "answer": [
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "对于小型企业用户来说节约成本是首要考虑因素，在大多数情况下，这种备份大多是采用服务器上自带的磁带机或备份硬盘，而备份操作往往也是通过手工操作的方式进行的，这种备份方式是（）",
+      "options": [
+        {
+          "label": "A",
+          "content": "Server-free"
+        },
+        {
+          "label": "B",
+          "content": "LAN-free"
+        },
+        {
+          "label": "C",
+          "content": "Host-base"
+        },
+        {
+          "label": "D",
+          "content": "LAN-base"
+        }
+      ],
+      "answer": [
+        "C"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "天翼云中虚拟私有云可以对云中资源进行网络隔离，其中包括各种功能不同的组件，用于连接不同网段的组件是(）",
+      "options": [
+        {
+          "label": "A",
+          "content": "路由表"
+        },
+        {
+          "label": "B",
+          "content": "NAT网关"
+        },
+        {
+          "label": "C",
+          "content": "VPN网关"
+        },
+        {
+          "label": "D",
+          "content": "安全组"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "天翼云中提供了丰富的存储供用户选择，下列场景中不适用于使用分布式关系型数据库进行保存的是（）",
+      "options": [
+        {
+          "label": "A",
+          "content": "电商"
+        },
+        {
+          "label": "B",
+          "content": "零售"
+        },
+        {
+          "label": "C",
+          "content": "数据备份"
+        },
+        {
+          "label": "D",
+          "content": "O2O"
+        }
+      ],
+      "answer": [
+        "C"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "天翼云针对用户服务器上云迁移推出了多种迁移方式，其中关于镜像迁移方式的说法中，错误的是（）",
+      "options": [
+        {
+          "label": "A",
+          "content": "冷迁移是通过工具直接镜像被迁移的服务器主机"
+        },
+        {
+          "label": "B",
+          "content": "冷迁移可以保证数据一致性"
+        },
+        {
+          "label": "C",
+          "content": "热迁移是通过镜像迁移工具进行迁移"
+        },
+        {
+          "label": "D",
+          "content": "热迁移可以保持数据实时同步"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "天翼云为用户提供了多种多样的存储服务，下列属于天翼云提供的块存储服务是（）",
+      "options": [
+        {
+          "label": "A",
+          "content": "云空间"
+        },
+        {
+          "label": "B",
+          "content": "对象存储"
+        },
+        {
+          "label": "C",
+          "content": "云硬盘"
+        },
+        {
+          "label": "D",
+          "content": "弹性文件服务"
+        }
+      ],
+      "answer": [
+        "C"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "虚拟私有云可以在天翼云中对资源进行网络隔离，下列关于虚拟私有云中的概念，私有网络、子网、路由表说法，正确的是（）",
+      "options": [
+        {
+          "label": "A",
+          "content": "子网创建好后，网段可以进行修改，修改后的网段必须属于VPC内"
+        },
+        {
+          "label": "B",
+          "content": "一个VPC内的子网可以进行通信"
+        },
+        {
+          "label": "C",
+          "content": "子网的网段要在VPC的网段内部"
+        },
+        {
+          "label": "D",
+          "content": "不同VPC的子网不能进行通信"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "开发和运营IT系统是一件非常复杂的工资，涉及到各个模块开发者、开发测试团队之间的协作，紧耦合到解耦合转变，下列描述属于解耦合优势的是（）",
+      "options": [
+        {
+          "label": "A",
+          "content": "系统解耦后，架构更加模块化，缩小故障范围"
+        },
+        {
+          "label": "B",
+          "content": "由于解耦合是分散的，所以不支持大规模计算"
+        },
+        {
+          "label": "C",
+          "content": "系统解耦后，故障影响范围大"
+        },
+        {
+          "label": "D",
+          "content": "多个耦合模块变更成本高"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "数据容灾技术，又称为异地数据复制技术，具有多种实现的技术方式，下列不属于异地数据复制技术实现方式的是（）",
+      "options": [
+        {
+          "label": "A",
+          "content": "同步传输方式"
+        },
+        {
+          "label": "B",
+          "content": "半同步传输方式"
+        },
+        {
+          "label": "C",
+          "content": "半异步传输方式"
+        },
+        {
+          "label": "D",
+          "content": "异步传输方式"
+        }
+      ],
+      "answer": [
+        "C"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "虚拟私有云是天翼云中的功能组件。下列关于虚拟私有云划分原则说法不正确的是()。",
+      "options": [
+        {
+          "label": "A",
+          "content": "小企业建议使用一个VPC"
+        },
+        {
+          "label": "B",
+          "content": "单个VPC跨可用区部署能够实现高可用和故障隔离"
+        },
+        {
+          "label": "C",
+          "content": "单个VPC跨区域使用可以实现区域互通"
+        },
+        {
+          "label": "D",
+          "content": "要求性能高建议使用一个VPC"
+        }
+      ],
+      "answer": [
+        "C"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "用户在天翼云中使用虚拟私有云来部署简单的WEB应用，下列关于天翼云中虚拟私有云说法不正确的是（）",
+      "options": [
+        {
+          "label": "A",
+          "content": "用户只能通过配置NAT网关的方式才能让私有网络中的WEB应用对互联网中的用户提供服务"
+        },
+        {
+          "label": "B",
+          "content": "用户可以像使用普通网络一样使用私有网络，部署简单的web应用，如博客、网站和日志系统"
+        },
+        {
+          "label": "C",
+          "content": "通过安全组和网络ACL，来保证WEB应用的安全"
+        },
+        {
+          "label": "D",
+          "content": "当流量突增时，可以启用弹性负载均衡应对"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "由于安全原因，数据库的IP地址有时不能暴露在公网上，但是选择专线网络进行数据库迁移，成本又高。这种情况下，您可以选用数据库复制服务提供的备份迁移，通过将源数据库的数据导出成备份文件，并上传至什么中，然后恢复到目标数据库？",
+      "options": [
+        {
+          "label": "A",
+          "content": "弹性云主机"
+        },
+        {
+          "label": "B",
+          "content": "对象存储"
+        },
+        {
+          "label": "C",
+          "content": "云硬盘"
+        },
+        {
+          "label": "D",
+          "content": "云空间"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "在天翼云监控中，云监控支持的三种告警状态不包括下面哪个？",
+      "options": [
+        {
+          "label": "A",
+          "content": "数据不足"
+        },
+        {
+          "label": "B",
+          "content": "正常"
+        },
+        {
+          "label": "C",
+          "content": "告警"
+        },
+        {
+          "label": "D",
+          "content": "异常"
+        }
+      ],
+      "answer": [
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "下列关于存储和缓存的说法，错误的是什么?",
+      "options": [
+        {
+          "label": "A",
+          "content": "缓存主要是为了弥补存储系统在复杂业务场景下的不足"
+        },
+        {
+          "label": "B",
+          "content": "数据落地存储一般在SSD或者硬盘中，其吞吐量小但是延迟低"
+        },
+        {
+          "label": "C",
+          "content": "缓存一般以内存为载体，速度高但是容量低"
+        },
+        {
+          "label": "D",
+          "content": "热数据一般放在缓存中，这样数据请求时，不必访问低速的最终存储，转而访问高速的缓存，这样可以减少响应耗时"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "RMAN是Oracle数据库用于备份、还原和恢复的一个工具，下列不属于RMAN备份内容的是（）",
+      "options": [
+        {
+          "label": "A",
+          "content": "数据库文件"
+        },
+        {
+          "label": "B",
+          "content": "控制文件"
+        },
+        {
+          "label": "C",
+          "content": "口令文件"
+        },
+        {
+          "label": "D",
+          "content": "归档日志"
+        }
+      ],
+      "answer": [
+        "C"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "天翼云应用层的弹性设计不包括下面什么?",
+      "options": [
+        {
+          "label": "A",
+          "content": "天翼云弹性伸缩服务"
+        },
+        {
+          "label": "B",
+          "content": "分布式放据库"
+        },
+        {
+          "label": "C",
+          "content": "天翼云弹性云主机"
+        },
+        {
+          "label": "D",
+          "content": "天翼云负载均衡服务"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "云上安全架构设计原则不包括下面的什么?",
+      "options": [
+        {
+          "label": "A",
+          "content": "可以从各方面面临的安全威胁入手，进而得到需要落地的防护技术"
+        },
+        {
+          "label": "B",
+          "content": "安全是一项系统工程，适用木桶原则"
+        },
+        {
+          "label": "C",
+          "content": "没有绝对的安全"
+        },
+        {
+          "label": "D",
+          "content": "进行安全设计时，主要根据业务实际需要进行设计，一般不考虑预算和成本"
+        }
+      ],
+      "answer": [
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "容灾和备份都可以在一定程度上提高企业的数据安全，下面关于容灾和备份的说法中，正确的是（）",
+      "options": [
+        {
+          "label": "A",
+          "content": "备份系统的恢复时间是几秒钟甚至几分钟"
+        },
+        {
+          "label": "B",
+          "content": "备份只能恢复出备份时间点以前的数据"
+        },
+        {
+          "label": "C",
+          "content": "容灾系统只能保护数据"
+        },
+        {
+          "label": "D",
+          "content": "容灾系统主要针对人为误操作、病毒感染等因素"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "在天翼云的服务中，弹性负载均衡可以支持同区域高可用，对于不同区域的高可用，可以选择的服务是（）",
+      "options": [
+        {
+          "label": "A",
+          "content": "云专网"
+        },
+        {
+          "label": "B",
+          "content": "对等连接"
+        },
+        {
+          "label": "C",
+          "content": "DNS"
+        },
+        {
+          "label": "D",
+          "content": "AS"
+        }
+      ],
+      "answer": [
+        "C"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "在天天翼云中提供了多种不同的CDN加速产品，以满足不同用户不同场展的各种需求。下面关于CDN的说法中，错误的是()",
+      "options": [
+        {
+          "label": "A",
+          "content": "CDN是中国电信依托分布于全国的网络节点塔建的一层虚似网络"
+        },
+        {
+          "label": "B",
+          "content": "解决因跨运营商访问、跨地域访问、服务器带宽及性能带来的访问延迟问题"
+        },
+        {
+          "label": "C",
+          "content": "前端用户请求通过CDN服务响应，对于可以满足的响应发至后端弹性负载均衡ELB"
+        },
+        {
+          "label": "D",
+          "content": "CDN将源站内容分发至最接近用户的节点，使用户可就近获取所需内容"
+        }
+      ],
+      "answer": [
+        "C"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "高性能计算HPC是利用并行处理和互联技术将多个计算节点连接起来，提供高效、可靠、快速运行的计算平台，可以提供比普通台式计算机或工作站更高的性能，以解决科学、工程或商业中复杂的问题。下列不属于天翼云HPC解决万案主要应用场景的是()。",
+      "options": [
+        {
+          "label": "A",
+          "content": "图形CAD工作站"
+        },
+        {
+          "label": "B",
+          "content": "紧耦合高性能计算"
+        },
+        {
+          "label": "C",
+          "content": "对安全和监管高要求的金融、证券等行业"
+        },
+        {
+          "label": "D",
+          "content": "松耦合高性能计算"
+        }
+      ],
+      "answer": [
+        "C"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "在上云的整体迁移过程中，迁移策略设计属于下面哪个步骤?",
+      "options": [
+        {
+          "label": "A",
+          "content": "监控优化"
+        },
+        {
+          "label": "B",
+          "content": "调研分析"
+        },
+        {
+          "label": "C",
+          "content": "测试验证"
+        },
+        {
+          "label": "D",
+          "content": "迁移实施"
+        },
+        {
+          "label": "E",
+          "content": "规划设计"
+        }
+      ],
+      "answer": [
+        "E"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "用户使用弹性负载均衡服务来提高天翼云中网站的可用性，当前有3台配置相同(CPU/内存)的后端服务器，此时新增1台后端服务器，希望能够快速地让第4台后端服务器的负载提升，降低另外3台后式服务器的压力，可以选择的负载方式是()。",
+      "options": [
+        {
+          "label": "A",
+          "content": "轮询"
+        },
+        {
+          "label": "B",
+          "content": "源地址"
+        },
+        {
+          "label": "C",
+          "content": "目的地址"
+        },
+        {
+          "label": "D",
+          "content": "最小连接数"
+        }
+      ],
+      "answer": [
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "在天翼云异地容灾架构中，当故障发生时可以实现秒级切换，及时恢复业务。实现该场景需要使用到的前端产品是()。",
+      "options": [
+        {
+          "label": "A",
+          "content": "ELB"
+        },
+        {
+          "label": "B",
+          "content": "DNS解析"
+        },
+        {
+          "label": "C",
+          "content": "DRS"
+        },
+        {
+          "label": "D",
+          "content": "路由器"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "弹性公网IP是天翼云为云中资源提供的公网地址，可以用于多种不同场合。下列关于弹性公网IP的说法中不正确是()。",
+      "options": [
+        {
+          "label": "A",
+          "content": "不支持与NAT网关实例的动态绑定和解绑"
+        },
+        {
+          "label": "B",
+          "content": "是可以独立申请的公网IP地址"
+        },
+        {
+          "label": "C",
+          "content": "不能同时绑定在多台弹性云主机中"
+        },
+        {
+          "label": "D",
+          "content": "弹性IP地址与天翼云云账户相关联，而不是与某个弹性云主机相关联"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "可靠性指系统无故障运行的概率，是衡量服务质量的一个非常重要标准。下列关于服务可靠性说法中不正确的是()。",
+      "options": [
+        {
+          "label": "A",
+          "content": "把平均无故障时间和平均维修时间作为衡量高可用性的标准"
+        },
+        {
+          "label": "B",
+          "content": "平均故障修复时间(MTTR)"
+        },
+        {
+          "label": "C",
+          "content": "高可用性的目的是通过大量的服务器集群来保证业务100%不间断的持续化运行"
+        },
+        {
+          "label": "D",
+          "content": "平均无故障时间(MTTF)"
+        }
+      ],
+      "answer": [
+        "C"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "可用区(Zone)是指天翼云在同一区域内电力和网络互相独立的物理数据中心。下列属于可用区特性的是()",
+      "options": [
+        {
+          "label": "A",
+          "content": "实例不能迁移至其他可用区"
+        },
+        {
+          "label": "B",
+          "content": "实例只能在指定区域下指定可用区"
+        },
+        {
+          "label": "C",
+          "content": "同一个区域的可用区只能通过外网实现互通"
+        },
+        {
+          "label": "D",
+          "content": "可用区的作用是故障隔离"
+        }
+      ],
+      "answer": [
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "云监控服务是天翼云为用户提供的监控服务，可以更详细地了解云资源使用情况，方便用户及时调整。下列不属于云监拉服务弹性云主机监控指标的是()",
+      "options": [
+        {
+          "label": "A",
+          "content": "内存使用率"
+        },
+        {
+          "label": "B",
+          "content": "访问者"
+        },
+        {
+          "label": "C",
+          "content": "CPU使用率"
+        },
+        {
+          "label": "D",
+          "content": "磁盘写速率"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "分布式消息服务的优势可以从多个方面考虑，但不包括下面哪个方面?",
+      "options": [
+        {
+          "label": "A",
+          "content": "灵活性"
+        },
+        {
+          "label": "B",
+          "content": "集成"
+        },
+        {
+          "label": "C",
+          "content": "性能"
+        },
+        {
+          "label": "D",
+          "content": ".配置简易性<br class=\"markdown_return\">E 、可靠性"
+        }
+      ],
+      "answer": [
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "两个同一区域内的VPC之间使用私有IP地址进行内网通信时，需要使用到下面什么天翼云服务?",
+      "options": [
+        {
+          "label": "A",
+          "content": "对等连接"
+        },
+        {
+          "label": "B",
+          "content": "NAT网关"
+        },
+        {
+          "label": "C",
+          "content": "虚拟私有云"
+        },
+        {
+          "label": "D",
+          "content": "VPN连接"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "用户在天翼云中选购弹性云主机的时候，主要根提具体的应用场景和产品架构进行综合考虑，选择具体的产品规格，如果用户的使用场景是web应用、开发测试环境以及小型数据库，最适合选择的是()。",
+      "options": [
+        {
+          "label": "A",
+          "content": "高计算型"
+        },
+        {
+          "label": "B",
+          "content": "内存优化型"
+        },
+        {
+          "label": "C",
+          "content": "通用型"
+        },
+        {
+          "label": "D",
+          "content": "通用计算增强型"
+        }
+      ],
+      "answer": [
+        "C"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "天翼云硬盘不支持下面哪项操作?",
+      "options": [
+        {
+          "label": "A",
+          "content": "减容"
+        },
+        {
+          "label": "B",
+          "content": "挂载"
+        },
+        {
+          "label": "C",
+          "content": "广容"
+        },
+        {
+          "label": "D",
+          "content": "备份"
+        },
+        {
+          "label": "E",
+          "content": "卸载"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "在天翼云中为用户提供了GPU加速型弹性云主机，下列关于这种类型云主机说法正确的是()。",
+      "options": [
+        {
+          "label": "A",
+          "content": "能够提供优秀的浮点计算能力"
+        },
+        {
+          "label": "B",
+          "content": "提供计算加速型P1和P2V以供用户选择"
+        },
+        {
+          "label": "C",
+          "content": "用户购买的G1型弹性云服务器可以在后续变更规格"
+        },
+        {
+          "label": "D",
+          "content": "主要用于逻辑控制和串行运算等场景"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "针对弹性云主机能够自动替换不健康实例，自动增加或减少云主机、操作灵活，从而保障业务灵活可用，避免损失，需要结合的服务类型是()。",
+      "options": [
+        {
+          "label": "A",
+          "content": "对象存储"
+        },
+        {
+          "label": "B",
+          "content": "弹性伸缩"
+        },
+        {
+          "label": "C",
+          "content": "弹性负载均衡"
+        },
+        {
+          "label": "D",
+          "content": "弹性云主机"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "服务器安全卫士产品规格分为三种:基础版、企业版、旗舰版。下列什么功能是只有旗舰版才支持的功能?",
+      "options": [
+        {
+          "label": "A",
+          "content": "资产清点"
+        },
+        {
+          "label": "B",
+          "content": "应用风险"
+        },
+        {
+          "label": "C",
+          "content": "暴力破解"
+        },
+        {
+          "label": "D",
+          "content": "安全补丁"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "在企业传统IP架构中，下列哪个架构设计是更好的利用二八定律，即80%的业务访问集中在20%的数据上，使得整个业务架构设计更有合理?",
+      "options": [
+        {
+          "label": "A",
+          "content": "分布式文件系统和分布式数据库"
+        },
+        {
+          "label": "B",
+          "content": "应用与数据库分离"
+        },
+        {
+          "label": "C",
+          "content": "应用服务器集群"
+        },
+        {
+          "label": "D",
+          "content": "数据库读写分离"
+        },
+        {
+          "label": "E",
+          "content": "使用缓存以改善性能"
+        }
+      ],
+      "answer": [
+        "E"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "在天翼云中，弹性网卡是一种虚拟的网络接口，可以将云主机绑定弹性网卡接入网络。下列关于弹性网卡说法不正确的是()。",
+      "options": [
+        {
+          "label": "A",
+          "content": "可以给云主机绑定弹性网卡"
+        },
+        {
+          "label": "B",
+          "content": "一台云服务器可以绑定多个弹性网卡"
+        },
+        {
+          "label": "C",
+          "content": "可以在多个云主机间自由迁移"
+        },
+        {
+          "label": "D",
+          "content": "可以同时给多台弹性云主机使用"
+        }
+      ],
+      "answer": [
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "大数据场景的应用越来越多，在天翼云中提供了多种数据库用于存放各种类型数据，其中可以存放大数据类的非关系型数据库是（）",
+      "options": [
+        {
+          "label": "A",
+          "content": "HBASE"
+        },
+        {
+          "label": "B",
+          "content": "MySQL"
+        },
+        {
+          "label": "C",
+          "content": "SQL Server"
+        },
+        {
+          "label": "D",
+          "content": "PostGre SQL"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "天翼云高可用架构在设计的时候分为多个不同层次，下列关于应用层高可用设计的说法中，错误的是（）",
+      "options": [
+        {
+          "label": "A",
+          "content": "弹性伸缩可以自动替换不健康实例"
+        },
+        {
+          "label": "B",
+          "content": "应用层主要处理的是业务逻辑，应用层高可用主要针对的是有状态类应用进行设计"
+        },
+        {
+          "label": "C",
+          "content": "天翼云中相同区域的不同可用区是通过内网进行链接"
+        },
+        {
+          "label": "D",
+          "content": "弹性负载均衡可以自动剔除不健康的云主机以实现业务的可用性"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "在数据库备份业务中，为了保证数据的一致性，需要先冻结应用，保证备份期间正在运行的应用程序能完成所有操作（如数据库事务），并将缓存中的数据刷新到新磁盘中，这种备份方式是（）",
+      "options": [
+        {
+          "label": "A",
+          "content": "增量备份"
+        },
+        {
+          "label": "B",
+          "content": "崩溃一致性备份"
+        },
+        {
+          "label": "C",
+          "content": "应用一致性备份"
+        },
+        {
+          "label": "D",
+          "content": "差异备份"
+        }
+      ],
+      "answer": [
+        "C"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "在天翼云中，对象存储系统为客户提供一种海量、弹性、高可用、高性价比的存储服务，下列关于对象存储系统说法不正确的是（）",
+      "options": [
+        {
+          "label": "A",
+          "content": "具有纠删码冗余"
+        },
+        {
+          "label": "B",
+          "content": "可大规模在线扩展"
+        },
+        {
+          "label": "C",
+          "content": "具有多副本提高数据安全"
+        },
+        {
+          "label": "D",
+          "content": "服务设计可用性为100%"
+        }
+      ],
+      "answer": [
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "高性能架构是目前所有企业的目标，从技术人员的视角，想要了解高性能架构主要考虑因素中不包括的是()。",
+      "options": [
+        {
+          "label": "A",
+          "content": "响应时间"
+        },
+        {
+          "label": "B",
+          "content": "君吐量"
+        },
+        {
+          "label": "C",
+          "content": "IOPS"
+        },
+        {
+          "label": "D",
+          "content": "并发数"
+        }
+      ],
+      "answer": [
+        "C"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "根据信息系统在国家安全，经济建设、社会生活中的重要程度，以及信息系统遭到破坏后对国家安全、社会秩序、公共利益，以及公民、法人和其他组织的合法权益的危害程度等因素，将信息系统安全等级由低到高分为几个等级?",
+      "options": [
+        {
+          "label": "A",
+          "content": "3"
+        },
+        {
+          "label": "B",
+          "content": "5"
+        },
+        {
+          "label": "C",
+          "content": "6"
+        },
+        {
+          "label": "D",
+          "content": "4"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "在天置云中，NAT网关能够为虚拟私有云内的计算实例提供网络地址转换服务。下面关于NAT网关的说法中，正确的是()。",
+      "options": [
+        {
+          "label": "A",
+          "content": "每个虚拟私有云可以支持多个NAT网关"
+        },
+        {
+          "label": "B",
+          "content": "SNAT和DNAT不能共用同一个弹性IP"
+        },
+        {
+          "label": "C",
+          "content": "主机同时配置弹性IP和NAT网关时，数据通过NAT网关发送"
+        },
+        {
+          "label": "D",
+          "content": "虚拟私有云内每个子网可以添加多条SNAT规则"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "在天翼云中弹性云主机可以接入Internet以访问网络资源，下列选项中不是天翼云虚拟私有云接入Intermet方式的是(）",
+      "options": [
+        {
+          "label": "A",
+          "content": "弹性公网IP(EIP)"
+        },
+        {
+          "label": "B",
+          "content": "弹性负载均衡(ELB)"
+        },
+        {
+          "label": "C",
+          "content": "VPN网关"
+        },
+        {
+          "label": "D",
+          "content": "NAT网关"
+        }
+      ],
+      "answer": [
+        "C"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "在使用天翼云服务器迁移工具时，所需要的操作除了完成安装控制端、完成授权、源端安装客户端、配置目的端、迁移等步骤以外，还包含什么步骤?",
+      "options": [
+        {
+          "label": "A",
+          "content": "配置线下服务器环境"
+        },
+        {
+          "label": "B",
+          "content": "购买License"
+        },
+        {
+          "label": "C",
+          "content": "配图参数文件"
+        },
+        {
+          "label": "D",
+          "content": "启动日志备份"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "针对非结构化的数据，在天翼云中可以保证数据多副本保存，从而提升容灾能力的产品是()。",
+      "options": [
+        {
+          "label": "A",
+          "content": "对象存储OOS"
+        },
+        {
+          "label": "B",
+          "content": "弹性云主机ECS"
+        },
+        {
+          "label": "C",
+          "content": "数据库复制服务DRS"
+        },
+        {
+          "label": "D",
+          "content": "关系数据库RDS"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "天翼云Anti-DDoS流量清洗(CT-AntiDDoS，Anti-DDoS)通过专业的DDoS防护设备来为用户互联网应用提供精细化的抵御DDoS攻击能力，不能抵御的攻击是()。",
+      "options": [
+        {
+          "label": "A",
+          "content": "FTP Flood攻击"
+        },
+        {
+          "label": "B",
+          "content": "SYN Flood攻击"
+        },
+        {
+          "label": "C",
+          "content": "CC攻击"
+        },
+        {
+          "label": "D",
+          "content": "UDP Flood攻击"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "上云迁移的难点除了用户的存储容量很大、规模大、云端适配问题以外，还包括什么?",
+      "options": [
+        {
+          "label": "A",
+          "content": "迁移安全难以保证"
+        },
+        {
+          "label": "B",
+          "content": "迁移数据无法保证一致性"
+        },
+        {
+          "label": "C",
+          "content": "延迟感知"
+        },
+        {
+          "label": "D",
+          "content": "迁移操作比较难"
+        }
+      ],
+      "answer": [
+        "C"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "服务器迁移工具是天翼云为上云用户量身打造的零停机的无缝()在线迁移工具。",
+      "options": [
+        {
+          "label": "A",
+          "content": "P2V/P2V"
+        },
+        {
+          "label": "B",
+          "content": "V2V/N2P"
+        },
+        {
+          "label": "C",
+          "content": "P2V/N2P"
+        },
+        {
+          "label": "D",
+          "content": "P2V/V2V"
+        }
+      ],
+      "answer": [
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "在DNS域名解析负载均衡中，DNS根据什么记录和负载均衡算法可以计算得到一个IP地址?",
+      "options": [
+        {
+          "label": "A",
+          "content": "TXT记录"
+        },
+        {
+          "label": "B",
+          "content": "A记录"
+        },
+        {
+          "label": "C",
+          "content": "MX记录"
+        },
+        {
+          "label": "D",
+          "content": "CNAME记录"
+        },
+        {
+          "label": "E",
+          "content": "NS记录"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "在天翼云CDN静态加速针对某域名配置了如下缓存配置:所有文件30天 .asp.php.html 100秒 jpg-png.gif 200秒/test\"\".jpg 300秒/test/test.jpg 400秒假设域名为www.examplE、com，资源为www.examplE、com/test/abC、jpg，那么该内容最终缓存时间应该是()。",
+      "options": [
+        {
+          "label": "A",
+          "content": "100秒"
+        },
+        {
+          "label": "B",
+          "content": "300秒"
+        },
+        {
+          "label": "C",
+          "content": "400秒"
+        },
+        {
+          "label": "D",
+          "content": "200秒"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "天翼云提供多区域以供客户选择，下列场景中不建议使用多区域的是()。",
+      "options": [
+        {
+          "label": "A",
+          "content": "电商全球化访问"
+        },
+        {
+          "label": "B",
+          "content": "核心应用异地容灾"
+        },
+        {
+          "label": "C",
+          "content": "核心应用双活架构"
+        },
+        {
+          "label": "D",
+          "content": "金融行业两地三中心"
+        }
+      ],
+      "answer": [
+        "C"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "云上存储即分布式存储主要是以什么定义存储为主?",
+      "options": [
+        {
+          "label": "A",
+          "content": "程序"
+        },
+        {
+          "label": "B",
+          "content": "硬件"
+        },
+        {
+          "label": "C",
+          "content": "软件"
+        },
+        {
+          "label": "D",
+          "content": "应用"
+        }
+      ],
+      "answer": [
+        "C"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "天翼云整体安全架构由多种安全服务组成，其中不包括下面哪个",
+      "options": [
+        {
+          "label": "A",
+          "content": "应用安全服务"
+        },
+        {
+          "label": "B",
+          "content": "数据安全服务"
+        },
+        {
+          "label": "C",
+          "content": "网络安全服务"
+        },
+        {
+          "label": "D",
+          "content": "网页安全服务"
+        },
+        {
+          "label": "E",
+          "content": "运维安全服务 F:主机安全服务\""
+        }
+      ],
+      "answer": [
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "在天翼云中，弹性扩展可以选择水平扩展的方式，下列关于水平扩展方式描述正确的是（）",
+      "options": [
+        {
+          "label": "A",
+          "content": "通过增加实例数量来缓解业务压力"
+        },
+        {
+          "label": "B",
+          "content": "通过增加云主机内存来缓解业务压力"
+        },
+        {
+          "label": "C",
+          "content": "通过增加网络带宽的方式来缓解业务压力"
+        },
+        {
+          "label": "D",
+          "content": "通过增加虚拟CPU的数量来缓解业务压力"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "对于传统IT基础架构与云上基础架构这两种架构而言，资源方面的不同点在于线下资源和云上资源的不同，下列什么资源属于云上资源？",
+      "options": [
+        {
+          "label": "A",
+          "content": "对象存储"
+        },
+        {
+          "label": "B",
+          "content": "互联网核心层的设备"
+        },
+        {
+          "label": "C",
+          "content": "互联网汇聚层的设备"
+        },
+        {
+          "label": "D",
+          "content": "互联网接入层的设备"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "在数据库的分库分表中，水平拆分就是把同一个表中的数据拆分到两个甚至多个数据库中，下面哪一项是产生数据水平拆分的原因?",
+      "options": [
+        {
+          "label": "A",
+          "content": "无法满足大型系统持续增长的业务需求"
+        },
+        {
+          "label": "B",
+          "content": "服务器的负载能力无法满足业务的需求"
+        },
+        {
+          "label": "C",
+          "content": "数据库的查询速度满足不了前端的业务需求"
+        },
+        {
+          "label": "D",
+          "content": "某个业务的数据量或者更新量到达了单个数据库的瓶颈"
+        }
+      ],
+      "answer": [
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "混合云的业务挑战不包括什么？",
+      "options": [
+        {
+          "label": "A",
+          "content": "运营成本高"
+        },
+        {
+          "label": "B",
+          "content": "安全性差"
+        },
+        {
+          "label": "C",
+          "content": "不可持续性"
+        },
+        {
+          "label": "D",
+          "content": "建设成本高"
+        },
+        {
+          "label": "E",
+          "content": "多平台管理成本高"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "下列天翼云服务中，哪一项可以为用户提供资源独享、安全可靠的云上物理机服务器?",
+      "options": [
+        {
+          "label": "A",
+          "content": "弹性云主机"
+        },
+        {
+          "label": "B",
+          "content": "天翼云桌面"
+        },
+        {
+          "label": "C",
+          "content": "物理机"
+        },
+        {
+          "label": "D",
+          "content": "GPU云主机"
+        }
+      ],
+      "answer": [
+        "C"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "在天翼云对象存储中，需要创建容器才能上传对象文件，容器默从提供三种访问权限：共有、私有和只读。下列属于私有权限的特点是()。",
+      "options": [
+        {
+          "label": "A",
+          "content": "任何人对于该容器都能读"
+        },
+        {
+          "label": "B",
+          "content": "任何人都能对该容器读写"
+        },
+        {
+          "label": "C",
+          "content": "只有容器创建者可以读写"
+        },
+        {
+          "label": "D",
+          "content": "任何人对于该容器都能写"
+        }
+      ],
+      "answer": [
+        "C"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "在下列的服务器迁移模式中，什么模式的功能是将物理机服务器上的操作系统及其上的应用软件和数据迁移到另外一台物理服务器?",
+      "options": [
+        {
+          "label": "A",
+          "content": "P2P"
+        },
+        {
+          "label": "B",
+          "content": "V2V"
+        },
+        {
+          "label": "C",
+          "content": "V2P"
+        },
+        {
+          "label": "D",
+          "content": "P2V"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "天翼云中为用户提供多种不同类型的产品，以满足不同用户和不同场景的各种需求。下列产品中不能提供计算能力的是()",
+      "options": [
+        {
+          "label": "A",
+          "content": "弹性云主机"
+        },
+        {
+          "label": "B",
+          "content": "云桌面"
+        },
+        {
+          "label": "C",
+          "content": "对象存储"
+        },
+        {
+          "label": "D",
+          "content": "物理机服务"
+        }
+      ],
+      "answer": [
+        "C"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "为了保证数据的安全性，可以采用备份。以下各种备份方式中，数据丢失(RPO)最小的是()。",
+      "options": [
+        {
+          "label": "A",
+          "content": "热备"
+        },
+        {
+          "label": "B",
+          "content": "冷备"
+        },
+        {
+          "label": "C",
+          "content": "半热备"
+        },
+        {
+          "label": "D",
+          "content": "温备"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "在云上基础架构中，关系型数据库的特点不包括什么?",
+      "options": [
+        {
+          "label": "A",
+          "content": "即开即用"
+        },
+        {
+          "label": "B",
+          "content": "操作简便"
+        },
+        {
+          "label": "C",
+          "content": "可弹性伸缩"
+        },
+        {
+          "label": "D",
+          "content": "稳定可靠"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "云API是天翼云为开发者提高可以使用的云应用编程接口编码，下列云API说法不正确的是()。",
+      "options": [
+        {
+          "label": "A",
+          "content": "私有加密协议，传输内容更精简，使用更安全"
+        },
+        {
+          "label": "B",
+          "content": "少量的代码即可轻松使用API"
+        },
+        {
+          "label": "C",
+          "content": "云API供多语言SDK"
+        },
+        {
+          "label": "D",
+          "content": "云API的管理和监控需要管理员手动完成"
+        }
+      ],
+      "answer": [
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "VPN连接用于在远端用户和VPC之间建立一条安全加电的通信随道，使远端用户通过VPN直接使用天翼云VPC中的业务资源。下列关于VPN连接的说法中，正确的目()",
+      "options": [
+        {
+          "label": "A",
+          "content": "VPN连接两端的P地址可以相同"
+        },
+        {
+          "label": "B",
+          "content": "VPN连接不支持不同区域的互联"
+        },
+        {
+          "label": "C",
+          "content": "VPN连接提供Internet访问"
+        },
+        {
+          "label": "D",
+          "content": "VPN连限的价格比较贵"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "存储高性能的常见方式读写分离架构往往采用主从架构，其运行方式是?",
+      "options": [
+        {
+          "label": "A",
+          "content": "主机写，从机写"
+        },
+        {
+          "label": "B",
+          "content": "主机读，从机读"
+        },
+        {
+          "label": "C",
+          "content": "主机写，从机读"
+        },
+        {
+          "label": "D",
+          "content": "主机读，从机写"
+        }
+      ],
+      "answer": [
+        "C"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "为了提高云资源的安全性，天翼云为用户提供一个安全、可靠、高效的云服务，在天翼云安全体系中提供5S安全体系，其中不包活的是()",
+      "options": [
+        {
+          "label": "A",
+          "content": "服务器(Server)"
+        },
+        {
+          "label": "B",
+          "content": "持久(Sustainablity)"
+        },
+        {
+          "label": "C",
+          "content": "系统(System)"
+        },
+        {
+          "label": "D",
+          "content": "保密(Secrecy)"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "天翼云负载均街服务经常结合弹性伸缩服务，下列关于弹性伸缩服务的说法中，不正确的是()。",
+      "options": [
+        {
+          "label": "A",
+          "content": "必须结合弹性负载均衡才能使用"
+        },
+        {
+          "label": "B",
+          "content": "操作灵活"
+        },
+        {
+          "label": "C",
+          "content": "可自动增加云主机"
+        },
+        {
+          "label": "D",
+          "content": "可自动减少云主机"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "当客户购买的天翼云弹性云主机的CPU和内存不能满足要求时，此时可以采用下列什么方式进行处理?",
+      "options": [
+        {
+          "label": "A",
+          "content": "重新挂载磁盘"
+        },
+        {
+          "label": "B",
+          "content": "操作系统重装"
+        },
+        {
+          "label": "C",
+          "content": "通过规格变更进行处理"
+        },
+        {
+          "label": "D",
+          "content": "操作系统切换"
+        }
+      ],
+      "answer": [
+        "C"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "在云专线业务中，常规物理专线支持的最大带宽不超过多少G?",
+      "options": [
+        {
+          "label": "A",
+          "content": "100"
+        },
+        {
+          "label": "B",
+          "content": "50"
+        },
+        {
+          "label": "C",
+          "content": "10"
+        },
+        {
+          "label": "D",
+          "content": "20"
+        }
+      ],
+      "answer": [
+        "C"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "弹性负载均衡是天翼云提供的一种网络负载业务，关于弹性负载均衡业务，下列说法不正确的是()",
+      "options": [
+        {
+          "label": "A",
+          "content": "负载均衡技术无法获取来访者真实IP"
+        },
+        {
+          "label": "B",
+          "content": "7层负载均衡是基于cookie进行会话保持"
+        },
+        {
+          "label": "C",
+          "content": "提供公网负载均衡"
+        },
+        {
+          "label": "D",
+          "content": "4层负载均衡基于IP进行会话保持"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "在天翼云中配置弹性伸缩的伸缩策路时，可以选择定时伸缩策策略，关于定时伸缩策略下列说法不正确的是()。",
+      "options": [
+        {
+          "label": "A",
+          "content": "业务呈周期性变化或可预期"
+        },
+        {
+          "label": "B",
+          "content": "适用于负载变化情况是未知的场景"
+        },
+        {
+          "label": "C",
+          "content": "设置定时任务，对设备扩展活动进行规划"
+        },
+        {
+          "label": "D",
+          "content": "定时及周期性的自动增加或减少弹性云主机，提高设备利用率，节省部署和实例成本"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "天翼云为用户提供了微服务云应用平台，下关于该平台优势说法中，不正确的是()。",
+      "options": [
+        {
+          "label": "A",
+          "content": "对业务逻辑有小部分侵入性"
+        },
+        {
+          "label": "B",
+          "content": "快速建云分布式应用"
+        },
+        {
+          "label": "C",
+          "content": "支持基于微服务的全生命周期管理"
+        },
+        {
+          "label": "D",
+          "content": "提供大规模容器集群管理"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "在高可用架构下，资源不足，在高并发的情况下，节点无法正常工作，对外表现为什么?",
+      "options": [
+        {
+          "label": "A",
+          "content": "资源不可用"
+        },
+        {
+          "label": "B",
+          "content": "客户端调用出问题"
+        },
+        {
+          "label": "C",
+          "content": "节点连接不上"
+        },
+        {
+          "label": "D",
+          "content": "响应超时"
+        }
+      ],
+      "answer": [
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "用户在天翼云弹性云主机ECS中搭建数据库服务器，选择数据库这类业务密集型应用的云硬盘时，需要特别关注的性标是()。",
+      "options": [
+        {
+          "label": "A",
+          "content": "容量"
+        },
+        {
+          "label": "B",
+          "content": "吞吐量"
+        },
+        {
+          "label": "C",
+          "content": "IOPS"
+        },
+        {
+          "label": "D",
+          "content": "访问时延"
+        }
+      ],
+      "answer": [
+        "C"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "针对非结构的数据，在天翼云中可以保证数据多副本保存，从而提升容灾能力的产品是()。",
+      "options": [
+        {
+          "label": "A",
+          "content": "数据库复制服务DRS"
+        },
+        {
+          "label": "B",
+          "content": "弹性云主机ECS"
+        },
+        {
+          "label": "C",
+          "content": "对象存储OOS"
+        },
+        {
+          "label": "D",
+          "content": "关系数据库RDS"
+        }
+      ],
+      "answer": [
+        "C"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "在天翼云中为用户提供多种不同的存储以应对不用场景和不同需求。假如用户有大量数据逻辑备份类数据需要存放在天翼云中，最适合存放的存储是()。",
+      "options": [
+        {
+          "label": "A",
+          "content": "备份存储"
+        },
+        {
+          "label": "B",
+          "content": "弹性文件服务"
+        },
+        {
+          "label": "C",
+          "content": "云硬盘"
+        },
+        {
+          "label": "D",
+          "content": "对象存储"
+        }
+      ],
+      "answer": [
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "在数据库迁移模式中，在线迁移与离线迁移都是比较简单的迁移场景，主要区别在什么地方?",
+      "options": [
+        {
+          "label": "A",
+          "content": "迁移数据量大小"
+        },
+        {
+          "label": "B",
+          "content": "迁移过程中是否需要停机"
+        },
+        {
+          "label": "C",
+          "content": "迁移耗费时间"
+        },
+        {
+          "label": "D",
+          "content": "迁路所需成本"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "云计算是在目前IT环境中使用非常多的一种架构，相较于传统的IDC机房，云计算具有很多优势。下列关于使用云上资源的优势说法不正确的是()",
+      "options": [
+        {
+          "label": "A",
+          "content": "计算业务提供弹性按需扩展的资源租用服务"
+        },
+        {
+          "label": "B",
+          "content": "云算业务中，降低了效率提高了使用成本"
+        },
+        {
+          "label": "C",
+          "content": "云计算中可以租用的资源范围广泛，不局限于服务器和带宽"
+        },
+        {
+          "label": "D",
+          "content": "云计算业务中用户不需要了解物理资源的硬件信息"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "电商、门户网站，网页游戏等互联网场景中的图片、HTML、CSS等资源的加速，可以使用天翼云CDN加速产品是（）",
+      "options": [
+        {
+          "label": "A",
+          "content": "安全加速"
+        },
+        {
+          "label": "B",
+          "content": "全站加速"
+        },
+        {
+          "label": "C",
+          "content": "静态加速"
+        },
+        {
+          "label": "D",
+          "content": "下载加速"
+        }
+      ],
+      "answer": [
+        "C"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "在系统并发数由小到大逐新增大的过程中，系统的吞吐量一般是先逐渐增大，达到一个极限后，随着并发数的增加反而下降，达到系统的崩溃点后，资源耗尽，此时的吞吐量为?",
+      "options": [
+        {
+          "label": "A",
+          "content": "100"
+        },
+        {
+          "label": "B",
+          "content": "10"
+        },
+        {
+          "label": "C",
+          "content": "0"
+        },
+        {
+          "label": "D",
+          "content": "5"
+        }
+      ],
+      "answer": [
+        "C"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "服务器迁移工具是天翼云为上云用户量身打造的、零停机的无缝P2V/V2V在线迁移工具，下面不属于服务器上云迁移步骤的是()",
+      "options": [
+        {
+          "label": "A",
+          "content": "目标端安装客户端"
+        },
+        {
+          "label": "B",
+          "content": "源端安装客户端"
+        },
+        {
+          "label": "C",
+          "content": "安装控制端"
+        },
+        {
+          "label": "D",
+          "content": "完成授权"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "在天翼云中提供了多种不同的CDN加速产品，以满足不同用户不同场景的各种需求。下面关于CDN的说法中，错误的",
+      "options": [
+        {
+          "label": "A",
+          "content": "前端用户请求通过CDN服务响应，对于可以满足的响应发至后端弹性负载均衡ELB"
+        },
+        {
+          "label": "B",
+          "content": "解决因跨运营商访问、跨地域访问、服务器带宽及性能带来的访问延迟问题"
+        },
+        {
+          "label": "C",
+          "content": "CDN是中国电信依托分布于全国的网络节点搭建的一层虚拟网络"
+        },
+        {
+          "label": "D",
+          "content": "CDN将源站内容分发至接近用户的节点，使用户可就近获取所需内容"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "在天翼云中，可以基于告警信息增加或者减少伸缩组中主机。下列关于告警策略触发的伸缩组说法，不正确的是(",
+      "options": [
+        {
+          "label": "A",
+          "content": "如果业务访问不存在周期性变化，使用告警策略触发能够更好地适应业务的变化"
+        },
+        {
+          "label": "B",
+          "content": "建议每个伸缩组各创建两个策略，分别用于扩展和伸缩"
+        },
+        {
+          "label": "C",
+          "content": "告警策略触发一旦条件到达告警阈值将直接触发"
+        },
+        {
+          "label": "D",
+          "content": "告警触发伸缩组伸缩的时候执行动作是:发送通知+增加/减少指定数量的云服务器"
+        }
+      ],
+      "answer": [
+        "C"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "有一种备份方式，其中每个备份点都是一个虚拟的全备，多次备份间有依赖关系的数据块以指针索引的方式引用，这种备份方式是()",
+      "options": [
+        {
+          "label": "A",
+          "content": "永久增量备份"
+        },
+        {
+          "label": "B",
+          "content": "合成备份"
+        },
+        {
+          "label": "C",
+          "content": "培量备份"
+        },
+        {
+          "label": "D",
+          "content": "差异备份"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "下列什么不属于传统安防方案?",
+      "options": [
+        {
+          "label": "A",
+          "content": "硬件Anti-DDoS"
+        },
+        {
+          "label": "B",
+          "content": "态势感知"
+        },
+        {
+          "label": "C",
+          "content": "硬件防火墙"
+        },
+        {
+          "label": "D",
+          "content": "硬件WAF"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "松耦合架构的优点不包括什么?",
+      "options": [
+        {
+          "label": "A",
+          "content": "提高了系统的可维护性"
+        },
+        {
+          "label": "B",
+          "content": "多任务并行处理能力获得极大提升"
+        },
+        {
+          "label": "C",
+          "content": "异步操作减少了网络资源消耗和操作关联"
+        },
+        {
+          "label": "D",
+          "content": "开发人员协作更简单<br class=\"markdown_return\">E 、实现负载自适应机制"
+        }
+      ],
+      "answer": [
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "DDoS攻击是网络中常见的攻击手段，下面情况不属于DDoS攻击特征的是()。",
+      "options": [
+        {
+          "label": "A",
+          "content": "服务器CPU和内存占用率增大"
+        },
+        {
+          "label": "B",
+          "content": "服务器密码被破解"
+        },
+        {
+          "label": "C",
+          "content": "网站出现大量未知访问"
+        },
+        {
+          "label": "D",
+          "content": "网络出入放行流量激增"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "远程医疗的业务挑战不包括什么",
+      "options": [
+        {
+          "label": "A",
+          "content": "会议效果较差"
+        },
+        {
+          "label": "B",
+          "content": "缺乏有效的运营手段和运营"
+        },
+        {
+          "label": "C",
+          "content": "医疗孤岛现象"
+        },
+        {
+          "label": "D",
+          "content": "安全风险高"
+        },
+        {
+          "label": "E",
+          "content": "会诊应用场景简单"
+        }
+      ],
+      "answer": [
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "在天翼云上，为了实现数据库容灾，我们可以在业务系统和容灾系统中实现数据库1:1复制的技术是()。",
+      "options": [
+        {
+          "label": "A",
+          "content": "数据库复制服务DRS/DTS"
+        },
+        {
+          "label": "B",
+          "content": "弹性云主机ECS"
+        },
+        {
+          "label": "C",
+          "content": "关系数库RDS"
+        },
+        {
+          "label": "D",
+          "content": "对象存储OOS"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "为了应付复杂的网络环境和不同地区用户的访问，通过什么可以加快用户访问的速度，同时减轻后端服务器的负载压力",
+      "options": [
+        {
+          "label": "A",
+          "content": "非关系型数据库"
+        },
+        {
+          "label": "B",
+          "content": "分布式文件系统"
+        },
+        {
+          "label": "C",
+          "content": "CDN和反向代理"
+        },
+        {
+          "label": "D",
+          "content": "应用服务集群"
+        }
+      ],
+      "answer": [
+        "C"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "天翼云数据库复制服务中的实时同步功能一般不会应用于下面什么场景?",
+      "options": [
+        {
+          "label": "A",
+          "content": "云下数据库迁移上云"
+        },
+        {
+          "label": "B",
+          "content": "数仓环境"
+        },
+        {
+          "label": "C",
+          "content": "实时分析"
+        },
+        {
+          "label": "D",
+          "content": "报表系统"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "天翼云弹性云主机中，当系统出现问题时，需要将一块磁盘的数据回滚到之前的某一时刻，实现该功能所用的技术是",
+      "options": [
+        {
+          "label": "A",
+          "content": "镜像修复"
+        },
+        {
+          "label": "B",
+          "content": "镜像备份"
+        },
+        {
+          "label": "C",
+          "content": "快照备份"
+        },
+        {
+          "label": "D",
+          "content": "快照回滚"
+        }
+      ],
+      "answer": [
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "弹性架构即随着业务的变化能够进行灵活的、自动的弹性伸缩的一种架构，下列描述中不属于这种架构优势的是（）。",
+      "options": [
+        {
+          "label": "A",
+          "content": "可以根据业务变化进行弹性调整"
+        },
+        {
+          "label": "B",
+          "content": "充分优化企业的计算资源"
+        },
+        {
+          "label": "C",
+          "content": "随需计算节省企业成本"
+        },
+        {
+          "label": "D",
+          "content": "对技术水平、实力、应用规模要求都较低"
+        }
+      ],
+      "answer": [
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "对于可靠性和容灾有很高要求的业务，在天翼云中能够将流量跨可用区进行分发，建立实时的业务容灾部署的应用是（）",
+      "options": [
+        {
+          "label": "A",
+          "content": "弹性伸缩"
+        },
+        {
+          "label": "B",
+          "content": "对象存储"
+        },
+        {
+          "label": "C",
+          "content": "弹性云主机"
+        },
+        {
+          "label": "D",
+          "content": "弹性负载均衡"
+        }
+      ],
+      "answer": [
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "天翼云WEB应用防火墙可以在很大程度上提高WEB服务器的安全性，下列场景中不可以使用WEB应用防火墙的是（）",
+      "options": [
+        {
+          "label": "A",
+          "content": "防止XSS攻击"
+        },
+        {
+          "label": "B",
+          "content": "防御DDOS攻击"
+        },
+        {
+          "label": "C",
+          "content": "防止SQL攻击"
+        },
+        {
+          "label": "D",
+          "content": "代码注入"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "在天翼云种提供了多种不同的CDN加速产品，以满足不同用户不同场景的各种需求，下面关于CDN的说法错误的是（）",
+      "options": [
+        {
+          "label": "A",
+          "content": "CDN能够为用户访问加速，使用CDN后会降低企业服务器的安全性"
+        },
+        {
+          "label": "B",
+          "content": "解决因跨运营商访问、跨地域访问、服务器带宽及性能带来的访问延迟问题"
+        },
+        {
+          "label": "C",
+          "content": "CDN是通过分散在各地的缓存节点为用户访问进行加速"
+        },
+        {
+          "label": "D",
+          "content": "CDN将源站内容分发至最接近用户的节点，使用户可就近获取所需内容"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "在弹性架构设计原则中，下面什么的弹性设计主要是应用服务器集群的弹性设计。",
+      "options": [
+        {
+          "label": "A",
+          "content": "网络层的弹性设计"
+        },
+        {
+          "label": "B",
+          "content": "存储层的弹性设计"
+        },
+        {
+          "label": "C",
+          "content": "IT基础设施层弹性设计"
+        },
+        {
+          "label": "D",
+          "content": "应用层的弹性设计"
+        }
+      ],
+      "answer": [
+        "C"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "在天翼云中购买资源的时候会面临区域region和可用区AZ的选择，下列关于region和AZ说法中正确的是",
+      "options": [
+        {
+          "label": "A",
+          "content": "AZ一般是基于地理位置进行划分的"
+        },
+        {
+          "label": "B",
+          "content": "region之间可以通过天翼云内网进行互联"
+        },
+        {
+          "label": "C",
+          "content": "一个region可以包含多个AZ"
+        },
+        {
+          "label": "D",
+          "content": "一个AZ可以包含多个region"
+        }
+      ],
+      "answer": [
+        "C"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "架构设计在企业中非常重要，和以前传统架构设计相比，云原生架构具备了很多云端的优势，下列描述中不属于云原生架构技术特征的是",
+      "options": [
+        {
+          "label": "A",
+          "content": "设计为紧耦合架构"
+        },
+        {
+          "label": "B",
+          "content": "通过Devops流程进行管理"
+        },
+        {
+          "label": "C",
+          "content": "采用轻量级容器"
+        },
+        {
+          "label": "D",
+          "content": "通过API进行交互写作"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "在传统IT架构的系统演进过程中，下列哪个是应用与数据库分离的关键特征？",
+      "options": [
+        {
+          "label": "A",
+          "content": "应用程序．数据库，文件等所有的资源都在同一台服务器上"
+        },
+        {
+          "label": "B",
+          "content": "数据库采用分布式数据库，文件系统采用分布式文件系统"
+        },
+        {
+          "label": "C",
+          "content": "多台服务器通过负载均衡同时向外部提供服务，解决单台服务器处理能力和行储空间上限的问题"
+        },
+        {
+          "label": "D",
+          "content": "应用程序，数据库， 文件分别部署在独立的资源上"
+        },
+        {
+          "label": "E",
+          "content": "数据库中访问较集中的一小部分数据存储在缓存服务器中，减少了数据库的访问次数，除低数据库的访问压力"
+        }
+      ],
+      "answer": [
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "下列哪一种上云迁移策略也称为”放弃后购买“",
+      "options": [
+        {
+          "label": "A",
+          "content": "Retire"
+        },
+        {
+          "label": "B",
+          "content": "Re-Purchase"
+        },
+        {
+          "label": "C",
+          "content": "Re-Host"
+        },
+        {
+          "label": "D",
+          "content": "Re-Platform"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "高性能架构的传统解决方案中可以从多个方面考虑，但是不包括下面什么方面？",
+      "options": [
+        {
+          "label": "A",
+          "content": "优化运维方式"
+        },
+        {
+          "label": "B",
+          "content": "就近部署"
+        },
+        {
+          "label": "C",
+          "content": "升级硬件配置"
+        },
+        {
+          "label": "D",
+          "content": "优化架构"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "消息队列无法解决下面的什么问题？",
+      "options": [
+        {
+          "label": "A",
+          "content": "运维效率低下"
+        },
+        {
+          "label": "B",
+          "content": "扩展难度大"
+        },
+        {
+          "label": "C",
+          "content": "系统耦合性"
+        },
+        {
+          "label": "D",
+          "content": "处理性能低"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "天翼云中服务器安全卫士可以保护用户服务器安全，下面关于服务器安全卫士的说法中，错误的是（）",
+      "options": [
+        {
+          "label": "A",
+          "content": "不能为用户提供问题解决能力"
+        },
+        {
+          "label": "B",
+          "content": "可以发现安全威胁和入侵事件"
+        },
+        {
+          "label": "C",
+          "content": "可以针对主机信息进行监控和分析"
+        },
+        {
+          "label": "D",
+          "content": "可以对用户行为进行监控和分析"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "NAT网关可以为天翼云中资源比如弹性云主机，提供internet接入功能，下列场景中不适用NAT接入的是（）。",
+      "options": [
+        {
+          "label": "A",
+          "content": "只有一个弹性IP同时启用SNAT和DNAT"
+        },
+        {
+          "label": "B",
+          "content": "大带宽、高可用公网访问场景"
+        },
+        {
+          "label": "C",
+          "content": "部署服务较多的公网访问应用场景"
+        },
+        {
+          "label": "D",
+          "content": "安全的公网访问场景"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "天翼云Anti-DDoS流量清洗功能提供查看安全报告能力，其查看区间为？",
+      "options": [
+        {
+          "label": "A",
+          "content": "一周"
+        },
+        {
+          "label": "B",
+          "content": "2天"
+        },
+        {
+          "label": "C",
+          "content": "5天"
+        },
+        {
+          "label": "D",
+          "content": "3天"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "弹性架构具有充足的灵活性，可以满足企业业务后续扩容的要求，在弹性架构设计中分为多个不同的层次，下列关于应用层弹性设计的说法中，错误的是（）",
+      "options": [
+        {
+          "label": "A",
+          "content": "应用层是有状态的设计，方便后续调用"
+        },
+        {
+          "label": "B",
+          "content": "应用层需要将状态分散到缓存层还有数据层"
+        },
+        {
+          "label": "C",
+          "content": "需要依赖后台数据库和缓存层面的东西"
+        },
+        {
+          "label": "D",
+          "content": "通常是由PHP、Java、Python等写的逻辑代码构成的"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "天翼云关系型数据库RDS是一种基于云计算平台的即开即用、稳定可靠、弹性伸缩、便捷管理的在线关系型数据库服务。下列关于该数据库的说法不正确的是（）",
+      "options": [
+        {
+          "label": "A",
+          "content": "用户能够在云中轻松的进行设置和扩展"
+        },
+        {
+          "label": "B",
+          "content": "有多重安全防护措施以保证数据库的安全"
+        },
+        {
+          "label": "C",
+          "content": "具有完善的性能监控体系"
+        },
+        {
+          "label": "D",
+          "content": "支持开启双活架构提高数据库可用性"
+        }
+      ],
+      "answer": [
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "管理员使用了下面命令通过外网访天翼云的MySQL数据库：mysql -h [xx] -P [xx] -u [xx] -p，其中-P选项代表的含义是（）",
+      "options": [
+        {
+          "label": "A",
+          "content": "云数据库密码"
+        },
+        {
+          "label": "B",
+          "content": "云数据库账号"
+        },
+        {
+          "label": "C",
+          "content": "云数据库端口号"
+        },
+        {
+          "label": "D",
+          "content": "云数据库外网地址"
+        }
+      ],
+      "answer": [
+        "C"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "在天翼云中可以使用安全组和ACL来提高虚拟私有云的安全性，进而提高企业云安全。下列关于安全组说法中不正确的是()。",
+      "options": [
+        {
+          "label": "A",
+          "content": "用户可以在安全组中定义各种访问规则，当虚拟机加入该安全组后，即受到这些访问规则的保护"
+        },
+        {
+          "label": "B",
+          "content": "安全组用来实现安全组内和组间虚拟机的访问控制，加强虚拟机的安全防护"
+        },
+        {
+          "label": "C",
+          "content": "安全组是基于物理进行划分"
+        },
+        {
+          "label": "D",
+          "content": "由同一个地域内具有相同安全保护需求并相互信任的云主机组成"
+        }
+      ],
+      "answer": [
+        "C"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "《信息安全技术-网络安全等级保护基本要求》是一项中国国家标准，是指对网络和信息系统按照重要性等级分级别保护的一种工作。其中定义的保护最高等级是（）",
+      "options": [
+        {
+          "label": "A",
+          "content": "6"
+        },
+        {
+          "label": "B",
+          "content": "5"
+        },
+        {
+          "label": "C",
+          "content": "4"
+        },
+        {
+          "label": "D",
+          "content": "3"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "在云计算环境中，安全需要用户和云提供商共同负责。天翼云中用户购买弹性云主机提供Web应用，下列由用户负责的安全设置是（）",
+      "options": [
+        {
+          "label": "A",
+          "content": "虚拟机内应用的安全"
+        },
+        {
+          "label": "B",
+          "content": "软件基础设安全"
+        },
+        {
+          "label": "C",
+          "content": "网络基础设施安全"
+        },
+        {
+          "label": "D",
+          "content": "数据中心安全"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "在创建天翼云关系数据库MySQL实例时，不需要配置下面哪个参数?",
+      "options": [
+        {
+          "label": "A",
+          "content": "实例类型"
+        },
+        {
+          "label": "B",
+          "content": "实例名称"
+        },
+        {
+          "label": "C",
+          "content": "数据库版本"
+        },
+        {
+          "label": "D",
+          "content": "存储空间"
+        },
+        {
+          "label": "E",
+          "content": "数据库引擎"
+        }
+      ],
+      "answer": [
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "云硬盘的存储系统采用三副本机制来保证数据的可靠性，下列关于三副本技术的描述，错误的是?",
+      "options": [
+        {
+          "label": "A",
+          "content": "针对某份数据，默认将数据分为10MB大小的数据块"
+        },
+        {
+          "label": "B",
+          "content": "存储系统自动确保3个数据副本分布在不同服务器的不同物理磁盘上，单个硬件设备的故障不会影响业务"
+        },
+        {
+          "label": "C",
+          "content": "存储系统可以确保3个数据副本之间的数据强一致性"
+        },
+        {
+          "label": "D",
+          "content": "每一个数据块被复制为3个副本，然后按照一定的分布式存储算法将这些副本保存在集群中的不同节点上"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "天翼云中可以选择多种不同方式构建混合云，实现云上和云下的互通。下列关于两种最常用的连接方式:专线接入和VPN连接，描述不正确的是()。",
+      "options": [
+        {
+          "label": "A",
+          "content": "VPN连接利用公网和IPSec协议在用户的数据中心和私有网络之间建立加密的网络连接"
+        },
+        {
+          "label": "B",
+          "content": "专线接入施工时间较长，但可以提供高质量、高可靠的网络连接服务"
+        },
+        {
+          "label": "C",
+          "content": "VPN连接更适合使用的场景是高速度的容灾或者混合云部署"
+        },
+        {
+          "label": "D",
+          "content": "一般情况下专线上层应用透明承载，可承载数据、语音、视频等综合应用"
+        }
+      ],
+      "answer": [
+        "C"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "天翼云应用层的弹性设计不包括下面什么?",
+      "options": [
+        {
+          "label": "A",
+          "content": "天翼云弹性云主机"
+        },
+        {
+          "label": "B",
+          "content": "分布式数据库"
+        },
+        {
+          "label": "C",
+          "content": "天翼云弹性伸缩服务"
+        },
+        {
+          "label": "D",
+          "content": "天翼云负载均衡服务"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "在天翼云中，为用户提供了CDN以提高网络资源的访问速度，提升用户体验，下列关于CDN说法中不正确的是（）",
+      "options": [
+        {
+          "label": "A",
+          "content": "提高用户访问的响应速度和成功率"
+        },
+        {
+          "label": "B",
+          "content": "使用CDN后会大幅增加后端服务器负担"
+        },
+        {
+          "label": "C",
+          "content": "可以有效降低访问延迟，用户可就近获取所需内容"
+        },
+        {
+          "label": "D",
+          "content": "CND是内容分发网络"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "通过选择不同的镜像，可以在天翼云中创建不同系统和软件的弹性云主机。下列镜像类型中可以手动删除的是（）",
+      "options": [
+        {
+          "label": "A",
+          "content": "镜像市场"
+        },
+        {
+          "label": "B",
+          "content": "私有镜像"
+        },
+        {
+          "label": "C",
+          "content": "共享镜像"
+        },
+        {
+          "label": "D",
+          "content": "公共镜像"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "在天翼云中购买弹性云主机可以选择包月计费和按需计费的计费方式，其中包月计费是按月进行计费，以自然月为计费单位，请问下列应用场景中不适应于该计费方式的是（）",
+      "options": [
+        {
+          "label": "A",
+          "content": "长期稳定运行的网站平台"
+        },
+        {
+          "label": "B",
+          "content": "适用于电商抢购等设备需求量瞬间大幅波动的场景，使用包年包月方式更划算"
+        },
+        {
+          "label": "C",
+          "content": "企业内部办公系统、邮件系统"
+        },
+        {
+          "label": "D",
+          "content": "其他需要长期稳定的成熟业务"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "镜像是在()个磁盘或磁盘子系统上产生()个数据的镜像视图的存储过程",
+      "options": [
+        {
+          "label": "A",
+          "content": "一个，同一个"
+        },
+        {
+          "label": "B",
+          "content": "两个或多个，同一个"
+        },
+        {
+          "label": "C",
+          "content": "两个或多个，两个或多个"
+        },
+        {
+          "label": "D",
+          "content": "一个，多个"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "在天翼云中可以使用安全组和ACL来提高虚拟私有云的安全性，以提高企业云安全。下列说法中正确的是()。",
+      "options": [
+        {
+          "label": "A",
+          "content": "安全组是在子网级别提作的，属于第二防御层"
+        },
+        {
+          "label": "B",
+          "content": "安全组是无状态的，返回的数据必须被规则明确允许"
+        },
+        {
+          "label": "C",
+          "content": "安全组会自动关联到子网内所有弹性云主机实例"
+        },
+        {
+          "label": "D",
+          "content": "安全组支持允许规则和拒绝规则"
+        }
+      ],
+      "answer": [
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "天翼云中，在伸缩程据容时，会根据策略决定移除哪台主机;当移出策略选择“较晚创建的实例”的时候，下列会被最先移出伸缩组的是()。",
+      "options": [
+        {
+          "label": "A",
+          "content": "最早自动增加的机器"
+        },
+        {
+          "label": "B",
+          "content": "最后自动增加的机器"
+        },
+        {
+          "label": "C",
+          "content": "最后创建的配置增加的机器"
+        },
+        {
+          "label": "D",
+          "content": "最早手动增加的机器"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "业务的连续性和可靠性成为云上和云下环境共同考虑的重要参考标准，一个业务连续性高的系统中，PRO和RRO应该具备的特点是（）",
+      "options": [
+        {
+          "label": "A",
+          "content": "RPO较高，RTO较低"
+        },
+        {
+          "label": "B",
+          "content": "RPO和RTO都较低"
+        },
+        {
+          "label": "C",
+          "content": "RPO较低，RTO较高"
+        },
+        {
+          "label": "D",
+          "content": "RPO和RTO都较高"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "备份可以在IT系统中保护数据的安全，在备份过程中可以选择不同的备份方式，下列备份方式中备份数据量最大恢复最慢的是（）",
+      "options": [
+        {
+          "label": "A",
+          "content": "全量备份"
+        },
+        {
+          "label": "B",
+          "content": "差异备份"
+        },
+        {
+          "label": "C",
+          "content": "增量备份"
+        },
+        {
+          "label": "D",
+          "content": "完全备份"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "在天翼云中可以为用户提供云硬盘进行数据存储，云硬盘所属的存储类型是（）",
+      "options": [
+        {
+          "label": "A",
+          "content": "文件存储"
+        },
+        {
+          "label": "B",
+          "content": "对象存储"
+        },
+        {
+          "label": "C",
+          "content": "块存储"
+        },
+        {
+          "label": "D",
+          "content": "离线存储"
+        }
+      ],
+      "answer": [
+        "C"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "天翼云中CDN为用户提供多种加速产品以供用户进行选择使用，下面不属于天翼云CDN提供的加速产品与服务的是（）",
+      "options": [
+        {
+          "label": "A",
+          "content": "静态加速"
+        },
+        {
+          "label": "B",
+          "content": "视频直播加速"
+        },
+        {
+          "label": "C",
+          "content": "下载加速"
+        },
+        {
+          "label": "D",
+          "content": "图片加速"
+        }
+      ],
+      "answer": [
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "备份点平时不启动（甚至可以在主节点首次故障时才进行部署），当主机点故障时，需要先恢复备份点的数据，在启动备份组件，这种备份方式被成为（）",
+      "options": [
+        {
+          "label": "A",
+          "content": "热备"
+        },
+        {
+          "label": "B",
+          "content": "冷备"
+        },
+        {
+          "label": "C",
+          "content": "温备"
+        },
+        {
+          "label": "D",
+          "content": "半热备"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "在天翼云中，虚拟私有云可以划分不同子网，下列关于子网的子网掩码说法不正确的是（）",
+      "options": [
+        {
+          "label": "A",
+          "content": "将IP地址划分为网络和主机两部分"
+        },
+        {
+          "label": "B",
+          "content": "允许掩码为/28"
+        },
+        {
+          "label": "C",
+          "content": "允许掩码为/6"
+        },
+        {
+          "label": "D",
+          "content": "天翼云保留每个子网中前两个和最后一个IP地址"
+        }
+      ],
+      "answer": [
+        "C"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "在IT架构中，备份可以有效提高数据的安全性，防止因为意外而导致的数据丢失。备份有多种不同的备份方式，一般在首次备份的时候采用的备份方式是（）",
+      "options": [
+        {
+          "label": "A",
+          "content": "差异备份"
+        },
+        {
+          "label": "B",
+          "content": "副本备份"
+        },
+        {
+          "label": "C",
+          "content": "增量备份"
+        },
+        {
+          "label": "D",
+          "content": "全量备份"
+        }
+      ],
+      "answer": [
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "在天翼云中，弹性负载均衡通过将访问流量自动分发到多台云主机，扩展应用系统对外的服务能力，解决大量并发访问服务器的问题，实现更高水平的应用程序容错性能，下列关于弹性负载均衡说法不正确的是（）",
+      "options": [
+        {
+          "label": "A",
+          "content": "支持流量分配算法"
+        },
+        {
+          "label": "B",
+          "content": "不支持跨可用区容灾"
+        },
+        {
+          "label": "C",
+          "content": "支持四层和七层负载均衡"
+        },
+        {
+          "label": "D",
+          "content": "支持节点的健康检查"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "在云审计的功能中，审计日志转储时会按照服务维度压缩审计日志为什么文件？",
+      "options": [
+        {
+          "label": "A",
+          "content": "日志文件"
+        },
+        {
+          "label": "B",
+          "content": "告警文件"
+        },
+        {
+          "label": "C",
+          "content": "事件文件"
+        },
+        {
+          "label": "D",
+          "content": "数据库文件"
+        }
+      ],
+      "answer": [
+        "C"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "耦合性是一种软件度量，指程序中模块与模块之间信息或者参数的依赖症，下列关于耦合性说法不正确的是（）",
+      "options": [
+        {
+          "label": "A",
+          "content": "紧耦合降低变更成本"
+        },
+        {
+          "label": "B",
+          "content": "高内聚低耦合一直以来都是软件的基本设计原则"
+        },
+        {
+          "label": "C",
+          "content": "耦合性可以提供给用户访问的服务，系统与系统之间信息、接口、访问地址等的依赖度"
+        },
+        {
+          "label": "D",
+          "content": "当业务发生变化时，重新调整系统的难度越高，进行变革的成本就越大"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "性能优化可以在不增加成本的情况下，进行架构的升级或者优化，以更好的发挥当前系统的性能。下列措施中不属于云上高性能架构优化产品的是（）",
+      "options": [
+        {
+          "label": "A",
+          "content": "消息队列"
+        },
+        {
+          "label": "B",
+          "content": "服务器安全卫士"
+        },
+        {
+          "label": "C",
+          "content": "负载均衡"
+        },
+        {
+          "label": "D",
+          "content": "分布式缓存"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "不同的天翼云虚拟私有云默认是不能互通的，实现不同虚拟私有云内资源的互通，可以使用的天翼云产品是（）",
+      "options": [
+        {
+          "label": "A",
+          "content": "弹性公网IP"
+        },
+        {
+          "label": "B",
+          "content": "NAT网关"
+        },
+        {
+          "label": "C",
+          "content": "专线网关"
+        },
+        {
+          "label": "D",
+          "content": "VPN连接"
+        }
+      ],
+      "answer": [
+        "C"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "下列关于架构和框架的描述，错误的是?",
+      "options": [
+        {
+          "label": "A",
+          "content": "框架是具有基础功能的软件产品"
+        },
+        {
+          "label": "B",
+          "content": "架构是一个系统的正式描述"
+        },
+        {
+          "label": "C",
+          "content": "框架是组件规范"
+        },
+        {
+          "label": "D",
+          "content": "框架体现在系统组件与组件之间及组件与环境之间的相互关系，以及对系统设计和演进进行治理的原则中"
+        },
+        {
+          "label": "E",
+          "content": "架构是指导系统实施的组件层级详细过程 组件结构、组件之间相互关系，以及对这些组件的设计和随时间演进的治理原则和指南\""
+        }
+      ],
+      "answer": [
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "传统弹性架构解决方案遇到的问题不包括什么？",
+      "options": [
+        {
+          "label": "A",
+          "content": "学习成本高"
+        },
+        {
+          "label": "B",
+          "content": "安全性能差"
+        },
+        {
+          "label": "C",
+          "content": "脚本稳定性不高"
+        },
+        {
+          "label": "D",
+          "content": "自动化程度不高"
+        },
+        {
+          "label": "E",
+          "content": "配置管理操作复杂"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "管理员可以通过添加数据盘的方式，为天翼云弹性云主机增加存储空间。如果增加的数据盘空间超过2T，那么在弹性云主机中需要使用的分区格式是（）。",
+      "options": [
+        {
+          "label": "A",
+          "content": "EXT"
+        },
+        {
+          "label": "B",
+          "content": "GPT"
+        },
+        {
+          "label": "C",
+          "content": "MBR"
+        },
+        {
+          "label": "D",
+          "content": "FAT"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "在天翼云中，选择弹性负载均衡可以提高服务的可用性。在配置弹性负载均衡的过程中，设置负载均衡监听器时不能选择的转发规则是（）。",
+      "options": [
+        {
+          "label": "A",
+          "content": "目的地址"
+        },
+        {
+          "label": "B",
+          "content": "源地址"
+        },
+        {
+          "label": "C",
+          "content": "轮询"
+        },
+        {
+          "label": "D",
+          "content": "最小连接数"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "在传统弹性架构解决方案中，下面什么层次为运维自动化的核心？",
+      "options": [
+        {
+          "label": "A",
+          "content": "应用层"
+        },
+        {
+          "label": "B",
+          "content": "资源层"
+        },
+        {
+          "label": "C",
+          "content": "逻辑层"
+        },
+        {
+          "label": "D",
+          "content": "展示层"
+        }
+      ],
+      "answer": [
+        "C"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "天翼云中用户搭建了Web应用，由于客户访问数据的地理位置和数据所在机房距离远，数据传输影响访问体验，可以选择的天翼云服务是（）。",
+      "options": [
+        {
+          "label": "A",
+          "content": "DDOS高防IP"
+        },
+        {
+          "label": "B",
+          "content": "WAF"
+        },
+        {
+          "label": "C",
+          "content": "NAT网关"
+        },
+        {
+          "label": "D",
+          "content": "CDN"
+        }
+      ],
+      "answer": [
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "用户已经具有大规模应用，其核心问题不再是担心基础设施部署速度无法满足业务增长，更多的是从稳定性、可靠性等寻求从单中心向多中心化发展，通过消灭单点，解决单数据中心故障带来的业务风险。建议用户采用天翼云上两地三中心容灾部署，下列不属于这种部署方式特点的是()。",
+      "options": [
+        {
+          "label": "A",
+          "content": "跨可用区部署"
+        },
+        {
+          "label": "B",
+          "content": "跨区域高速互联"
+        },
+        {
+          "label": "C",
+          "content": "用户分区域就近接入"
+        },
+        {
+          "label": "D",
+          "content": "跨区域部署"
+        }
+      ],
+      "answer": [
+        "C"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "天翼云为用户提供高质量的云服务，其中高安全性是天翼云的一大特色。从高安全架构出发，以下关于应用安全包括的几个方面，说法不正确的是()。",
+      "options": [
+        {
+          "label": "A",
+          "content": "从培训和制定组织范围的标准到实际编写和测试代码"
+        },
+        {
+          "label": "B",
+          "content": "将代码从孤立的开发环境转移到生产中的安全和测试活动"
+        },
+        {
+          "label": "C",
+          "content": "保护和维护生产应用程序，包括外部防御"
+        },
+        {
+          "label": "D",
+          "content": "安全防范，提前做好入侵检测，杜绝DDoS攻击"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "传统软件开发已经从封闭走向了开放。云计算使得大量的开发团队能涉共享很多优秀代码和架构，不需要重复地造轮子，编写代码的工作量大大减少，云计算会对软件开发商带来的影响是",
+      "options": [
+        {
+          "label": "A",
+          "content": "规模增大"
+        },
+        {
+          "label": "B",
+          "content": "需求增加"
+        },
+        {
+          "label": "C",
+          "content": "需求的变化，产目的转变"
+        },
+        {
+          "label": "D",
+          "content": "软件交付方式"
+        }
+      ],
+      "answer": [
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "天翼云中弹性云主机分布在多个位置，这些位置由区域和可用区构成，每个区域都是一个独立的物理区域。下列关于区域特性的说法，不正确的是()。",
+      "options": [
+        {
+          "label": "A",
+          "content": "区域覆盖范围广泛，并逐渐增加"
+        },
+        {
+          "label": "B",
+          "content": "为了实现资源共享，不同区域是不隔离的"
+        },
+        {
+          "label": "C",
+          "content": "不同区域之间无法实现内网互通"
+        },
+        {
+          "label": "D",
+          "content": "客户访问总是选择最近区域，降低访问延迟"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "在天翼云中提供了多个区域和可用区方便用户选择资源，关于多区域多可用区部署的描述中，下列说法正确的是( )。",
+      "options": [
+        {
+          "label": "A",
+          "content": "多可用区可以实现数据容灾"
+        },
+        {
+          "label": "B",
+          "content": "多可用区可以实现异地灾备"
+        },
+        {
+          "label": "C",
+          "content": "多区域可以实现高可用"
+        },
+        {
+          "label": "D",
+          "content": "多区域可以实现同城容灾"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "在天翼云中，可以使用NAT网关为云内资源提供互联网接入服务。在一个VPC中可以绑定NAT网关的数量是（）。",
+      "options": [
+        {
+          "label": "A",
+          "content": "1"
+        },
+        {
+          "label": "B",
+          "content": "2"
+        },
+        {
+          "label": "C",
+          "content": "3"
+        },
+        {
+          "label": "D",
+          "content": "不限"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "天翼云为用户提供了丰富的产品以满足用户使用场景，其中弹性云主机可以为用户提供计算类资源，所属的云计算服务模式是（）。",
+      "options": [
+        {
+          "label": "A",
+          "content": "IaaS"
+        },
+        {
+          "label": "B",
+          "content": "PaaS"
+        },
+        {
+          "label": "C",
+          "content": "SaaS"
+        },
+        {
+          "label": "D",
+          "content": "DaaS"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "single",
+      "stem": "云上云下环境对于业务的安全性都有非常高的要求，天翼云整体安全架构由多方面共同构成，下面不属于安全架构构成部分的是（）。",
+      "options": [
+        {
+          "label": "A",
+          "content": "网络安全"
+        },
+        {
+          "label": "B",
+          "content": "主机安全"
+        },
+        {
+          "label": "C",
+          "content": "备份安全"
+        },
+        {
+          "label": "D",
+          "content": "数据安全"
+        }
+      ],
+      "answer": [
+        "C"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "天翼云弹性伸缩AS可以根据伸缩规则来创建或删除弹性云主机。在设置实例移除策略，可以选择的方案是",
+      "options": [
+        {
+          "label": "A",
+          "content": "根据较早创建的配置较早创建的实例"
+        },
+        {
+          "label": "B",
+          "content": "较早创建的实例"
+        },
+        {
+          "label": "C",
+          "content": "较晚创建的实例"
+        },
+        {
+          "label": "D",
+          "content": "根据较早创建的配置较晚创建的实例"
+        }
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "消息队列可用于应对传统架构面临的各种问题，以下属于消息队列可以解决的问题是()",
+      "options": [
+        {
+          "label": "A",
+          "content": "系统耦合性"
+        },
+        {
+          "label": "B",
+          "content": "扩展难度大"
+        },
+        {
+          "label": "C",
+          "content": "系统效率低"
+        },
+        {
+          "label": "D",
+          "content": "处理性能低"
+        }
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "分布式消息服务DMS是一项售于高可用分布式集群技术的消息中间件服务，提供了可靠且可扩展的托管消息队列，用于收发消息和存储消息，下列属于天翼云分布式消息服务的产品是()。",
+      "options": [
+        {
+          "label": "A",
+          "content": "RabbitMQ"
+        },
+        {
+          "label": "B",
+          "content": "Pulsar"
+        },
+        {
+          "label": "C",
+          "content": "CMQ"
+        },
+        {
+          "label": "D",
+          "content": "Kafka"
+        }
+      ],
+      "answer": [
+        "A",
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "在天翼云中提供了丰富的弹性云主机实例规格以满足多种应用场景的需求，下列场景和实例规格匹配正确的有()。",
+      "options": [
+        {
+          "label": "A",
+          "content": "高性能数据库->内存优化型"
+        },
+        {
+          "label": "B",
+          "content": "深度学习->超高I/O型"
+        },
+        {
+          "label": "C",
+          "content": "高性能渲染>GPU加速型"
+        },
+        {
+          "label": "D",
+          "content": "游戏服务器->高计算型"
+        }
+      ],
+      "answer": [
+        "C",
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "在天翼云中安全需要由天翼云服务商和云租户安全责任共担，下列属于云租户安全责任的是()。",
+      "options": [
+        {
+          "label": "A",
+          "content": "虚拟机内应用安全"
+        },
+        {
+          "label": "B",
+          "content": "主机日志分析"
+        },
+        {
+          "label": "C",
+          "content": "虚拟化层的安全加固"
+        },
+        {
+          "label": "D",
+          "content": "主机补丁管理"
+        }
+      ],
+      "answer": [
+        "A",
+        "B",
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "下列关于天翼云弹性架构设计中数据层的弹性设计的描述，正确的是?",
+      "options": [
+        {
+          "label": "A",
+          "content": "数据层的弹性设计需要从结构化数据和非结构化数据来进行考虑"
+        },
+        {
+          "label": "B",
+          "content": "结构化数据主要从数据库层面来考虑"
+        },
+        {
+          "label": "C",
+          "content": "结构化数据可以从数据库RDS 分布式关系型数据库、分布式缓存进行选择设计"
+        },
+        {
+          "label": "D",
+          "content": "结构化数据主要从云硬盘、对象存储来进行考虑设计选型"
+        }
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "天翼云提供了丰富的产品供用户开通使用，其中云服务器产品的优势主要体现在()。",
+      "options": [
+        {
+          "label": "A",
+          "content": "可用性强"
+        },
+        {
+          "label": "B",
+          "content": "安全性强"
+        },
+        {
+          "label": "C",
+          "content": "可扩展性强"
+        },
+        {
+          "label": "D",
+          "content": "稳定性强"
+        }
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "天翼云对象存储可以为用户提供海量、安全，低成本的存储服务。管理员可以限制用户对对象存储中数据的访问。可以为容器Bucket设置的权限是()。",
+      "options": [
+        {
+          "label": "A",
+          "content": "共享读"
+        },
+        {
+          "label": "B",
+          "content": "私有"
+        },
+        {
+          "label": "C",
+          "content": "只读"
+        },
+        {
+          "label": "D",
+          "content": "公有"
+        }
+      ],
+      "answer": [
+        "B",
+        "C",
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "高性能计算HPC是天翼云中为性能需求特别大的客户提供的提供高效、可靠、快速运行的计算平台，在HPC解决方案中重点产品主要包括()。",
+      "options": [
+        {
+          "label": "A",
+          "content": "物理机"
+        },
+        {
+          "label": "B",
+          "content": "云安全"
+        },
+        {
+          "label": "C",
+          "content": "云监控"
+        },
+        {
+          "label": "D",
+          "content": "GPU云主机"
+        }
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "Web应用防火墙WAF是天翼云中一款专业为网站提供安全防护，通过多维度防御策略提高Web服务器安全性的服务,下列属于WAF可以防御的攻击类型是()。",
+      "options": [
+        {
+          "label": "A",
+          "content": "XSS跨站攻击小"
+        },
+        {
+          "label": "B",
+          "content": "恶意爬虫"
+        },
+        {
+          "label": "C",
+          "content": "SQL注入"
+        },
+        {
+          "label": "D",
+          "content": "敏感文件访问"
+        }
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "云硬盘在天翼云弹性云主机中存放系统中各种数据，下列关于云硬盘扩容的说法，正确的是()。",
+      "options": [
+        {
+          "label": "A",
+          "content": "云硬盘，需要弹性云主机关机后才能扩容"
+        },
+        {
+          "label": "B",
+          "content": "在天翼云中某些特定节点可以扩容原有磁盘空间"
+        },
+        {
+          "label": "C",
+          "content": "支持新增云硬盘并挂载实现扩容"
+        },
+        {
+          "label": "D",
+          "content": "共享云硬盘不支持扩容操作"
+        }
+      ],
+      "answer": [
+        "B",
+        "C"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "服务器迁移工具是天翼云为上云用户量身打造的零停机的无缝在线迁移工具。无需中断生产业务，服务器迁移工具的优势主要包括()",
+      "options": [
+        {
+          "label": "A",
+          "content": "经济高效"
+        },
+        {
+          "label": "B",
+          "content": "无缝迁移"
+        },
+        {
+          "label": "C",
+          "content": "兼容性好"
+        },
+        {
+          "label": "D",
+          "content": "操作简单"
+        }
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "在天翼云中，弹性负载均衡可以开启会话保持功能，尽可能让客户访问同一台服务器。下列关于弹性负载均衡会话保持功能说法中，正确的是()。",
+      "options": [
+        {
+          "label": "A",
+          "content": "7层服务可以提供基于Cookie和IP地址的会话保持"
+        },
+        {
+          "label": "B",
+          "content": "7层服务可以基于Cookie进行会话保持"
+        },
+        {
+          "label": "C",
+          "content": "4层服务可以基于IP进行会话保持"
+        },
+        {
+          "label": "D",
+          "content": "会话保持用户不能自行关闭"
+        }
+      ],
+      "answer": [
+        "B",
+        "C"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "下列关于天翼云基础设施层高可用架构设计的描述，错误的是?",
+      "options": [
+        {
+          "label": "A",
+          "content": "天翼云云基础设施围绕区域(Regin)和可用区(AZ)构建"
+        },
+        {
+          "label": "B",
+          "content": "天翼云云基础设施的每个可用区完全隔离，同一个地域内的可用区之间也是完全隔离的"
+        },
+        {
+          "label": "C",
+          "content": "基于天属云产品搭建的高可用架构无法支持多区域多可用区使用"
+        },
+        {
+          "label": "D",
+          "content": "天翼云云基础设施的每个地域完全独立"
+        }
+      ],
+      "answer": [
+        "B",
+        "C"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "IT架构是指导IT投资和设计决策的IT框架，是建立企业信息系统的综合蓝图，传统的IT架构通常划分的部分主要包括",
+      "options": [
+        {
+          "label": "A",
+          "content": "数据架构"
+        },
+        {
+          "label": "B",
+          "content": "虚拟架构"
+        },
+        {
+          "label": "C",
+          "content": "技术架构"
+        },
+        {
+          "label": "D",
+          "content": "应用架构"
+        }
+      ],
+      "answer": [
+        "A",
+        "C",
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "用户在天翼云中创建虚拟私有云VPC的网段为172.16.0.0/12，在该VPC下创建交换机的时候可以使用的私有网段是()",
+      "options": [
+        {
+          "label": "A",
+          "content": "172.16.0.0/16"
+        },
+        {
+          "label": "B",
+          "content": "172.30.0.0/24"
+        },
+        {
+          "label": "C",
+          "content": "172.32.0.0/16"
+        },
+        {
+          "label": "D",
+          "content": "172.15.0.0/16"
+        }
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "在数据层高性能设计环节，主要是什么的产品设计?",
+      "options": [
+        {
+          "label": "A",
+          "content": "数据库"
+        },
+        {
+          "label": "B",
+          "content": "网络"
+        },
+        {
+          "label": "C",
+          "content": "安全"
+        },
+        {
+          "label": "D",
+          "content": "存储"
+        }
+      ],
+      "answer": [
+        "A",
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "天翼云大量的资源需要使用到虚拟私有云，下面关于虚拟私有云的说法中，正确的是()。",
+      "options": [
+        {
+          "label": "A",
+          "content": "安全组是一个逻辑上的划分"
+        },
+        {
+          "label": "B",
+          "content": "当虚拟机加入该安全组后，即受到这些访问规则的保护"
+        },
+        {
+          "label": "C",
+          "content": "虚拟私有云中子网创建成功后可以在后续使用中修改网段信息"
+        },
+        {
+          "label": "D",
+          "content": "一个VPC内的子网可以进行通信"
+        }
+      ],
+      "answer": [
+        "A",
+        "B",
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "下列对高性能架构衡量指标的描述，错误的是？",
+      "options": [
+        {
+          "label": "A",
+          "content": "并发数指单位时间内系统处理的请求数量，体现系统的整体处理能力"
+        },
+        {
+          "label": "B",
+          "content": "性能计算器是描述服务器或者操作系统性能的一些书记指标"
+        },
+        {
+          "label": "C",
+          "content": "吞吐量指系统能够同时处理请求的数目，这个数字直接反映了系统的负载特性"
+        },
+        {
+          "label": "D",
+          "content": "响应时间包括从发出请求开始到收到最后相应数据所需要的时间，它直观的反映了系统的“快慢”"
+        }
+      ],
+      "answer": [
+        "A",
+        "C"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "弹性云主机可以为用户提供安全可靠的弹性计算服务，下列可供选择的天翼云弹性云主机类型有()。",
+      "options": [
+        {
+          "label": "A",
+          "content": "通用型"
+        },
+        {
+          "label": "B",
+          "content": "高计算型"
+        },
+        {
+          "label": "C",
+          "content": "高存储型"
+        },
+        {
+          "label": "D",
+          "content": "GPU加速型"
+        }
+      ],
+      "answer": [
+        "A",
+        "B",
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "管理员在天翼云弹性云主机中自建了一台MySQL数据库，使用Mysqldump命令进行MySQL数据库的导入和导出，关于该命令下阿说法中正确的是()。",
+      "options": [
+        {
+          "label": "A",
+          "content": "可将据库中的数据备份成一个文本文件"
+        },
+        {
+          "label": "B",
+          "content": "表中的数据将存储在文本文件中"
+        },
+        {
+          "label": "C",
+          "content": "也可以备份Oracle数据库的数据"
+        },
+        {
+          "label": "D",
+          "content": "表的结构将存储在文本文件中"
+        }
+      ],
+      "answer": [
+        "A",
+        "B",
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "在高性能架构中，需要保证多层次多方面的高性能。存储高性能主要解决存储层读写性能低的问题，下列属于存储高性能的实现方式是()。",
+      "options": [
+        {
+          "label": "A",
+          "content": "读写分离"
+        },
+        {
+          "label": "B",
+          "content": "异地容灾"
+        },
+        {
+          "label": "C",
+          "content": "添加缓存"
+        },
+        {
+          "label": "D",
+          "content": "数据分片"
+        }
+      ],
+      "answer": [
+        "A",
+        "C",
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "在天翼云中一台弹性云主机上安装了数据库和服务（服务程序和数据库在同一台机器上），那么服务器程序与数据库就是耦合的。下列关于这种结构可能存在的问题和解决办法描述正确的是()。",
+      "options": [
+        {
+          "label": "A",
+          "content": "效率低"
+        },
+        {
+          "label": "B",
+          "content": "“烟囱式”结构"
+        },
+        {
+          "label": "C",
+          "content": "易形成资源孤岛"
+        },
+        {
+          "label": "D",
+          "content": "难扩展"
+        }
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "在天翼云中，弹性云主机Window/Linux实例登录的方式有很多，下列属于Windows实例登录方法的是",
+      "options": [
+        {
+          "label": "A",
+          "content": "VNC方式登录"
+        },
+        {
+          "label": "B",
+          "content": "密钥方式登录"
+        },
+        {
+          "label": "C",
+          "content": "MSTSC密码方式录"
+        },
+        {
+          "label": "D",
+          "content": "SSH方式登录"
+        }
+      ],
+      "answer": [
+        "A",
+        "C"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "备份可以有效果地保护数据不丢失或者较少的丢失，是企业中数据保护的重要工具，从不同的角度可以分为多种不同的类型，根据备份的时间及读写可用性可以将备份分为()。",
+      "options": [
+        {
+          "label": "A",
+          "content": "温备"
+        },
+        {
+          "label": "B",
+          "content": "热备"
+        },
+        {
+          "label": "C",
+          "content": "半热备"
+        },
+        {
+          "label": "D",
+          "content": "冷备"
+        }
+      ],
+      "answer": [
+        "A",
+        "B",
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "上云迁移是一个非常复杂的过程，在实施上云迁移前，需要做好大量的准备工作才能进行上云的实施，在实施上云迁移的时候，一般的迁移流程包括的步骤有()。",
+      "options": [
+        {
+          "label": "A",
+          "content": "评估分析"
+        },
+        {
+          "label": "B",
+          "content": "验证实施"
+        },
+        {
+          "label": "C",
+          "content": "渗透测试"
+        },
+        {
+          "label": "D",
+          "content": "规划分析"
+        }
+      ],
+      "answer": [
+        "A",
+        "B",
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "在高可用架构传统解决方案中，高可用架构主要包含下列哪些？",
+      "options": [
+        {
+          "label": "A",
+          "content": "计算高可用"
+        },
+        {
+          "label": "B",
+          "content": "安全高可用"
+        },
+        {
+          "label": "C",
+          "content": "网络高可用"
+        },
+        {
+          "label": "D",
+          "content": "存储高可用"
+        }
+      ],
+      "answer": [
+        "A",
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "天翼云关系型数据库RDS具有完善的性能监控和多重安全防护施，并提供了专业的数据库管理平台，让用户在云中轻松进行设置。其中RDS的可用性主要集中在（）。",
+      "options": [
+        {
+          "label": "A",
+          "content": "双机热备"
+        },
+        {
+          "label": "B",
+          "content": "数据恢复"
+        },
+        {
+          "label": "C",
+          "content": "数据容灾"
+        },
+        {
+          "label": "D",
+          "content": "数据备份"
+        }
+      ],
+      "answer": [
+        "A",
+        "B",
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "低耦合的系统具备哪些优势？",
+      "options": [
+        {
+          "label": "A",
+          "content": "更容易扩展"
+        },
+        {
+          "label": "B",
+          "content": "更加安全"
+        },
+        {
+          "label": "C",
+          "content": "让开发过程维护变得轻松和容易管理"
+        },
+        {
+          "label": "D",
+          "content": "更容易复用"
+        }
+      ],
+      "answer": [
+        "A",
+        "C",
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "在天翼云中云监控服务面向云主机、云硬盘、RDS等产品提供监控服务 以方便管理员了解天翼云资源使用情况。下 列属于天翼云云监控提供的功能是()。",
+      "options": [
+        {
+          "label": "A",
+          "content": "调优建议"
+        },
+        {
+          "label": "B",
+          "content": "历史信息查询"
+        },
+        {
+          "label": "C",
+          "content": "指标监控"
+        },
+        {
+          "label": "D",
+          "content": "自动告警"
+        }
+      ],
+      "answer": [
+        "B",
+        "C",
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "云计算架构主要指的是云计算所需的组件和子组件，设计企业的云计算架构是云计算架构师的主要工作内容，云计算架构需要交付的内容主要包括()",
+      "options": [
+        {
+          "label": "A",
+          "content": "基于云计算的解决方案"
+        },
+        {
+          "label": "B",
+          "content": "网络"
+        },
+        {
+          "label": "C",
+          "content": "前端"
+        },
+        {
+          "label": "D",
+          "content": "后端"
+        }
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "为了提高服务的可用性，提升客户体验，高性能实构在企业中开始流行起来。想衡量量一个高性能架构优劣，主要参考衡量指标是()",
+      "options": [
+        {
+          "label": "A",
+          "content": "性能计算器"
+        },
+        {
+          "label": "B",
+          "content": "并发量"
+        },
+        {
+          "label": "C",
+          "content": "响应时间"
+        },
+        {
+          "label": "D",
+          "content": "吞吐量"
+        }
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "天翼云云监控服务是面向云主机、云硬盘、RDS等产品提供监控服务，实现性能指标监控、自动告警、历史信息等功能的描述中，下列关于云监控服务描述中正确的是()。",
+      "options": [
+        {
+          "label": "A",
+          "content": "一旦发生异常会立刻给管理员发送报警通知"
+        },
+        {
+          "label": "B",
+          "content": "云监控提共丰富的图表展现样式"
+        },
+        {
+          "label": "C",
+          "content": "云控需要管理员手动开通"
+        },
+        {
+          "label": "D",
+          "content": "弹在云主机需要安装Agent才能实现基础云监控功能"
+        }
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "在云架构设计原则中，下列对高性能原则保证方式的描述，正确的是?",
+      "options": [
+        {
+          "label": "A",
+          "content": "使用CDN，将网站静态内容分发至离用户最近的网络服务机房，使用户通过最短访问路径获取数据"
+        },
+        {
+          "label": "B",
+          "content": "使用NOSQL数据库通过优化数据模型"
+        },
+        {
+          "label": "C",
+          "content": "在浏览器端，可以通过浏览器缓存、使用页面压缩、合理布局页面等手段改善性能"
+        },
+        {
+          "label": "D",
+          "content": "在网站出现用户高并发的情况下，可以使用服务器本地缓存，通过缓存在内存中的热点数据处理用户请求，加快请求响应速度"
+        },
+        {
+          "label": "E",
+          "content": "在代码层面，可以通过使用多线程，改善内存管理等手段优化性能"
+        }
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C",
+        "E"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "云原生是一种构建和运行应用程序的方法，是一套技术体系和方法论，云原生架构的典型技术特征有（）",
+      "options": [
+        {
+          "label": "A",
+          "content": "使用最佳语言和框架开发"
+        },
+        {
+          "label": "B",
+          "content": "通过API进行交互写作"
+        },
+        {
+          "label": "C",
+          "content": "采用轻量级的容器"
+        },
+        {
+          "label": "D",
+          "content": "设计为松散耦合的微服务"
+        }
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "计算高可用架构可以分为下列哪些?",
+      "options": [
+        {
+          "label": "A",
+          "content": "非对称集群"
+        },
+        {
+          "label": "B",
+          "content": "对称集群"
+        },
+        {
+          "label": "C",
+          "content": "主备"
+        },
+        {
+          "label": "D",
+          "content": "主从"
+        }
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "云监控可以让用户了解天翼云产品使用信息，在监控中内部组件可能包含的模块有()。",
+      "options": [
+        {
+          "label": "A",
+          "content": "告警处理模块"
+        },
+        {
+          "label": "B",
+          "content": "消息队列模块"
+        },
+        {
+          "label": "C",
+          "content": "console模块"
+        },
+        {
+          "label": "D",
+          "content": "API模块"
+        }
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "天翼云分布式缓存数据库-DCS提供单机和主备两种缓存实例类型，它的可用性主要体现在?",
+      "options": [
+        {
+          "label": "A",
+          "content": "数据持久化"
+        },
+        {
+          "label": "B",
+          "content": "数据恢复"
+        },
+        {
+          "label": "C",
+          "content": "双机热备"
+        },
+        {
+          "label": "D",
+          "content": "数据备份"
+        }
+      ],
+      "answer": [
+        "A",
+        "C"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "用户在天翼云中创建了Linux操作系统的弹性云主机，该弹性云主机默认支持的认证登录方式是",
+      "options": [
+        {
+          "label": "A",
+          "content": "Rdesktop方式登录"
+        },
+        {
+          "label": "B",
+          "content": "VNC方式登录"
+        },
+        {
+          "label": "C",
+          "content": "SSH密钥认证"
+        },
+        {
+          "label": "D",
+          "content": "SSH密码认证"
+        }
+      ],
+      "answer": [
+        "B",
+        "C",
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "天翼云云监控可以在天翼云平台中针对多种资源，监控不同的内容，方便用户管理和查询，下列属于云监控针对弹性云主机提供的监控指标是()。",
+      "options": [
+        {
+          "label": "A",
+          "content": "磁盘使用率"
+        },
+        {
+          "label": "B",
+          "content": "磁盘写速率"
+        },
+        {
+          "label": "C",
+          "content": "CPU使用率"
+        },
+        {
+          "label": "D",
+          "content": "内存使用率"
+        }
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "为了提高业务的可用性和可靠性，需要多方面多层次进行数据和业务的保护，在容灾设计中，弹性负载均衡ELB的灾备设计主要包括()。",
+      "options": [
+        {
+          "label": "A",
+          "content": "健康检查"
+        },
+        {
+          "label": "B",
+          "content": "多可用区部署"
+        },
+        {
+          "label": "C",
+          "content": "集群部署"
+        },
+        {
+          "label": "D",
+          "content": "跨地域部署"
+        }
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "天翼云弹性云主机灵活地选择所需的内存、CPU、带宽等配置，打造可靠、安全、灵活、高效的应用环境，弹性云主机具有多层次安全防护，下面属于安全防护层次的是（）",
+      "options": [
+        {
+          "label": "A",
+          "content": "租户内部应用配置安全"
+        },
+        {
+          "label": "B",
+          "content": "云平台和租户网络之间的安全"
+        },
+        {
+          "label": "C",
+          "content": "云平台的互联网出口安全"
+        },
+        {
+          "label": "D",
+          "content": "租户网络的互联网出口安全"
+        }
+      ],
+      "answer": [
+        "B",
+        "C",
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "按需付费是天翼云中优化和降低成本的方式之一，下列场景中建议使用按需付费方式的是()",
+      "options": [
+        {
+          "label": "A",
+          "content": "需要长期使用云资源，追求低成本"
+        },
+        {
+          "label": "B",
+          "content": "具有较稳定的业务场景"
+        },
+        {
+          "label": "C",
+          "content": "业务发展有较大波动性，且无法进行准确预测"
+        },
+        {
+          "label": "D",
+          "content": "资源使用有临时性和突发性"
+        }
+      ],
+      "answer": [
+        "C",
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "天翼云HPC解决方案的主要应用场景包括下面哪些?",
+      "options": [
+        {
+          "label": "A",
+          "content": "数据密集型高性能计算"
+        },
+        {
+          "label": "B",
+          "content": "紧耦合高性能计算"
+        },
+        {
+          "label": "C",
+          "content": "图形CAD工作站"
+        },
+        {
+          "label": "D",
+          "content": "松耦合高性能计算"
+        }
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "云计算服务与自建IDC相比，具有很大的便利性。下面关于云计算的便利性说法中，正确的是",
+      "options": [
+        {
+          "label": "A",
+          "content": "提高可靠性"
+        },
+        {
+          "label": "B",
+          "content": "提高效率"
+        },
+        {
+          "label": "C",
+          "content": "按需购买"
+        },
+        {
+          "label": "D",
+          "content": "降低成本"
+        }
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "天翼云数据库复制服务中的实时迁移支持下列哪些网络迁移方式?",
+      "options": [
+        {
+          "label": "A",
+          "content": "专线网络"
+        },
+        {
+          "label": "B",
+          "content": "VPN网络"
+        },
+        {
+          "label": "C",
+          "content": "公网网络"
+        },
+        {
+          "label": "D",
+          "content": "VPC网络"
+        }
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "一个典型的3层Web应用系统主要包括Web层、应用层和数据层，下列关于这种基础架构设计的说法中，正确的是",
+      "options": [
+        {
+          "label": "A",
+          "content": "使用天翼云RDS关系型数据库作为数据层"
+        },
+        {
+          "label": "B",
+          "content": "数据逻辑备份可以存放于对象存储产品中"
+        },
+        {
+          "label": "C",
+          "content": "使用弹性负载均衡和多台弹性云主机提供系统可用性和可伸缩性"
+        },
+        {
+          "label": "D",
+          "content": "使用弹性公网IP(EIP)接入Intemel"
+        }
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "天翼云服务器迁移工具支持下面哪些的迁移?",
+      "options": [
+        {
+          "label": "A",
+          "content": "对象存储"
+        },
+        {
+          "label": "B",
+          "content": "裸磁盘"
+        },
+        {
+          "label": "C",
+          "content": "系统盘"
+        },
+        {
+          "label": "D",
+          "content": "数据盘"
+        }
+      ],
+      "answer": [
+        "B",
+        "C",
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "云计算架构在目前IT环境中使用越来越广泛，在企业环境下部署的优势主要有（ ）。",
+      "options": [
+        {
+          "label": "A",
+          "content": "降低使用成本的同时降低了效率"
+        },
+        {
+          "label": "B",
+          "content": "节约运营成本"
+        },
+        {
+          "label": "C",
+          "content": "减少宕机"
+        },
+        {
+          "label": "D",
+          "content": "快速灵活部署IT资源"
+        }
+      ],
+      "answer": [
+        "B",
+        "C",
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "CDN可以为用户提供访问加速提升客户体验。天翼云中提供了丰富的CDN产品，其中全站加速CDN产品提供了安全可靠的传输保证，主要体现在（ ）。",
+      "options": [
+        {
+          "label": "A",
+          "content": "设置IP黑白名单"
+        },
+        {
+          "label": "B",
+          "content": "https加密传输"
+        },
+        {
+          "label": "C",
+          "content": "私有传输协议"
+        },
+        {
+          "label": "D",
+          "content": "源站信息保护"
+        }
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "天翼云提供了多种关系型数据库以用于用户数据存放，下列说法中，描述了天翼云关系型数据库优势的是（ ）。",
+      "options": [
+        {
+          "label": "A",
+          "content": "即开即用"
+        },
+        {
+          "label": "B",
+          "content": "稳定可靠"
+        },
+        {
+          "label": "C",
+          "content": "可弹性伸缩"
+        },
+        {
+          "label": "D",
+          "content": "使用复杂"
+        }
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "在天翼云中，弹性云主机Window和Linux实例登录的方式有很多，下列属于Windows实例登录方法的是（ ）。",
+      "options": [
+        {
+          "label": "A",
+          "content": "VNC登录"
+        },
+        {
+          "label": "B",
+          "content": "SSH登录"
+        },
+        {
+          "label": "C",
+          "content": "密钥方式登录"
+        },
+        {
+          "label": "D",
+          "content": "MSTSC密码方式登录"
+        }
+      ],
+      "answer": [
+        "A",
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "弹性伸缩服务AS在天翼云使用非常广泛，可以结合天翼云中其他相关产品提供可伸缩的服务访问。下列描述AS优势说法中正确的是（ ）。",
+      "options": [
+        {
+          "label": "A",
+          "content": "自动替换不健康实例"
+        },
+        {
+          "label": "B",
+          "content": "适当伸缩实例，节省成本"
+        },
+        {
+          "label": "C",
+          "content": "适当增加实例，提高性能"
+        },
+        {
+          "label": "D",
+          "content": "一定要搭配弹性负载均衡才能使用"
+        }
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "在天翼云中弹性负载均衡需要配置监听器，配置监听器时四层负载均衡器前端协议可以配置的是（ ）。",
+      "options": [
+        {
+          "label": "A",
+          "content": "HTTP"
+        },
+        {
+          "label": "B",
+          "content": "HTTPS"
+        },
+        {
+          "label": "C",
+          "content": "TCP"
+        },
+        {
+          "label": "D",
+          "content": "UDP"
+        }
+      ],
+      "answer": [
+        "C",
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "应用层主要处理的是业务逻辑，有一个显著的特点就是应用的无状态性，下列关于天翼云应用层高可用设计中描述正确的是（ ）。",
+      "options": [
+        {
+          "label": "A",
+          "content": "弹性云主机可在不同可用区中部署"
+        },
+        {
+          "label": "B",
+          "content": "弹性负载均衡会自动剔除不健康云主机，保证在健康主机上进行负载"
+        },
+        {
+          "label": "C",
+          "content": "弹性伸缩服务可以自动替换不健康实例"
+        },
+        {
+          "label": "D",
+          "content": "弹性伸缩服务必须结合弹性负载均衡才可以工作"
+        }
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "用户在使用天翼云服务时，天翼云上有多个区域和可用区供客户进行选择，下列描述区域和可用区关系正确的是（ ）。",
+      "options": [
+        {
+          "label": "A",
+          "content": "选择最靠近客户的区域"
+        },
+        {
+          "label": "B",
+          "content": "天翼云产品搭建的高可用架构可支持多区域多可用区使用"
+        },
+        {
+          "label": "C",
+          "content": "同一个地域内的可用区之间使用低时延链路相连"
+        },
+        {
+          "label": "D",
+          "content": "资源创建成功后不能更换区域"
+        }
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "创建天翼云虚拟私有云VPC时，需要首先规划好私网网段。下面属于天翼云可用网段的是（ ）。",
+      "options": [
+        {
+          "label": "A",
+          "content": "192.168.0.0/24"
+        },
+        {
+          "label": "B",
+          "content": "172.25.0.0/24"
+        },
+        {
+          "label": "C",
+          "content": "172.32.1.0/24"
+        },
+        {
+          "label": "D",
+          "content": "192.168.1.0/24"
+        }
+      ],
+      "answer": [
+        "A",
+        "B",
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "灾备可以有效提高企业数据安全和业务的可靠性，下面属于天翼云中弹性云主机ECS灾备设计的是（ ）。",
+      "options": [
+        {
+          "label": "A",
+          "content": "快照备份"
+        },
+        {
+          "label": "B",
+          "content": "快照回滚"
+        },
+        {
+          "label": "C",
+          "content": "镜像备份"
+        },
+        {
+          "label": "D",
+          "content": "镜像恢复"
+        }
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "云硬盘是天翼云中一种基于分布式架构的、可弹性扩展的虚拟块存储设备，适用于文件系统、数据库或者其他需要块存储设备的系统软件或应用，下列属于天翼云云硬盘可以选择的磁盘模式的是（ ）。",
+      "options": [
+        {
+          "label": "A",
+          "content": "VBD"
+        },
+        {
+          "label": "B",
+          "content": "SATA"
+        },
+        {
+          "label": "C",
+          "content": "SAS"
+        },
+        {
+          "label": "D",
+          "content": "SCSI"
+        }
+      ],
+      "answer": [
+        "A",
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "混合云架构在目前IT架构中使用越来越多，混合云的业务在使用过程中会面临大量的挑战，下列属于混合云业务面临的问题是（ ）。",
+      "options": [
+        {
+          "label": "A",
+          "content": "建设成本高"
+        },
+        {
+          "label": "B",
+          "content": "运营成本高"
+        },
+        {
+          "label": "C",
+          "content": "不可持续性"
+        },
+        {
+          "label": "D",
+          "content": "多平台管理成本高"
+        }
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "在应用与数据库分离的企业IT架构中，常用的部署模式有如下哪几种？",
+      "options": [
+        {
+          "label": "A",
+          "content": "2台云服务器（ECS）"
+        },
+        {
+          "label": "B",
+          "content": "3台云服务器（ECS）"
+        },
+        {
+          "label": "C",
+          "content": "1台云服务器（ECS）+1台云数据库（RDS）"
+        },
+        {
+          "label": "D",
+          "content": "1台云服务器（ECS）+2台云数据库（RDS）"
+        }
+      ],
+      "answer": [
+        "A",
+        "C"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "对比传统IT架构，使用了云上资源之后的架构具有如下哪些优势？",
+      "options": [
+        {
+          "label": "A",
+          "content": "随需提供，按需购买"
+        },
+        {
+          "label": "B",
+          "content": "降低IT总投资成本、降低运维服务成本，延长IT设备资产的寿命"
+        },
+        {
+          "label": "C",
+          "content": "提高系统运行效率、资源效能、以及运维管理效率"
+        },
+        {
+          "label": "D",
+          "content": "提高数据存储的可靠性和系统运行的可靠性"
+        },
+        {
+          "label": "E",
+          "content": "提升系统安全性，降低安全风险"
+        }
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "云服务器的基本构成主要包含了下列哪些内容？",
+      "options": [
+        {
+          "label": "A",
+          "content": "云服务器"
+        },
+        {
+          "label": "B",
+          "content": "负载均衡"
+        },
+        {
+          "label": "C",
+          "content": "关系型数据库"
+        },
+        {
+          "label": "D",
+          "content": "防火墙"
+        },
+        {
+          "label": "E",
+          "content": "对象存储"
+        }
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C",
+        "E"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "对比线下资源和云上资源这两种类型的基础架构，最主要的区别在什么？",
+      "options": [
+        {
+          "label": "A",
+          "content": "服务器"
+        },
+        {
+          "label": "B",
+          "content": "存储"
+        },
+        {
+          "label": "C",
+          "content": "网络设备"
+        },
+        {
+          "label": "D",
+          "content": "安全设备"
+        }
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "在天翼云弹性负载均衡CT-ELB中，对负载均衡器协议/端口进行配置时，如需要使用到下列哪些接口，则必须提前进行备案？",
+      "options": [
+        {
+          "label": "A",
+          "content": "80"
+        },
+        {
+          "label": "B",
+          "content": "8080"
+        },
+        {
+          "label": "C",
+          "content": "443"
+        },
+        {
+          "label": "D",
+          "content": "8443"
+        }
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "天翼云CDN的相关产品与服务主要有什么？",
+      "options": [
+        {
+          "label": "A",
+          "content": "下载加速"
+        },
+        {
+          "label": "B",
+          "content": "静态加速"
+        },
+        {
+          "label": "C",
+          "content": "视频直播加速"
+        },
+        {
+          "label": "D",
+          "content": "视频点播加速"
+        },
+        {
+          "label": "E",
+          "content": "网页加速"
+        }
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "消息中间件实现了发布者和订阅者在下面哪些方面的解耦？",
+      "options": [
+        {
+          "label": "A",
+          "content": "时间"
+        },
+        {
+          "label": "B",
+          "content": "空间"
+        },
+        {
+          "label": "C",
+          "content": "流程"
+        },
+        {
+          "label": "D",
+          "content": "结构"
+        }
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "在进行数据层高可用设计时，结构化数据高可用可以通过下列哪些天翼云服务来实现？",
+      "options": [
+        {
+          "label": "A",
+          "content": "关系型数据库"
+        },
+        {
+          "label": "B",
+          "content": "分布式缓存服务"
+        },
+        {
+          "label": "C",
+          "content": "弹性伸缩服务"
+        },
+        {
+          "label": "D",
+          "content": "弹性负载均衡"
+        }
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "分布式消息服务可以实现下列哪些功能？",
+      "options": [
+        {
+          "label": "A",
+          "content": "加快系统的响应速度"
+        },
+        {
+          "label": "B",
+          "content": "降低耦合性"
+        },
+        {
+          "label": "C",
+          "content": "实现数据缓存"
+        },
+        {
+          "label": "D",
+          "content": "降低系统安全风险"
+        }
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "在天翼云容灾备份架构中，业务系统和容灾系统产生的哪些数据，通过OOS跨区复制，可以完成主实例和容灾实例之间的数据同步？",
+      "options": [
+        {
+          "label": "A",
+          "content": "配置信息"
+        },
+        {
+          "label": "B",
+          "content": "日志"
+        },
+        {
+          "label": "C",
+          "content": "快照"
+        },
+        {
+          "label": "D",
+          "content": "备份文件"
+        }
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "根据备份的内容可以将备份分为以下哪些？",
+      "options": [
+        {
+          "label": "A",
+          "content": "增程备份"
+        },
+        {
+          "label": "B",
+          "content": "全量备份"
+        },
+        {
+          "label": "C",
+          "content": "增量备份"
+        },
+        {
+          "label": "D",
+          "content": "差异备份"
+        }
+      ],
+      "answer": [
+        "B",
+        "C",
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "基于天翼云平台的容灾解决方案有下面哪些亮点？",
+      "options": [
+        {
+          "label": "A",
+          "content": "多数据中心"
+        },
+        {
+          "label": "B",
+          "content": "安全"
+        },
+        {
+          "label": "C",
+          "content": "稳定"
+        },
+        {
+          "label": "D",
+          "content": "弹性"
+        }
+      ],
+      "answer": [
+        "A",
+        "C",
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "天翼云关系型数据库的高可用性主要集中在下列哪几个方面？",
+      "options": [
+        {
+          "label": "A",
+          "content": "RDS采用热备架构"
+        },
+        {
+          "label": "B",
+          "content": "支持自动备份和手动备份，并支持通过备份数据恢复实例"
+        },
+        {
+          "label": "C",
+          "content": "故障系统秒级自动切换"
+        },
+        {
+          "label": "D",
+          "content": "支持按备份集和指定时间点的恢复"
+        }
+      ],
+      "answer": [
+        "A",
+        "B",
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "下列哪些功能是天翼云态势感知服务高级版的独有功能？",
+      "options": [
+        {
+          "label": "A",
+          "content": "权威情报数据"
+        },
+        {
+          "label": "B",
+          "content": "权威安全预警"
+        },
+        {
+          "label": "C",
+          "content": "资产发现"
+        },
+        {
+          "label": "D",
+          "content": "资产管理"
+        },
+        {
+          "label": "E",
+          "content": "脆弱性检测"
+        }
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "天翼云数据库复制服务中，实时迁移是指在数据库复制服务器能够同时连通源数据库和目标数据库的情况下，只需要配置下列哪些信息即可完成整个数据迁移过程？",
+      "options": [
+        {
+          "label": "A",
+          "content": "迁移的源数据库实例"
+        },
+        {
+          "label": "B",
+          "content": "迁移的目标数据库实例"
+        },
+        {
+          "label": "C",
+          "content": "迁移对象"
+        },
+        {
+          "label": "D",
+          "content": "迁移路径"
+        }
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "迁移流程中的评估分析步骤中包含了哪些内容？",
+      "options": [
+        {
+          "label": "A",
+          "content": "收集现网业务应用信息"
+        },
+        {
+          "label": "B",
+          "content": "盘点本地资源"
+        },
+        {
+          "label": "C",
+          "content": "梳理业务流程及依存关系"
+        },
+        {
+          "label": "D",
+          "content": "计划从何处向云上迁移"
+        }
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "在天翼云数据库复制的应用场景中，云上灾备中心场景建议搭配下列哪些云服务使用？",
+      "options": [
+        {
+          "label": "A",
+          "content": "关系型数据库MySQL"
+        },
+        {
+          "label": "B",
+          "content": "云专线"
+        },
+        {
+          "label": "C",
+          "content": "关系型PostgreSQL"
+        },
+        {
+          "label": "D",
+          "content": "虚拟专业网络VPN"
+        }
+      ],
+      "answer": [
+        "A",
+        "B",
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "天翼云混合云解决方案的应用场景包括哪些？",
+      "options": [
+        {
+          "label": "A",
+          "content": "混合云管理"
+        },
+        {
+          "label": "B",
+          "content": "智能运维"
+        },
+        {
+          "label": "C",
+          "content": "业务按需部署"
+        },
+        {
+          "label": "D",
+          "content": "备份和容灾"
+        }
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "在天翼云在线教育解决方案中，在CT-ECS的WEB层使用了下列哪些服务？",
+      "options": [
+        {
+          "label": "A",
+          "content": "OOS"
+        },
+        {
+          "label": "B",
+          "content": "云转码"
+        },
+        {
+          "label": "C",
+          "content": "关系型数据库RDS"
+        },
+        {
+          "label": "D",
+          "content": "CDN"
+        },
+        {
+          "label": "E",
+          "content": "云解析"
+        }
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "紧耦合架构是模块或者系统之间关系太紧密，存在相互调用，在架构设计中存在紧耦合和松耦合这两种情况，下列属于紧耦合架构优点（）",
+      "options": [
+        {
+          "label": "A",
+          "content": "能够快速的开发"
+        },
+        {
+          "label": "B",
+          "content": "开发周期短"
+        },
+        {
+          "label": "C",
+          "content": "架构简单"
+        },
+        {
+          "label": "D",
+          "content": "设计简单"
+        }
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "越来越多的企业意识到云计算架构的好处，开始将线下的环境进行上云的迁移，在上云迁移的过程中会遇到的问题包括（）",
+      "options": [
+        {
+          "label": "A",
+          "content": "保持可接受的性能"
+        },
+        {
+          "label": "B",
+          "content": "合规性问题"
+        },
+        {
+          "label": "C",
+          "content": "安全问题"
+        },
+        {
+          "label": "D",
+          "content": "成本管理"
+        }
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "服务器迁移上云是上云迁移过程中非常重要的一个环节，为了更好地实施服务器迁移，需要对服务器迁移有XXX，下面属于服务器迁移模式的是（）",
+      "options": [
+        {
+          "label": "A",
+          "content": "V2V"
+        },
+        {
+          "label": "B",
+          "content": "V2C"
+        },
+        {
+          "label": "C",
+          "content": "P2P"
+        },
+        {
+          "label": "D",
+          "content": "P2V"
+        }
+      ],
+      "answer": [
+        "A",
+        "C",
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "天翼云通用场景安全服务解决方案，以云平台数据安全为核心，主要覆盖下列哪些基础领域？",
+      "options": [
+        {
+          "label": "A",
+          "content": "网络"
+        },
+        {
+          "label": "B",
+          "content": "运维"
+        },
+        {
+          "label": "C",
+          "content": "数据"
+        },
+        {
+          "label": "D",
+          "content": "系统（主机）"
+        },
+        {
+          "label": "E",
+          "content": "应用"
+        }
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "高可用架构在设计的过程中需要考虑各个方面的设计，主要包括：接入层、应用层、服务层、和数据层，其中应用层高可用设计原则主要包括（）",
+      "options": [
+        {
+          "label": "A",
+          "content": "灰度设计"
+        },
+        {
+          "label": "B",
+          "content": "回滚设计"
+        },
+        {
+          "label": "C",
+          "content": "可以水平扩展"
+        },
+        {
+          "label": "D",
+          "content": "无状态设计"
+        }
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "IT基础设施层弹性设计，主要讲的是应用服务器集群的弹性设计。这个设计中，请求将会分发至负载均衡服务器，常见的负载均衡有（）",
+      "options": [
+        {
+          "label": "A",
+          "content": "IP负载均衡"
+        },
+        {
+          "label": "B",
+          "content": "反向代理负载均衡"
+        },
+        {
+          "label": "C",
+          "content": "数据链路层负载均衡"
+        },
+        {
+          "label": "D",
+          "content": "DNS域名解析负载均衡"
+        },
+        {
+          "label": "E",
+          "content": "HTTP重定向负载均衡"
+        }
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "Anti-DDoS流量清洗（CT-AntiDDoS,Anti-DDoS）通过专业的DDoS防护设备来为用户互联网应用提供精细化的低于DDOS攻击能力，可以抵御的攻击主要有（）。",
+      "options": [
+        {
+          "label": "A",
+          "content": "FTP FLOOD攻击"
+        },
+        {
+          "label": "B",
+          "content": "SYN FLOOD攻击"
+        },
+        {
+          "label": "C",
+          "content": "UDP FLOOD攻击"
+        },
+        {
+          "label": "D",
+          "content": "CC攻击"
+        }
+      ],
+      "answer": [
+        "B",
+        "C",
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "云计算架构目前在IT环境中使用越来越广泛，在企业环境下部署的优势主要有（）",
+      "options": [
+        {
+          "label": "A",
+          "content": "降低使用成本的同时降低了效率"
+        },
+        {
+          "label": "B",
+          "content": "降低成本"
+        },
+        {
+          "label": "C",
+          "content": "随需提供，按需购买"
+        },
+        {
+          "label": "D",
+          "content": "提高可靠性"
+        }
+      ],
+      "answer": [
+        "B",
+        "C",
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "用户在使用天翼云服务时，天翼云上有多个区域和可用区供客户进行选择，下列描述区域和可用区关系正确的是",
+      "options": [
+        {
+          "label": "A",
+          "content": "资源创建成功后不能更换区域"
+        },
+        {
+          "label": "B",
+          "content": "同一个地域内的可用区之间使用低时延链路相连"
+        },
+        {
+          "label": "C",
+          "content": "每个可用区完全隔离"
+        },
+        {
+          "label": "D",
+          "content": "天翼云产品搭建的高可用架构可支持多区域多可用区使用"
+        }
+      ],
+      "answer": [
+        "A",
+        "B",
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "天翼云Web应用防火墙WAF可以帮助用户应对Web应用攻击，确保Web安全。WAF支持Web服务器的网络协议是（）。",
+      "options": [
+        {
+          "label": "A",
+          "content": "HTTPS"
+        },
+        {
+          "label": "B",
+          "content": "FTP"
+        },
+        {
+          "label": "C",
+          "content": "HTTP"
+        },
+        {
+          "label": "D",
+          "content": "SSH"
+        }
+      ],
+      "answer": [
+        "A",
+        "C"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "对象存储是天翼云为用户提供的一种海量、弹性、高可用、高性价比的存储服务，在对象存储中需要创建容器Bucket才可以存放对象数据，下列关于容器说法中正确的是（）。",
+      "options": [
+        {
+          "label": "A",
+          "content": "创建Bucket的时候可以设置ACL，如果不设置默认是公共读"
+        },
+        {
+          "label": "B",
+          "content": "Bucket的名称要求全局唯一"
+        },
+        {
+          "label": "C",
+          "content": "用户可以创建多个容器，每个容器可以设置不同权限"
+        },
+        {
+          "label": "D",
+          "content": "Bucket创建成功后名称可以修改"
+        }
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "与传统IT架构相比，云上基础架构具有很多优点，下面关于这两种架构的描述中，正确的是（）",
+      "options": [
+        {
+          "label": "A",
+          "content": "云上存储通过分布式技术解决存储空间浪费的问题"
+        },
+        {
+          "label": "B",
+          "content": "云上存储主要以软件定义存储为主"
+        },
+        {
+          "label": "C",
+          "content": "传统IT架构可靠性高、稳定好、功能丰富"
+        },
+        {
+          "label": "D",
+          "content": "传统IT架构数据中心管理和维护成本高"
+        }
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "在天翼云中，购买资源需要选择好区域和可用区。在选择区域和可用区时，下列说法中正确的是()",
+      "options": [
+        {
+          "label": "A",
+          "content": "区域之间网络资源是隔离的，必须通过公网连接才能实现跨区域的通信"
+        },
+        {
+          "label": "B",
+          "content": "区域之间是通过天翼云内网进行互联"
+        },
+        {
+          "label": "C",
+          "content": "一个区域可以包含多个可用区"
+        },
+        {
+          "label": "D",
+          "content": "可用区是基于地理位置进行划分，不同可用区之间必须通过公网进行互联"
+        }
+      ],
+      "answer": [
+        "B",
+        "C"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "在IT架构中云计算有多种部署模式，其中需要用户拥有自己的机房和硬件设施的部署模式有",
+      "options": [
+        {
+          "label": "A",
+          "content": "行业云"
+        },
+        {
+          "label": "B",
+          "content": "混合云"
+        },
+        {
+          "label": "C",
+          "content": "私有云"
+        },
+        {
+          "label": "D",
+          "content": "公有云"
+        }
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "在天翼云中，使用天翼云管理控制台进行天翼云产品的查看和管理，管理控制台可以管理的核心功能主要有(）",
+      "options": [
+        {
+          "label": "A",
+          "content": "组合功能，实现更高级的功能"
+        },
+        {
+          "label": "B",
+          "content": "通过工单方式获得服务支持"
+        },
+        {
+          "label": "C",
+          "content": "管理云账号"
+        },
+        {
+          "label": "D",
+          "content": "管控天翼云产品"
+        }
+      ],
+      "answer": [
+        "B",
+        "C",
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "天翼云管理控制台是统一查看和管理天翼云产品及服务的平台，管理控制台面向天翼云用户，进行配置操作可以使用的工具是（）",
+      "options": [
+        {
+          "label": "A",
+          "content": "图形化界面"
+        },
+        {
+          "label": "B",
+          "content": "API"
+        },
+        {
+          "label": "C",
+          "content": "Cloud Shell命令行"
+        },
+        {
+          "label": "D",
+          "content": "SDK"
+        }
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "弹性负载均衡通过将访问流量自动分发到多台云主机，扩展应用系统对外的服务能力，实现更高水平的应用程序容错性能，评价弹性负载均衡的性能如何，通常考虑到的关键指标是（ ）。",
+      "options": [
+        {
+          "label": "A",
+          "content": "每秒吞吐量"
+        },
+        {
+          "label": "B",
+          "content": "并发最大连接数"
+        },
+        {
+          "label": "C",
+          "content": "每秒新建连接数"
+        },
+        {
+          "label": "D",
+          "content": "每秒查询数"
+        }
+      ],
+      "answer": [
+        "B",
+        "C",
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "弹性负载均衡通过将访问流量自动分发到多台云主机，扩展应用系统对外的服务能力，实现更高水平的应用程序容错性能，评价弹性负载均衡的性能如何，通常考虑到的关键指标是()。",
+      "options": [
+        {
+          "label": "A",
+          "content": "每秒带宽"
+        },
+        {
+          "label": "B",
+          "content": "每秒新建连接数"
+        },
+        {
+          "label": "C",
+          "content": "每秒查询数"
+        },
+        {
+          "label": "D",
+          "content": "并发量大连接数"
+        }
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "服务器迁移适用于多种场景，可以很好地为政府、企业客户以最小化的成本投入实现最大价值，最有保证力度的迁移解决方案，服务器迁移主要场景包括（）。",
+      "options": [
+        {
+          "label": "A",
+          "content": "快速上云"
+        },
+        {
+          "label": "B",
+          "content": "业务迁移"
+        },
+        {
+          "label": "C",
+          "content": "机房搬迁"
+        },
+        {
+          "label": "D",
+          "content": "信息化建设"
+        }
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "judgment",
+      "stem": "天翼云提供的分布式关系型数据库DRDS无法兼容MySOL协议。",
+      "options": [
+        {
+          "label": "A",
+          "content": "正确"
+        },
+        {
+          "label": "B",
+          "content": "错误"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "judgment",
+      "stem": "服务器安全卫士，通过对主机信息和行为进行续监控和分析，快速准地发现安全厩胁和入侵事件，并提供灵活高效的问题解决能力",
+      "options": [
+        {
+          "label": "A",
+          "content": "正确"
+        },
+        {
+          "label": "B",
+          "content": "错误"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "judgment",
+      "stem": "<span class=\"font0\">紧耦合</span><span class=\"font1\">系统通常是基于消息的系统，此时客户和远程服务并不知道对方是如何实现的。</span>",
+      "options": [
+        {
+          "label": "A",
+          "content": "正确"
+        },
+        {
+          "label": "B",
+          "content": "错误"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "judgment",
+      "stem": "弹性架构的设计要从多个层面进行，其中数据层的弹性采用关系型数据库集群的弹性设计和NoSQL数据的弹性设计。",
+      "options": [
+        {
+          "label": "A",
+          "content": "正确"
+        },
+        {
+          "label": "B",
+          "content": "错误"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "judgment",
+      "stem": "对象存储服务可大规模在线扩展，不影响对外业务：多副本和纠删码冗余，可根据对象的重要程度选择不同的冗余方式",
+      "options": [
+        {
+          "label": "A",
+          "content": "正确"
+        },
+        {
+          "label": "B",
+          "content": "错误"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "judgment",
+      "stem": "天翼云远程医疗解决方案的架构特点有部署灵活、体验优异、专业定制和互联互通。",
+      "options": [
+        {
+          "label": "A",
+          "content": "正确"
+        },
+        {
+          "label": "B",
+          "content": "错误"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "judgment",
+      "stem": "分布式消息服务DMS，是一项基于高可用分布式集群技术的消息中间件服务，提供了可靠且可扩展的托管消息队列，用于收发消息和存储消息",
+      "options": [
+        {
+          "label": "A",
+          "content": "正确"
+        },
+        {
+          "label": "B",
+          "content": "错误"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "judgment",
+      "stem": "天翼云分布式缓存数据库DCS仅提供主备实例类型，支持自动容灾切换、扩容、数据备分实例监控等数据库服务",
+      "options": [
+        {
+          "label": "A",
+          "content": "正确"
+        },
+        {
+          "label": "B",
+          "content": "错误"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "judgment",
+      "stem": "在天翼云云硬盘主要是进行文件存储，天翼云云硬盘是一种基于分布式架构的、可弹性扩展的文件级存储设备。",
+      "options": [
+        {
+          "label": "A",
+          "content": "正确"
+        },
+        {
+          "label": "B",
+          "content": "错误"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "judgment",
+      "stem": "存储高性能中的读写分离架构下，主从同步需要时间，特别是在网络状况差的情况下，耗时能到秒级别。",
+      "options": [
+        {
+          "label": "A",
+          "content": "正确"
+        },
+        {
+          "label": "B",
+          "content": "错误"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "judgment",
+      "stem": "天翼云弹性负载均衡中，如果打开保持会话，针对7层(HTTP)服务，会提供基于IP地址的会话保持。",
+      "options": [
+        {
+          "label": "A",
+          "content": "正确"
+        },
+        {
+          "label": "B",
+          "content": "错误"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "judgment",
+      "stem": "应用层高可用设计主要处理的是业务逻辑，最显著特点就是应用有状态性。在应用层设计中，需要解决的问题是应用服务器宕机、应用服务BUG",
+      "options": [
+        {
+          "label": "A",
+          "content": "正确"
+        },
+        {
+          "label": "B",
+          "content": "错误"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "judgment",
+      "stem": "天翼云弹性云主机中，添加了1.5T数据盘，可以用MBR分区管理的方式进行管理。",
+      "options": [
+        {
+          "label": "A",
+          "content": "正确"
+        },
+        {
+          "label": "B",
+          "content": "错误"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "judgment",
+      "stem": "基于IPSAN的远程数据灾备技术是指利用基于SAN的互联协议，将主数据中心SAN中的信息通过现有的TCPIP网络，远程复制到备援中心SAN中",
+      "options": [
+        {
+          "label": "A",
+          "content": "正确"
+        },
+        {
+          "label": "B",
+          "content": "错误"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "judgment",
+      "stem": "在天翼云中可以使用数据库复制服务DRS实现数据库的同步和数据的迁移，DRS不支持不同区域间数据同步",
+      "options": [
+        {
+          "label": "A",
+          "content": "正确"
+        },
+        {
+          "label": "B",
+          "content": "错误"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "judgment",
+      "stem": "用户数据上云迁移需要选择合适的上云迁移策略，其中re-flatform重新托管，也称为&ldquo;直接迁移&rdquo;：即对应用程序巡行环境不做改变的情况下迁移上云",
+      "options": [
+        {
+          "label": "A",
+          "content": "正确"
+        },
+        {
+          "label": "B",
+          "content": "错误"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "judgment",
+      "stem": "天翼云分布式消息服务是一项基于分布式集群技术的消息中间件服务，具有高可靠、高并发、低时延、海量消息堆积的能力特点",
+      "options": [
+        {
+          "label": "A",
+          "content": "正确"
+        },
+        {
+          "label": "B",
+          "content": "错误"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "judgment",
+      "stem": "天翼云HPC解决方案的重点产品有：物理机+GPIJ云主机+对象存储O0S+云安全+云监控CES+云专线CDA。",
+      "options": [
+        {
+          "label": "A",
+          "content": "正确"
+        },
+        {
+          "label": "B",
+          "content": "错误"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "judgment",
+      "stem": "天翼云kafka能够做到流处理，如股市分析走向、气象数据测控、网站用户行为分析等，这些领域中数据产生快、实时性强、数据量大、很难统一采集并入库存储后再做处理",
+      "options": [
+        {
+          "label": "A",
+          "content": "正确"
+        },
+        {
+          "label": "B",
+          "content": "错误"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "judgment",
+      "stem": "天翼云关系型数据库RDS的主备实例采用一主一备的双机热备架构，故障系统1分钟自动切换。",
+      "options": [
+        {
+          "label": "A",
+          "content": "正确"
+        },
+        {
+          "label": "B",
+          "content": "错误"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "judgment",
+      "stem": "天翼云弹性云主机具有快速开通的优势，指的是无论是一台还是百台，均可实现秒级开通使用",
+      "options": [
+        {
+          "label": "A",
+          "content": "正确"
+        },
+        {
+          "label": "B",
+          "content": "错误"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "judgment",
+      "stem": "服务器迁移功能中的复制技术是基于磁盘块级的数据复制，需要对卷进行改造",
+      "options": [
+        {
+          "label": "A",
+          "content": "正确"
+        },
+        {
+          "label": "B",
+          "content": "错误"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "judgment",
+      "stem": "在数据层高可用设计中，结构化数据高可用可以通过天翼云关系型数据库和分布式缓存数据库来实现。",
+      "options": [
+        {
+          "label": "A",
+          "content": "正确"
+        },
+        {
+          "label": "B",
+          "content": "错误"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "judgment",
+      "stem": "异地多活数据中心与传统的灾备设计的主要区别在于&ldquo;多活&rdquo;，即所有站点都是同时在对外提供服务",
+      "options": [
+        {
+          "label": "A",
+          "content": "正确"
+        },
+        {
+          "label": "B",
+          "content": "错误"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "judgment",
+      "stem": "天翼云的弹性伸缩服务只能支持非负载均衡场景下的弹性伸缩服务。",
+      "options": [
+        {
+          "label": "A",
+          "content": "正确"
+        },
+        {
+          "label": "B",
+          "content": "错误"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "judgment",
+      "stem": "在天翼云中通过存储快照技术，将云硬盘数据备份到对象存储。",
+      "options": [
+        {
+          "label": "A",
+          "content": "正确"
+        },
+        {
+          "label": "B",
+          "content": "错误"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "judgment",
+      "stem": "ECS灾备设计包含快照备份、快照回滚、镜像备份、镜像恢复、健康检查等内容",
+      "options": [
+        {
+          "label": "A",
+          "content": "正确"
+        },
+        {
+          "label": "B",
+          "content": "错误"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "judgment",
+      "stem": "天翼云中Anti-DDoS流量清洗服务提供四到七层的DDoS攻击防护，包括CC、SYN Flood，UDP Flood等所有DDos攻击方式。",
+      "options": [
+        {
+          "label": "A",
+          "content": "正确"
+        },
+        {
+          "label": "B",
+          "content": "错误"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "judgment",
+      "stem": "云监控主要功能包括:监控概览、云主机监控、云服务监控、数据可视化、支持查看和导出监控数据、支持告警管理。",
+      "options": [
+        {
+          "label": "A",
+          "content": "正确"
+        },
+        {
+          "label": "B",
+          "content": "错误"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "judgment",
+      "stem": "消息中间件的使用：即将异步转为同步，通过同步来实现解耦",
+      "options": [
+        {
+          "label": "A",
+          "content": "正确"
+        },
+        {
+          "label": "B",
+          "content": "错误"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "judgment",
+      "stem": "RMAN提供了一个备份资料库保存备份的详细信息，跨平台的RMAN命令既支持交互式调用，也支持脚本式调用，其目的是保护备份并且最大限度地降低备份和恢复操作中发生人为错误的可能性。",
+      "options": [
+        {
+          "label": "A",
+          "content": "正确"
+        },
+        {
+          "label": "B",
+          "content": "错误"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "judgment",
+      "stem": "天翼云弹性IP(ElasticIP，CT-EIP)功能中，IPv4和IPV6分别使用不同的带宽资源，当使用IPv4后又需要使用IPv6时，需要额外申请IPv6带宽",
+      "options": [
+        {
+          "label": "A",
+          "content": "正确"
+        },
+        {
+          "label": "B",
+          "content": "错误"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "judgment",
+      "stem": "天翼云弹性IP(ElasticIP，CT-EIP)功能中，IPv4和IPV6分别使用不同的带宽资源，当使用IPv4后又需要使用IPv6时，需要额外申请IPv6带宽",
+      "options": [
+        {
+          "label": "A",
+          "content": "正确"
+        },
+        {
+          "label": "B",
+          "content": "错误"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "judgment",
+      "stem": "天翼云的弹性伸缩服务必须结合负载均衡进行使用，弹性伸缩服务可以自动替换不健康的实例。",
+      "options": [
+        {
+          "label": "A",
+          "content": "正确"
+        },
+        {
+          "label": "B",
+          "content": "错误"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "judgment",
+      "stem": "DDos攻击可能会导致目标服务器的瘫痪，无法提供正常访问服务，用户可以根据业务模型配置流量参数阈值，可以监控攻防状态，实时保证业务安全运行。",
+      "options": [
+        {
+          "label": "A",
+          "content": "正确"
+        },
+        {
+          "label": "B",
+          "content": "错误"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "judgment",
+      "stem": "Re.Purchase 重新构建，是指改变应用的架构和开发模式，进行云原生的应用服务体现，例如单体应用向微服务架构改造。",
+      "options": [
+        {
+          "label": "A",
+          "content": "正确"
+        },
+        {
+          "label": "B",
+          "content": "错误"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "judgment",
+      "stem": "随着业务越来越复杂，对数据存储和检索的需求也越来越复杂，系统需要采用分布式文件系统和分布式数据库技术来解决相关问题。",
+      "options": [
+        {
+          "label": "A",
+          "content": "正确"
+        },
+        {
+          "label": "B",
+          "content": "错误"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "judgment",
+      "stem": "崩溃一致性备份是基于多个云硬盘的一致性快照技术，实现天翼云云服务器的崩溃一致性备份，这种备份方式同时会备份内存中的数据",
+      "options": [
+        {
+          "label": "A",
+          "content": "正确"
+        },
+        {
+          "label": "B",
+          "content": "错误"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "judgment",
+      "stem": "天翼云中提供了丰富的CDN产品以满足资源加速的需求，前端用户请求通过CDN服务响应，CDN主要用来做服务加速，对于可以满足的响应直接使用CDN解决，无法满足的请求转发给后端服务器。",
+      "options": [
+        {
+          "label": "A",
+          "content": "正确"
+        },
+        {
+          "label": "B",
+          "content": "错误"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "judgment",
+      "stem": "计算高可用架构可通过增加更多的服务器的方法来搭建，计算高可用架构分为主备、主从、对称集群、非对称集群。",
+      "options": [
+        {
+          "label": "A",
+          "content": "正确"
+        },
+        {
+          "label": "B",
+          "content": "错误"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "judgment",
+      "stem": "云原生是一种构建和运行应用程序的方法，是一套技术体系和方法论，原生为云而设计，在云上以最佳姿势运行，充分利用和发挥云平台的弹性以及分布式优势。",
+      "options": [
+        {
+          "label": "A",
+          "content": "正确"
+        },
+        {
+          "label": "B",
+          "content": "错误"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "judgment",
+      "stem": "上云迁移策略的主要目标是为应用程序和数据顺利运行提供一个良好的场所。",
+      "options": [
+        {
+          "label": "A",
+          "content": "正确"
+        },
+        {
+          "label": "B",
+          "content": "错误"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "judgment",
+      "stem": "弹性负载均衡支持用户自定义健康检查方式和频率，负载均衡根据预设的健康检查规则定时检查后的云主机是否正常运行，一旦检测到云主机为非健康状态，则不会将访问流量分派到这些非健康云主机实例。",
+      "options": [
+        {
+          "label": "A",
+          "content": "正确"
+        },
+        {
+          "label": "B",
+          "content": "错误"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "judgment",
+      "stem": "天翼云的弹性伸缩服务仅支持负载均衡场景下的弹性伸缩服务，自动替换不健康实例。",
+      "options": [
+        {
+          "label": "A",
+          "content": "正确"
+        },
+        {
+          "label": "B",
+          "content": "错误"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "judgment",
+      "stem": "天翼云弹性负载均衡支持TCP、UDP协议的四层负载均衡和HTTP协议的七层负载均衡（HTTP协议、HTTPS协议）",
+      "options": [
+        {
+          "label": "A",
+          "content": "正确"
+        },
+        {
+          "label": "B",
+          "content": "错误"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "judgment",
+      "stem": "在天翼云NAT网关服务中，NAT网关的规格会影响SNAT功能的数据吞吐量。",
+      "options": [
+        {
+          "label": "A",
+          "content": "正确"
+        },
+        {
+          "label": "B",
+          "content": "错误"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "judgment",
+      "stem": "天翼云NAT网关能够为虚拟私有云内的计算实例提供网络地址转换，多个弹性云主机可以共享使用弹性IP访问Internet或使用多个弹性云主机提供互联网服务。",
+      "options": [
+        {
+          "label": "A",
+          "content": "正确"
+        },
+        {
+          "label": "B",
+          "content": "错误"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "judgment",
+      "stem": "天翼云EIP可以灵活的绑定至弹性云主机实例，但是不支持解绑操作，绑定EIP之前一定要做好规划工作。",
+      "options": [
+        {
+          "label": "A",
+          "content": "正确"
+        },
+        {
+          "label": "B",
+          "content": "错误"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "judgment",
+      "stem": "云原生是以应用为中心的开发模式，烦琐的软件安装通过自动化的模式来完成，保证了软件环境一致性，减少系统依赖的风险。",
+      "options": [
+        {
+          "label": "A",
+          "content": "正确"
+        },
+        {
+          "label": "B",
+          "content": "错误"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "judgment",
+      "stem": "云监控服务面向云主机、云硬盘、RDS等产品提供监控服务，实现性能监控指标、自动告警、历史信息查询等功能。",
+      "options": [
+        {
+          "label": "A",
+          "content": "正确"
+        },
+        {
+          "label": "B",
+          "content": "错误"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "judgment",
+      "stem": "数据库复制（CT-DRS，Data Replication Service）是为上云用户提供的一种易用、稳定、高效、用于数据库在线迁移的云服务，可解决多场景下数据库之间数据流通问题，满足数据传输业务需求，同时减少数据传输成本。",
+      "options": [
+        {
+          "label": "A",
+          "content": "正确"
+        },
+        {
+          "label": "B",
+          "content": "错误"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "judgment",
+      "stem": "对象存储服务可大规模在线扩展，不影对外业务：支持多副本和纠删码冗余",
+      "options": [
+        {
+          "label": "A",
+          "content": "正确"
+        },
+        {
+          "label": "B",
+          "content": "错误"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "judgment",
+      "stem": "GPU适用于虚拟化环节下运行的图形渲染、工程制图等应用场景。",
+      "options": [
+        {
+          "label": "A",
+          "content": "正确"
+        },
+        {
+          "label": "B",
+          "content": "错误"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "judgment",
+      "stem": "天翼云中创建资源需要选择合适的区域和可用区，同一个区域内的不同可用区之间使用低速公网进行相连。",
+      "options": [
+        {
+          "label": "A",
+          "content": "正确"
+        },
+        {
+          "label": "B",
+          "content": "错误"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "judgment",
+      "stem": "在存储高可用架构中最常见的架构有主备、主从、双主、集群（数据集中集群和数据分散集群），分区。",
+      "options": [
+        {
+          "label": "A",
+          "content": "正确"
+        },
+        {
+          "label": "B",
+          "content": "错误"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "judgment",
+      "stem": "高可用架构可以有效提高业务的可用性和性能，可用性计算公式是：可用性=平均故障间隔/（平均故障间隔+平均修复时间）。",
+      "options": [
+        {
+          "label": "A",
+          "content": "正确"
+        },
+        {
+          "label": "B",
+          "content": "错误"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "judgment",
+      "stem": "在数据库离线迁移模式中，可以将热数据下线并迁移到目标端。",
+      "options": [
+        {
+          "label": "A",
+          "content": "正确"
+        },
+        {
+          "label": "B",
+          "content": "错误"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "judgment",
+      "stem": "天翼云混合云自助式容灾服务提供准应用级热备容灾服务，支持逻辑隔离模式的容灾中心，不支持物理隔离模式。",
+      "options": [
+        {
+          "label": "A",
+          "content": "正确"
+        },
+        {
+          "label": "B",
+          "content": "错误"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "judgment",
+      "stem": "Web应用防火墙是天翼云推出的一个安全产品，Web防火墙是基于IP和端口做策略，可以解决Web应用的SQL注入、XSS、命令代码注入、恶意爬虫扫描等威胁",
+      "options": [
+        {
+          "label": "A",
+          "content": "正确"
+        },
+        {
+          "label": "B",
+          "content": "错误"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "judgment",
+      "stem": "天翼云的弹性负载均衡，服务本身有冗余设计，不会出现单点故障。但是不会自动剔除不健康云主机。",
+      "options": [
+        {
+          "label": "A",
+          "content": "正确"
+        },
+        {
+          "label": "B",
+          "content": "错误"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    },
+    {
+      "type": "judgment",
+      "stem": "云原生架构的典型技术特征包括采用轻量级的容器、设计为松散耦合的微服务、通过WEB进行交互协作、使用最佳语言和框架开发和通过DevOps流程进行管理。",
+      "options": [
+        {
+          "label": "A",
+          "content": "正确"
+        },
+        {
+          "label": "B",
+          "content": "错误"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "",
+      "difficulty": 1
+    }
+  ]
+}

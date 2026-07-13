@@ -4,7 +4,7 @@ import random
 
 from fastapi import APIRouter, Depends, HTTPException
 from pydantic import BaseModel
-from sqlalchemy import case, func
+from sqlalchemy import case, func, or_
 from sqlalchemy.orm import Session
 
 from database import get_db
@@ -31,6 +31,15 @@ class MasterRequest(BaseModel):
     mastered: bool = True
 
 
+class BatchMasterRequest(BaseModel):
+    question_ids: list[int]
+    mastered: bool = True
+
+
+class BatchClearRequest(BaseModel):
+    question_ids: list[int]
+
+
 def _readable(bank: QuestionBank, user: User) -> bool:
     return bank.source_type == "platform" or bank.owner_id == user.id or user.role == "admin"
 
@@ -44,7 +53,7 @@ def start_quiz(payload: QuizStartRequest, db: Session = Depends(get_db), user: U
     bank = db.get(QuestionBank, payload.bank_id)
     if not bank or bank.status != "ready" or not _readable(bank, user):
         raise HTTPException(status_code=404, detail="题库不存在")
-    questions = db.query(Question).filter(Question.bank_id == bank.id, Question.type.in_(["single", "multiple"])).all()
+    questions = db.query(Question).filter(Question.bank_id == bank.id, Question.type.in_(["single", "multiple", "judgment"])).all()
     if not questions:
         raise HTTPException(status_code=400, detail="该题库暂无可练习题目")
     if payload.mode == "random":
@@ -238,6 +247,17 @@ def list_sessions(db: Session = Depends(get_db), user: User = Depends(get_curren
     ]
 
 
+@router.delete("/sessions/{session_id}")
+def delete_session(session_id: int, db: Session = Depends(get_db), user: User = Depends(get_current_active_user)):
+    """删除当前用户的指定练习记录（级联删除关联答题明细）。"""
+    session = db.query(QuizSession).filter(QuizSession.id == session_id, QuizSession.user_id == user.id).first()
+    if not session:
+        raise HTTPException(status_code=404, detail="练习不存在")
+    db.delete(session)
+    db.commit()
+    return {"message": "练习记录已删除"}
+
+
 # =====================================================================
 # 错题管理与斩题
 # =====================================================================
@@ -245,36 +265,245 @@ def list_sessions(db: Session = Depends(get_db), user: User = Depends(get_curren
 @router.get("/wrong-questions")
 def list_wrong_questions(
     bank_id: int | None = None,
+    type: str | None = None,
+    min_wrong_count: int | None = None,
+    last_result: str | None = None,
+    is_mastered: bool = False,
+    keyword: str | None = None,
+    sort_by: str = "last_answer_at",
+    order: str = "desc",
+    page: int = 1,
+    page_size: int = 20,
     db: Session = Depends(get_db),
     user: User = Depends(get_current_active_user),
 ):
-    """获取当前用户的错题本。"""
+    """获取当前用户的错题本，支持筛选、排序与分页。"""
     query = db.query(UserQuestionStat).filter(
         UserQuestionStat.user_id == user.id,
         UserQuestionStat.wrong_count > 0,
-        UserQuestionStat.is_mastered.is_(False),
     )
+
+    if not is_mastered:
+        query = query.filter(UserQuestionStat.is_mastered.is_(False))
+
     if bank_id is not None:
         query = query.filter(UserQuestionStat.bank_id == bank_id)
-    stats = query.order_by(UserQuestionStat.last_answer_at.desc()).all()
+
+    if type is not None:
+        query = query.join(Question, UserQuestionStat.question_id == Question.id).filter(Question.type == type)
+    else:
+        query = query.join(Question, UserQuestionStat.question_id == Question.id)
+
+    if min_wrong_count is not None and min_wrong_count > 0:
+        query = query.filter(UserQuestionStat.wrong_count >= min_wrong_count)
+
+    if last_result in ("correct", "wrong"):
+        query = query.filter(UserQuestionStat.last_result == last_result)
+
+    if keyword:
+        query = query.filter(Question.stem.ilike(f"%{keyword}%"))
+
+    sort_column = {
+        "last_answer_at": UserQuestionStat.last_answer_at,
+        "wrong_count": UserQuestionStat.wrong_count,
+        "correct_count": UserQuestionStat.correct_count,
+        "mastered_at": UserQuestionStat.mastered_at,
+    }.get(sort_by, UserQuestionStat.last_answer_at)
+
+    if order.lower() == "asc":
+        query = query.order_by(sort_column.asc())
+    else:
+        query = query.order_by(sort_column.desc())
+
+    total = query.count()
+    offset = (max(page, 1) - 1) * page_size
+    stats = query.offset(offset).limit(page_size).all()
+
+    return {
+        "items": [
+            {
+                "stat_id": s.id,
+                "question_id": s.question_id,
+                "bank_id": s.bank_id,
+                "bank_name": s.bank.name if s.bank else "未知题库",
+                "stem": s.question.stem if s.question else "",
+                "type": s.question.type if s.question else "",
+                "options": s.question.options if s.question else [],
+                "answer": s.question.answer if s.question else [],
+                "explanation": s.question.explanation if s.question else "",
+                "wrong_count": s.wrong_count,
+                "correct_count": s.correct_count,
+                "last_result": s.last_result,
+                "last_answer_at": s.last_answer_at.isoformat() if s.last_answer_at else None,
+            }
+            for s in stats
+        ],
+        "total": total,
+        "page": page,
+        "page_size": page_size,
+    }
+
+
+@router.get("/wrong-questions/banks")
+def list_wrong_question_banks(
+    db: Session = Depends(get_db),
+    user: User = Depends(get_current_active_user),
+):
+    """获取当前用户有错题的题库聚合信息。"""
+    results = (
+        db.query(
+            UserQuestionStat.bank_id,
+            QuestionBank.name.label("bank_name"),
+            func.count(UserQuestionStat.id).label("wrong_count"),
+            func.sum(case((UserQuestionStat.is_mastered.is_(True), 1), else_=0)).label("mastered_count"),
+            func.max(UserQuestionStat.last_answer_at).label("last_wrong_at"),
+        )
+        .outerjoin(QuestionBank, UserQuestionStat.bank_id == QuestionBank.id)
+        .filter(
+            UserQuestionStat.user_id == user.id,
+            UserQuestionStat.wrong_count > 0,
+        )
+        .group_by(UserQuestionStat.bank_id)
+        .order_by(func.max(UserQuestionStat.last_answer_at).desc())
+        .all()
+    )
     return [
         {
-            "stat_id": s.id,
-            "question_id": s.question_id,
-            "bank_id": s.bank_id,
-            "bank_name": s.bank.name if s.bank else "未知题库",
-            "stem": s.question.stem if s.question else "",
-            "type": s.question.type if s.question else "",
-            "options": s.question.options if s.question else [],
-            "answer": s.question.answer if s.question else [],
-            "explanation": s.question.explanation if s.question else "",
-            "wrong_count": s.wrong_count,
-            "correct_count": s.correct_count,
-            "last_result": s.last_result,
-            "last_answer_at": s.last_answer_at.isoformat() if s.last_answer_at else None,
+            "bank_id": r.bank_id,
+            "bank_name": r.bank_name or "未知题库",
+            "wrong_count": r.wrong_count,
+            "mastered_count": int(r.mastered_count or 0),
+            "pending_count": r.wrong_count - int(r.mastered_count or 0),
+            "last_wrong_at": r.last_wrong_at.isoformat() if r.last_wrong_at else None,
         }
-        for s in stats
+        for r in results
     ]
+
+
+@router.post("/wrong-questions/batch-master")
+def batch_master_wrong_questions(
+    payload: BatchMasterRequest,
+    db: Session = Depends(get_db),
+    user: User = Depends(get_current_active_user),
+):
+    """批量斩题或取消斩题（仅处理当前用户的错题记录）。"""
+    if not payload.question_ids:
+        raise HTTPException(status_code=400, detail="题目列表不能为空")
+
+    stats = (
+        db.query(UserQuestionStat)
+        .filter(
+            UserQuestionStat.user_id == user.id,
+            UserQuestionStat.question_id.in_(payload.question_ids),
+            UserQuestionStat.wrong_count > 0,
+        )
+        .all()
+    )
+
+    now = datetime.now(timezone.utc)
+    updated_ids = []
+    for stat in stats:
+        stat.is_mastered = payload.mastered
+        stat.mastered_at = now if payload.mastered else None
+        updated_ids.append(stat.question_id)
+
+    db.commit()
+    return {
+        "updated_count": len(updated_ids),
+        "question_ids": updated_ids,
+        "is_mastered": payload.mastered,
+    }
+
+
+@router.post("/wrong-questions/batch-clear")
+def batch_clear_wrong_questions(
+    payload: BatchClearRequest,
+    db: Session = Depends(get_db),
+    user: User = Depends(get_current_active_user),
+):
+    """批量将题目移出错题本（清空错误次数，保留正确次数统计）。"""
+    if not payload.question_ids:
+        raise HTTPException(status_code=400, detail="题目列表不能为空")
+
+    stats = (
+        db.query(UserQuestionStat)
+        .filter(
+            UserQuestionStat.user_id == user.id,
+            UserQuestionStat.question_id.in_(payload.question_ids),
+            UserQuestionStat.wrong_count > 0,
+        )
+        .all()
+    )
+
+    updated_ids = []
+    for stat in stats:
+        stat.wrong_count = 0
+        stat.is_mastered = False
+        stat.mastered_at = None
+        updated_ids.append(stat.question_id)
+
+    db.commit()
+    return {
+        "updated_count": len(updated_ids),
+        "question_ids": updated_ids,
+    }
+
+
+@router.delete("/wrong-questions/{question_id}")
+def delete_wrong_question(
+    question_id: int,
+    db: Session = Depends(get_db),
+    user: User = Depends(get_current_active_user),
+):
+    """彻底删除当前用户的指定错题记录。"""
+    stat = (
+        db.query(UserQuestionStat)
+        .filter(UserQuestionStat.user_id == user.id, UserQuestionStat.question_id == question_id)
+        .first()
+    )
+    if not stat:
+        raise HTTPException(status_code=404, detail="错题记录不存在")
+    db.delete(stat)
+    db.commit()
+    return {"message": "错题记录已删除"}
+
+
+@router.post("/wrong-questions/batch-delete")
+def batch_delete_wrong_questions(
+    payload: BatchClearRequest,
+    db: Session = Depends(get_db),
+    user: User = Depends(get_current_active_user),
+):
+    """批量彻底删除当前用户的错题记录。"""
+    if not payload.question_ids:
+        raise HTTPException(status_code=400, detail="题目列表不能为空")
+
+    result = (
+        db.query(UserQuestionStat)
+        .filter(
+            UserQuestionStat.user_id == user.id,
+            UserQuestionStat.question_id.in_(payload.question_ids),
+        )
+        .delete(synchronize_session=False)
+    )
+    db.commit()
+    return {"deleted_count": result}
+
+
+@router.delete("/wrong-questions/banks/{bank_id}")
+def delete_bank_wrong_questions(
+    bank_id: int,
+    db: Session = Depends(get_db),
+    user: User = Depends(get_current_active_user),
+):
+    """删除当前用户在指定题库下的所有错题记录。"""
+    result = (
+        db.query(UserQuestionStat)
+        .filter(UserQuestionStat.user_id == user.id, UserQuestionStat.bank_id == bank_id)
+        .delete(synchronize_session=False)
+    )
+    db.commit()
+    return {"deleted_count": result, "bank_id": bank_id}
 
 
 @router.post("/master")

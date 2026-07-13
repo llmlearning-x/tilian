@@ -14,6 +14,30 @@
       "answer": ["C"],
       "explanation": "在标准大气压下，水的沸点为 100℃。",
       "difficulty": 1
+    },
+    {
+      "type": "multiple",
+      "stem": "下列哪些是常见的云计算服务类型？",
+      "options": [
+        {"label": "A", "content": "IaaS"},
+        {"label": "B", "content": "PaaS"},
+        {"label": "C", "content": "SaaS"},
+        {"label": "D", "content": "DaaS"}
+      ],
+      "answer": ["A", "B", "C"],
+      "explanation": "IaaS（基础设施即服务）、PaaS（平台即服务）、SaaS（软件即服务）是三大主流云计算服务类型。",
+      "difficulty": 2
+    },
+    {
+      "type": "judgment",
+      "stem": "在标准大气压下，水的沸点为 100℃。",
+      "options": [
+        {"label": "A", "content": "正确"},
+        {"label": "B", "content": "错误"}
+      ],
+      "answer": ["A"],
+      "explanation": "在标准大气压下，水的沸点确实是 100℃。",
+      "difficulty": 1
     }
   ]
 }

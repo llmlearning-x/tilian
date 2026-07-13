@@ -4,31 +4,52 @@
       <div>
         <p class="eyebrow">ADMINISTRATION</p>
         <h1>平台题库管理</h1>
-        <p>维护学习者可直接使用的基础题库，支持标准 JSON 导入与 AI Agent 自动整理。</p>
+        <p>维护学习者可直接使用的基础题库，支持 Excel / CSV 文件导入与 AI Agent 自动整理。</p>
       </div>
     </header>
 
-    <!-- 标准 JSON 导入 -->
+    <!-- 标准题库导入 -->
     <section class="paper-panel">
-      <h2 class="panel-title">标准 JSON 导入</h2>
-      <p class="panel-desc">使用标准 JSON 文件维护基础题库。系统会先全量校验，再一次性导入。</p>
+      <h2 class="panel-title">题库文件导入</h2>
+      <p class="panel-desc">
+        推荐使用 Word 文档维护基础题库，也兼容 Excel / CSV / JSON。Word 模板中已包含题库名称与描述。
+        <a href="/examples/bank-import-template.docx" download class="template-link">Word 模板</a>
+        <a href="/examples/bank-import-template.csv" download class="template-link">CSV 模板</a>
+        <a href="/examples/bank-import-template.json" download class="template-link">JSON 模板</a>
+      </p>
+      <div class="import-meta">
+        <el-input v-model="bankName" placeholder="题库名称（CSV/Excel 必填，Word 从文档读取）" clearable />
+        <el-input v-model="bankDescription" placeholder="题库描述（可选，Word 从文档读取）" clearable />
+      </div>
       <el-upload
         drag
         :auto-upload="false"
         :limit="1"
-        accept=".json"
+        accept=".docx,.csv,.xlsx,.xls,.json"
         :on-change="(item) => (jsonFile = item.raw)"
         :on-remove="() => (jsonFile = null)"
       >
         <el-icon class="upload-icon"><UploadFilled /></el-icon>
-        <div>选择 UTF-8 JSON 题库文件</div>
+        <div>选择 Word / Excel / CSV / JSON 题库文件</div>
         <template #tip>
           <p>最大 2 MB；任一题不合法时不会写入任何数据。</p>
         </template>
       </el-upload>
       <el-alert v-if="validation" type="success" :title="`${validation.name}：${validation.question_count} 题，校验通过`" show-icon :closable="false" />
+      <div v-if="validationWarnings.length > 0" class="validation-warnings">
+        <p class="warning-title">校验通过，但发现 {{ validationWarnings.length }} 处可优化内容，建议修改后重新导入：</p>
+        <ul>
+          <li v-for="(warn, idx) in validationWarnings" :key="idx">{{ warn }}</li>
+        </ul>
+      </div>
+      <div v-if="validationErrors" class="validation-errors">
+        <p class="error-title">{{ validationErrors.message }}</p>
+        <ul v-if="validationErrors.errors">
+          <li v-for="(err, idx) in validationErrors.errors" :key="idx">{{ err }}</li>
+        </ul>
+      </div>
       <div class="form-actions">
-        <el-button :disabled="!jsonFile" :loading="busy" @click="validateJson">校验文件</el-button>
+        <el-button :disabled="!canValidate" :loading="busy" @click="validateJson">校验文件</el-button>
         <el-button type="primary" :disabled="!validation" :loading="busy" @click="importBank">确认导入</el-button>
       </div>
     </section>
@@ -147,14 +168,30 @@
 </template>
 
 <script setup>
-import { onMounted, ref } from 'vue'
+import { computed, onMounted, ref } from 'vue'
 import { ElMessage, ElMessageBox } from 'element-plus'
 import { UploadFilled, Cpu, Refresh } from '@element-plus/icons-vue'
 import { adminApi } from '@/api/modules'
 
 const jsonFile = ref(null)
+const bankName = ref('')
+const bankDescription = ref('')
 const validation = ref(null)
+const validationErrors = ref(null)
+const validationWarnings = ref([])
 const busy = ref(false)
+
+const isSpreadsheet = (file) => {
+  if (!file) return false
+  const name = file.name || ''
+  return /\.(csv|xlsx|xls)$/i.test(name)
+}
+
+const canValidate = computed(() => {
+  if (!jsonFile.value) return false
+  if (isSpreadsheet(jsonFile.value) && !bankName.value.trim()) return false
+  return true
+})
 
 const agentFile = ref(null)
 const agentBusy = ref(false)
@@ -216,9 +253,20 @@ const detail = (error) =>
 const validateJson = async () => {
   busy.value = true
   validation.value = null
+  validationErrors.value = null
+  validationWarnings.value = []
   try {
-    validation.value = (await adminApi.validate(jsonFile.value)).data
+    const res = await adminApi.validate(jsonFile.value, bankName.value, bankDescription.value)
+    validation.value = res.data
+    validationWarnings.value = res.data.warnings || []
+    if (validationWarnings.value.length > 0) {
+      ElMessage.warning(`校验通过，但发现 ${validationWarnings.value.length} 处可优化内容`)
+    } else {
+      ElMessage.success('校验通过')
+    }
   } catch (error) {
+    validationErrors.value = error.response?.data?.detail || null
+    validationWarnings.value = error.response?.data?.detail?.warnings || []
     ElMessage.error(detail(error))
   } finally {
     busy.value = false
@@ -227,12 +275,18 @@ const validateJson = async () => {
 
 const importBank = async () => {
   busy.value = true
+  validationErrors.value = null
   try {
-    const res = await adminApi.importBank(jsonFile.value)
+    const res = await adminApi.importBank(jsonFile.value, bankName.value, bankDescription.value)
     ElMessage.success(`已导入 ${res.data.question_count} 题`)
     validation.value = null
+    validationWarnings.value = []
+    bankName.value = ''
+    bankDescription.value = ''
     jsonFile.value = null
   } catch (error) {
+    validationErrors.value = error.response?.data?.detail || null
+    validationWarnings.value = error.response?.data?.detail?.warnings || []
     ElMessage.error(detail(error))
   } finally {
     busy.value = false
@@ -450,5 +504,62 @@ const importAgentResult = async () => {
   align-items: center;
   justify-content: space-between;
   margin-bottom: var(--space-4);
+}
+.import-meta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+.template-link {
+  margin-left: var(--space-3);
+  font-size: var(--text-sm);
+  color: var(--brand-600);
+  text-decoration: none;
+}
+.template-link:hover {
+  text-decoration: underline;
+}
+.validation-errors {
+  margin-top: var(--space-4);
+  padding: var(--space-4);
+  border-radius: var(--radius-md);
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #991b1b;
+}
+.validation-errors .error-title {
+  font-weight: 600;
+  margin: 0 0 var(--space-2);
+}
+.validation-errors ul {
+  margin: 0;
+  padding-left: var(--space-5);
+  font-size: var(--text-sm);
+  line-height: 1.6;
+}
+.validation-errors li {
+  margin-bottom: var(--space-1);
+}
+.validation-warnings {
+  margin-top: var(--space-4);
+  padding: var(--space-4);
+  border-radius: var(--radius-md);
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  color: #92400e;
+}
+.validation-warnings .warning-title {
+  font-weight: 600;
+  margin: 0 0 var(--space-2);
+}
+.validation-warnings ul {
+  margin: 0;
+  padding-left: var(--space-5);
+  font-size: var(--text-sm);
+  line-height: 1.6;
+}
+.validation-warnings li {
+  margin-bottom: var(--space-1);
 }
 </style>

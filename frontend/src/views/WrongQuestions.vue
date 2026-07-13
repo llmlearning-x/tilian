@@ -19,8 +19,8 @@
     <section v-else class="question-list">
       <div v-for="q in questions" :key="q.question_id" class="paper-panel question-card">
         <div class="question-meta">
-          <el-tag size="small" :type="q.type === 'single' ? 'primary' : 'warning'">
-            {{ q.type === 'single' ? '单选题' : '多选题' }}
+          <el-tag size="small" :type="q.type === 'multiple' ? 'warning' : 'primary'">
+            {{ typeLabel(q.type) }}
           </el-tag>
           <span class="bank-name">{{ q.bank_name }}</span>
           <span class="wrong-count">错 {{ q.wrong_count }} 次</span>
@@ -75,6 +75,11 @@ const load = async () => {
 
 const toggleExplanation = (q) => {
   q.showExplanation = !q.showExplanation
+}
+
+const typeLabel = (type) => {
+  const map = { single: '单选题', multiple: '多选题', judgment: '判断题' }
+  return map[type] || type
 }
 
 const master = async (q) => {

@@ -5,7 +5,6 @@ from sqlalchemy.sql import func
 from database import Base
 
 
-
 class InvitationCode(Base):
     __tablename__ = "invitation_codes"
 
@@ -20,6 +19,7 @@ class InvitationCode(Base):
 
     creator = relationship("User", foreign_keys=[created_by], back_populates="created_invitation_codes")
     used_by_user = relationship("User", foreign_keys=[used_by])
+
 
 class User(Base):
     __tablename__ = "users"

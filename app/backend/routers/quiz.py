@@ -53,7 +53,7 @@ def start_quiz(payload: QuizStartRequest, db: Session = Depends(get_db), user: U
     bank = db.get(QuestionBank, payload.bank_id)
     if not bank or bank.status != "ready" or not _readable(bank, user):
         raise HTTPException(status_code=404, detail="题库不存在")
-    questions = db.query(Question).filter(Question.bank_id == bank.id, Question.type.in_(["single", "multiple"])).all()
+    questions = db.query(Question).filter(Question.bank_id == bank.id, Question.type.in_(["single", "multiple", "judgment"])).all()
     if not questions:
         raise HTTPException(status_code=400, detail="该题库暂无可练习题目")
     if payload.mode == "random":

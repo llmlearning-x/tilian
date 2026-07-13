@@ -1,0 +1,4 @@
+type,stem,option_A,option_B,option_C,option_D,answer,explanation,difficulty
+single,水在标准大气压下的沸点是多少？,0℃,50℃,100℃,150℃,C,在标准大气压下，水的沸点为 100℃。,1
+multiple,下列哪些是常见的云计算服务类型？,IaaS,PaaS,SaaS,DaaS,"A,B,C",IaaS、PaaS、SaaS 是三大主流云计算服务类型。,2
+judgment,在标准大气压下，水的沸点为 100℃。,正确,错误,,,A,在标准大气压下，水的沸点确实是 100℃。,1

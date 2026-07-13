@@ -50,14 +50,18 @@ export const quizApi = {
 }
 
 export const adminApi = {
-  validate(file) {
+  validate(file, name, description) {
     const form = new FormData()
     form.append('file', file)
+    form.append('name', name || '')
+    if (description) form.append('description', description)
     return api.post('/admin/bank-imports/validate', form)
   },
-  importBank(file) {
+  importBank(file, name, description) {
     const form = new FormData()
     form.append('file', file)
+    form.append('name', name || '')
+    if (description) form.append('description', description)
     return api.post('/admin/bank-imports', form)
   },
   listBanks: (status = 'all') => api.get('/admin/banks', { params: { status } }),

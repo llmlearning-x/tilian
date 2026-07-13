@@ -80,7 +80,7 @@
         <el-button type="primary" :loading="busy" @click="confirm">确认并保存题库</el-button>
       </div>
       <article v-for="(question, index) in job.questions" :key="index" class="question-editor">
-        <div class="question-index">{{ String(index + 1).padStart(2, '0') }} · {{ question.type === 'single' ? '单选题' : '多选题' }}</div>
+        <div class="question-index">{{ String(index + 1).padStart(2, '0') }} · {{ typeLabel(question.type) }}</div>
         <el-input v-model="question.stem" type="textarea" autosize />
         <div v-for="option in question.options" :key="option.label" class="option-edit">
           <b>{{ option.label }}</b>
@@ -208,6 +208,11 @@ const confirm = async () => {
   } finally {
     busy.value = false
   }
+}
+
+const typeLabel = (type) => {
+  const map = { single: '单选题', multiple: '多选题', judgment: '判断题' }
+  return map[type] || type
 }
 
 onBeforeUnmount(() => clearInterval(timer))

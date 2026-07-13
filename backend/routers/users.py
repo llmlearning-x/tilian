@@ -2,14 +2,14 @@
 用户认证路由
 包含注册、登录、获取用户信息等接口
 """
-from datetime import timedelta
+from datetime import datetime, timedelta
 from fastapi import APIRouter, Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordRequestForm
 from sqlalchemy.orm import Session
 from pydantic import BaseModel, EmailStr
 
-from crud import get_user_by_username, get_user_by_email, create_user
-from schemas import UserCreate, UserResponse
+from crud import get_user_by_username, get_user_by_email
+from schemas import UserResponse
 from database import get_db
 from security import (
     verify_password,
@@ -18,7 +18,7 @@ from security import (
     get_current_active_user,
     ACCESS_TOKEN_EXPIRE_MINUTES
 )
-from models import User as UserModel
+from models import User as UserModel, InvitationCode
 
 router = APIRouter(prefix="/api/auth", tags=["auth"])
 
@@ -33,6 +33,7 @@ class RegisterRequest(BaseModel):
     username: str
     email: EmailStr
     password: str
+    invite_code: str
 
 
 # 响应模型
@@ -79,13 +80,51 @@ async def register(request: RegisterRequest, db: Session = Depends(get_db)):
             detail="邮箱已被注册"
         )
 
-    # 创建用户
-    user_data = UserCreate(
+    # 校验邀请码（存在、未使用、未过期、未禁用）
+    invite_code = (
+        db.query(InvitationCode)
+        .filter(InvitationCode.code == request.invite_code.strip())
+        .with_for_update()
+        .first()
+    )
+    now = datetime.utcnow()
+    if not invite_code:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="邀请码无效"
+        )
+    if not invite_code.is_active:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="邀请码已被禁用"
+        )
+    if invite_code.used_by is not None or invite_code.used_at is not None:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="邀请码已被使用"
+        )
+    if invite_code.expires_at is not None and invite_code.expires_at < now:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="邀请码已过期"
+        )
+
+    # 创建用户并标记邀请码已使用（同一事务）
+    db_user = UserModel(
         username=request.username,
         email=request.email,
-        password=request.password
+        hashed_password=get_password_hash(request.password),
+        role="student",
     )
-    db_user = create_user(db=db, user=user_data)
+    db.add(db_user)
+    db.flush()  # 获取 db_user.id
+
+    invite_code.used_by = db_user.id
+    invite_code.used_at = now
+    db.add(invite_code)
+
+    db.commit()
+    db.refresh(db_user)
 
     # 生成 Token
     access_token = create_access_token(data={"sub": str(db_user.id)})

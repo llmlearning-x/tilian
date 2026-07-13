@@ -19,30 +19,53 @@ class UserResponse(BaseModel):
     is_active: bool
     created_at: datetime
 
+
+class InviteCodeCreate(BaseModel):
+    count: int = Field(1, ge=1, le=50)
+    expires_days: Optional[int] = Field(None, ge=1, le=365)
+
+
+class InviteCodeResponse(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+    id: int
+    code: str
+    is_active: bool
+    created_at: datetime
+    expires_at: Optional[datetime]
+    used_at: Optional[datetime]
+    used_by: Optional[int]
+    used_by_username: Optional[str] = None
+
+
 class QuestionOption(BaseModel):
     label: str
     content: str = Field(min_length=1)
 
 
 class QuestionPayload(BaseModel):
-    type: Literal["single", "multiple"]
+    type: Literal["single", "multiple", "judgment"]
     stem: str = Field(min_length=1)
     options: list[QuestionOption]
     answer: list[str]
-    explanation: str = Field(min_length=1)
+    explanation: str = Field(default="")
     difficulty: int = Field(default=2, ge=1, le=3)
 
     @model_validator(mode="after")
     def validate_question(self):
         labels = [option.label for option in self.options]
-        if len(labels) != 4 or len(set(labels)) != 4:
-            raise ValueError("每题必须包含四个标签不重复的选项")
+        if len(set(labels)) != len(labels):
+            raise ValueError("选项标签不能重复")
         if any(answer not in labels for answer in self.answer):
             raise ValueError("答案必须引用有效选项")
         if self.type == "single" and len(self.answer) != 1:
             raise ValueError("单选题必须有且只有一个答案")
         if self.type == "multiple" and len(self.answer) < 2:
             raise ValueError("多选题必须至少有两个答案")
+        if self.type == "judgment":
+            if len(labels) != 2:
+                raise ValueError("判断题必须包含两个选项")
+            if len(self.answer) != 1:
+                raise ValueError("判断题必须有且只有一个答案")
         return self
 
 

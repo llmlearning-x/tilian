@@ -5,11 +5,12 @@
 ## 功能
 
 - 平台题库与个人题库
-- 单选、多选的顺序/随机练习
+- 单选、多选、判断题的顺序/随机练习
 - 每题判题、解析、个人历史正确率和全网正确率
 - 学习文档生成 1～20 道个人题目
 - 生成题预览、编辑、删除和确认
-- 管理员 JSON 平台题库导入
+- 管理员 JSON / CSV / Excel / Word 平台题库导入
+- 邀请码注册
 
 ## 本地运行
 
@@ -57,7 +58,13 @@ python promote_admin.py 已注册用户名
 
 ## 管理员导入模板
 
-参考 [bank-import-template.json](./examples/bank-import-template.json)。每题必须是单选或多选，包含四个标签不重复的选项、合法答案和解析。
+支持 `.json`、`.csv`、`.xlsx`、`.xls`、`.docx` 五种格式。参考：
+
+- [JSON 模板](./examples/bank-import-template.json)
+- [CSV 模板](./examples/bank-import-template.csv)
+- [Word 模板](./examples/bank-import-template.docx)
+
+题型支持单选（single）、多选（multiple）、判断（judgment）。判断题固定为 A. 正确 / B. 错误。选项数量不少于 2 个即可，解析为可选项。
 
 ## 验证
 

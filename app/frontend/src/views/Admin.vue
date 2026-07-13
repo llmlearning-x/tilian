@@ -35,6 +35,14 @@
         </template>
       </el-upload>
       <el-alert v-if="validation" type="success" :title="`${validation.name}：${validation.question_count} 题，校验通过`" show-icon :closable="false" />
+      <el-alert v-if="validationErrors.length > 0" type="error" :closable="false" class="validation-errors-alert">
+        <template #title>
+          <div class="error-title">题库校验失败，请修正以下问题：</div>
+        </template>
+        <ol class="error-list">
+          <li v-for="(err, index) in validationErrors" :key="index">{{ err }}</li>
+        </ol>
+      </el-alert>
       <div class="form-actions">
         <el-button :disabled="!jsonFile" :loading="busy" @click="validateJson">校验文件</el-button>
         <el-button type="primary" :disabled="!validation" :loading="busy" @click="importBank">确认导入</el-button>
@@ -227,6 +235,7 @@ import { adminApi } from '@/api/modules'
 
 const jsonFile = ref(null)
 const validation = ref(null)
+const validationErrors = ref([])
 const busy = ref(false)
 const baseUrl = import.meta.env.BASE_URL
 
@@ -386,13 +395,29 @@ const detail = (error) =>
     ? error.response.data.detail
     : error.response?.data?.detail?.message || '操作失败'
 
+const extractValidationErrors = (error) => {
+  const detail = error.response?.data?.detail
+  if (!detail) return ['请求失败，请稍后重试']
+  if (typeof detail === 'string') return [detail]
+  const errs = detail.errors || []
+  if (errs.length === 0) return [detail.message || '题库校验失败']
+  return errs.map((e) => {
+    if (typeof e === 'string') return e
+    const loc = e.location || e.loc?.join('.') || ''
+    const msg = e.message || e.msg || JSON.stringify(e)
+    return loc ? `[${loc}] ${msg}` : msg
+  })
+}
+
 const validateJson = async () => {
   busy.value = true
   validation.value = null
+  validationErrors.value = []
   try {
     validation.value = (await adminApi.validate(jsonFile.value)).data
   } catch (error) {
-    ElMessage.error(detail(error))
+    validationErrors.value = extractValidationErrors(error)
+    ElMessage.error('题库校验失败，请查看下方详细错误')
   } finally {
     busy.value = false
   }
@@ -400,13 +425,15 @@ const validateJson = async () => {
 
 const importBank = async () => {
   busy.value = true
+  validationErrors.value = []
   try {
     const res = await adminApi.importBank(jsonFile.value)
     ElMessage.success(`已导入 ${res.data.question_count} 题`)
     validation.value = null
     jsonFile.value = null
   } catch (error) {
-    ElMessage.error(detail(error))
+    validationErrors.value = extractValidationErrors(error)
+    ElMessage.error('题库导入失败，请查看下方详细错误')
   } finally {
     busy.value = false
   }

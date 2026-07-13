@@ -1,6 +1,6 @@
 """
 数据库配置与连接管理
-支持 SQLite（开发）和 PostgreSQL（生产）
+支持 SQLite（开发）、MySQL（生产）和 PostgreSQL（生产）
 """
 import os
 from sqlalchemy import create_engine, inspect, text
@@ -84,3 +84,5 @@ def _migrate_sqlite_compatibility():
             connection.execute(text("UPDATE question_banks SET source_type='platform', owner_id=NULL WHERE is_public=1"))
         if "quiz_items" in table_names:
             connection.execute(text("CREATE INDEX IF NOT EXISTS ix_quiz_items_question_submitted ON quiz_items (question_id, submitted_at)"))
+        if "user_question_stats" in table_names:
+            connection.execute(text("CREATE INDEX IF NOT EXISTS ix_user_question_stats_user_wrong_mastered ON user_question_stats (user_id, wrong_count, is_mastered)"))

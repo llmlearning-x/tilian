@@ -27,6 +27,7 @@ app.include_router(documents.router)
 app.include_router(generation.router)
 app.include_router(admin.router)
 app.include_router(admin.admin_bank_router)
+app.include_router(admin.admin_invite_router)
 app.include_router(deepagents.router)
 
 @app.get("/")

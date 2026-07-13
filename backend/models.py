@@ -5,6 +5,22 @@ from sqlalchemy.sql import func
 from database import Base
 
 
+class InvitationCode(Base):
+    __tablename__ = "invitation_codes"
+
+    id = Column(Integer, primary_key=True)
+    code = Column(String(64), unique=True, index=True, nullable=False)
+    created_by = Column(Integer, ForeignKey("users.id"), nullable=True, index=True)
+    used_by = Column(Integer, ForeignKey("users.id"), nullable=True, index=True)
+    created_at = Column(DateTime(timezone=True), server_default=func.now())
+    expires_at = Column(DateTime(timezone=True), nullable=True)
+    used_at = Column(DateTime(timezone=True), nullable=True)
+    is_active = Column(Boolean, default=True)
+
+    creator = relationship("User", foreign_keys=[created_by], back_populates="created_invitation_codes")
+    used_by_user = relationship("User", foreign_keys=[used_by])
+
+
 class User(Base):
     __tablename__ = "users"
 
@@ -21,6 +37,7 @@ class User(Base):
     source_documents = relationship("SourceDocument", back_populates="owner")
     generation_jobs = relationship("GenerationJob", back_populates="owner")
     question_stats = relationship("UserQuestionStat", back_populates="user")
+    created_invitation_codes = relationship("InvitationCode", foreign_keys=[InvitationCode.created_by], back_populates="creator")
 
 
 class KnowledgePoint(Base):
@@ -130,7 +147,10 @@ class UserQuestionStat(Base):
     question = relationship("Question")
     bank = relationship("QuestionBank")
 
-    __table_args__ = (Index("ux_user_question_stats_user_question", "user_id", "question_id", unique=True),)
+    __table_args__ = (
+        Index("ux_user_question_stats_user_question", "user_id", "question_id", unique=True),
+        Index("ix_user_question_stats_user_wrong_mastered", "user_id", "wrong_count", "is_mastered"),
+    )
 
 
 class SourceDocument(Base):

@@ -1,15 +1,15 @@
 {
   "name": "示例平台题库",
-  "description": "TILIAN 平台题库标准 JSON 导入模板，包含单选题与多选题示例。",
+  "description": "管理员导入模板",
   "questions": [
     {
       "type": "single",
       "stem": "水在标准大气压下的沸点是多少？",
       "options": [
-        { "label": "A", "content": "0℃" },
-        { "label": "B", "content": "50℃" },
-        { "label": "C", "content": "100℃" },
-        { "label": "D", "content": "150℃" }
+        {"label": "A", "content": "0℃"},
+        {"label": "B", "content": "50℃"},
+        {"label": "C", "content": "100℃"},
+        {"label": "D", "content": "150℃"}
       ],
       "answer": ["C"],
       "explanation": "在标准大气压下，水的沸点为 100℃。",
@@ -17,16 +17,27 @@
     },
     {
       "type": "multiple",
-      "stem": "下列哪些属于 Python 的基本数据类型？",
+      "stem": "下列哪些是常见的云计算服务类型？",
       "options": [
-        { "label": "A", "content": "int" },
-        { "label": "B", "content": "str" },
-        { "label": "C", "content": "list" },
-        { "label": "D", "content": "function" }
+        {"label": "A", "content": "IaaS"},
+        {"label": "B", "content": "PaaS"},
+        {"label": "C", "content": "SaaS"},
+        {"label": "D", "content": "DaaS"}
       ],
       "answer": ["A", "B", "C"],
-      "explanation": "Python 的基本数据类型包括 int、str、list 等；function 是对象类型，不是基本数据类型。",
+      "explanation": "IaaS（基础设施即服务）、PaaS（平台即服务）、SaaS（软件即服务）是三大主流云计算服务类型。",
       "difficulty": 2
+    },
+    {
+      "type": "judgment",
+      "stem": "在标准大气压下，水的沸点为 100℃。",
+      "options": [
+        {"label": "A", "content": "正确"},
+        {"label": "B", "content": "错误"}
+      ],
+      "answer": ["A"],
+      "explanation": "在标准大气压下，水的沸点确实是 100℃。",
+      "difficulty": 1
     }
   ]
 }
