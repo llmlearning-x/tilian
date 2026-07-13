@@ -130,6 +130,17 @@ jobs:
           name: tilian-frontend-dist
           path: app/frontend/dist
 
+      - name: Clean old frontend dist on server
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.PROD_HOST }}
+          username: ${{ secrets.PROD_USERNAME }}
+          key: ${{ secrets.PROD_DEPLOY_KEY }}
+          script: |
+            mkdir -p /data/tilian/dist
+            rm -rf /data/tilian/dist/*
+            echo "Old frontend dist cleaned"
+
       - name: Deploy frontend to server
         uses: appleboy/scp-action@v0.1.7
         with:
@@ -139,7 +150,7 @@ jobs:
           source: "app/frontend/dist/"
           target: "/data/tilian/"
           strip_components: 2
-          rm: true
+          rm: false
 
       - name: Reload Nginx
         uses: appleboy/ssh-action@v1.0.3
