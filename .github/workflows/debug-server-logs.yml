@@ -1,0 +1,19 @@
+name: Debug Server Logs
+
+on:
+  workflow_dispatch:
+
+jobs:
+  logs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch backend logs
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.PROD_HOST }}
+          username: ${{ secrets.PROD_USERNAME }}
+          key: ${{ secrets.PROD_DEPLOY_KEY }}
+          script: |
+            journalctl -u tilian-backend -n 80 --no-pager
+            echo "--- nginx error ---"
+            tail -n 40 /var/log/nginx/error.log
