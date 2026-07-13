@@ -52,7 +52,7 @@ def list_banks(
     result = []
     for bank in query.order_by(QuestionBank.created_at.desc()).all():
         valid_questions = db.query(Question).filter(
-            Question.bank_id == bank.id, Question.type.in_(["single", "multiple"])
+            Question.bank_id == bank.id, Question.type.in_(["single", "multiple", "judgment"])
         )
         result.append(_serialize(bank, user, valid_questions.count(), sorted({q.type for q in valid_questions.all()})))
     return result
@@ -76,7 +76,7 @@ def get_bank(bank_id: int, db: Session = Depends(get_db), user: User = Depends(g
     bank = db.get(QuestionBank, bank_id)
     if not bank or not _can_read(bank, user):
         raise HTTPException(status_code=404, detail="题库不存在")
-    questions = db.query(Question).filter(Question.bank_id == bank.id, Question.type.in_(["single", "multiple"])).all()
+    questions = db.query(Question).filter(Question.bank_id == bank.id, Question.type.in_(["single", "multiple", "judgment"])).all()
     return _serialize(bank, user, len(questions), sorted({q.type for q in questions}))
 
 
@@ -85,7 +85,7 @@ def get_bank_questions(bank_id: int, db: Session = Depends(get_db), user: User =
     bank = db.get(QuestionBank, bank_id)
     if not bank or not _can_read(bank, user):
         raise HTTPException(status_code=404, detail="题库不存在")
-    return db.query(Question).filter(Question.bank_id == bank_id, Question.type.in_(["single", "multiple"])).all()
+    return db.query(Question).filter(Question.bank_id == bank_id, Question.type.in_(["single", "multiple", "judgment"])).all()
 
 
 @router.patch("/{bank_id}", response_model=QuestionBankResponse)
