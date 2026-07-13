@@ -1,0 +1,152 @@
+name: Deploy TILIAN to Shared Server
+
+on:
+  push:
+    tags:
+      - 'tilian-v*'
+  workflow_dispatch:
+    inputs:
+      deploy_backend:
+        description: 'Deploy backend API'
+        required: true
+        default: true
+        type: boolean
+      deploy_frontend:
+        description: 'Deploy frontend H5'
+        required: true
+        default: true
+        type: boolean
+
+jobs:
+  build-frontend:
+    name: Build Frontend
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: app/frontend
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: app/frontend/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build H5
+        run: npm run build
+
+      - name: Upload frontend dist artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: tilian-frontend-dist
+          path: app/frontend/dist/
+          retention-days: 1
+
+  deploy-backend:
+    name: Deploy Backend API
+    runs-on: ubuntu-latest
+    needs: build-frontend
+    if: ${{ github.event_name == 'push' || inputs.deploy_backend == true }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Deploy backend files to server
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.PROD_HOST }}
+          username: ${{ secrets.PROD_USERNAME }}
+          key: ${{ secrets.PROD_DEPLOY_KEY }}
+          source: "app/backend/,app/alembic/,app/alembic.ini"
+          target: "/data/tilian/"
+          strip_components: 1
+
+      - name: Setup backend on server
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.PROD_HOST }}
+          username: ${{ secrets.PROD_USERNAME }}
+          key: ${{ secrets.PROD_DEPLOY_KEY }}
+          script: |
+            set -e
+            REMOTE_DIR="/data/tilian"
+
+            # 创建目录
+            mkdir -p "$REMOTE_DIR/uploads" /data/logs/tilian
+
+            # 创建/更新虚拟环境
+            if [ ! -d "$REMOTE_DIR/venv" ]; then
+              python3 -m venv "$REMOTE_DIR/venv"
+            fi
+            source "$REMOTE_DIR/venv/bin/activate"
+
+            # 安装/更新依赖
+            cd "$REMOTE_DIR/backend"
+            pip install --upgrade pip
+            pip install -r requirements.txt
+            pip install gunicorn
+
+            # 数据库迁移
+            cd "$REMOTE_DIR"
+            alembic -c alembic.ini upgrade head || true
+
+            # 重启服务
+            systemctl restart tilian-backend
+
+      - name: Health check
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.PROD_HOST }}
+          username: ${{ secrets.PROD_USERNAME }}
+          key: ${{ secrets.PROD_DEPLOY_KEY }}
+          script: |
+            sleep 3
+            for i in {1..10}; do
+              if curl -sf http://127.0.0.1:8001/health >/dev/null; then
+                echo "Backend health check passed"
+                exit 0
+              fi
+              echo "Waiting for backend... ($i/10)"
+              sleep 2
+            done
+            echo "Backend health check failed"
+            exit 1
+
+  deploy-frontend:
+    name: Deploy Frontend H5
+    runs-on: ubuntu-latest
+    needs: build-frontend
+    if: ${{ github.event_name == 'push' || inputs.deploy_frontend == true }}
+    steps:
+      - name: Download frontend dist artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: tilian-frontend-dist
+          path: app/frontend/dist
+
+      - name: Deploy frontend to server
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.PROD_HOST }}
+          username: ${{ secrets.PROD_USERNAME }}
+          key: ${{ secrets.PROD_DEPLOY_KEY }}
+          source: "app/frontend/dist/"
+          target: "/data/tilian/"
+          strip_components: 2
+          rm: true
+
+      - name: Reload Nginx
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.PROD_HOST }}
+          username: ${{ secrets.PROD_USERNAME }}
+          key: ${{ secrets.PROD_DEPLOY_KEY }}
+          script: |
+            nginx -t && systemctl reload nginx
+            echo "Frontend deployed and Nginx reloaded"

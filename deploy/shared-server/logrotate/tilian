@@ -1,0 +1,29 @@
+# TILIAN + Postcards 日志自动轮转
+# 部署方式：
+#   sudo cp tilian /etc/logrotate.d/tilian
+#   sudo chmod 644 /etc/logrotate.d/tilian
+#   sudo logrotate -d /etc/logrotate.d/tilian  # 调试模式测试
+
+/data/logs/tilian/*.log {
+    daily
+    rotate 14
+    missingok
+    notifempty
+    compress
+    delaycompress
+    copytruncate
+    dateext
+    dateformat -%Y%m%d
+}
+
+/data/postcards/logs/*.log {
+    daily
+    rotate 14
+    missingok
+    notifempty
+    compress
+    delaycompress
+    copytruncate
+    dateext
+    dateformat -%Y%m%d
+}

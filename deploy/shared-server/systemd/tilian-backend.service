@@ -1,0 +1,30 @@
+[Unit]
+Description=TILIAN Backend API
+After=network.target
+
+[Service]
+Type=simple
+User=www-data
+Group=www-data
+WorkingDirectory=/data/tilian/backend
+Environment=PATH=/data/tilian/venv/bin
+EnvironmentFile=/data/tilian/backend/.env
+
+# 使用 gunicorn + uvicorn worker 运行 FastAPI
+# -w 2: 2 个 worker，可根据 CPU 核心数调整
+# --bind 127.0.0.1:8001: 仅监听本地，由 Nginx 反向代理
+# 服务器 Python 版本为 3.12，使用 python3 创建虚拟环境
+ExecStart=/data/tilian/venv/bin/gunicorn main:app \
+    -w 2 \
+    -k uvicorn.workers.UvicornWorker \
+    --bind 127.0.0.1:8001 \
+    --access-logfile /data/logs/tilian/access.log \
+    --error-logfile /data/logs/tilian/error.log \
+    --capture-output \
+    --enable-stdio-inheritance
+
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

@@ -20,11 +20,18 @@ uploads/*
 !uploads/.gitkeep
 backend/uploads/*
 !backend/uploads/.gitkeep
+app/uploads/*
+!app/uploads/.gitkeep
+app/backend/uploads/*
+!app/backend/uploads/.gitkeep
 
 # Frontend
 frontend/node_modules/
 frontend/dist/
 frontend/.vite/
+app/frontend/node_modules/
+app/frontend/dist/
+app/frontend/.vite/
 
 # OS
 .DS_Store
@@ -38,3 +45,26 @@ Thumbs.db
 
 # Logs
 *.log
+
+# Playwright MCP logs
+.playwright-mcp/
+
+# AI assistant config
+.claude/
+
+# Runtime / local data
+*.pid
+aiquiz.db
+app/backend/.env
+app/frontend/.env.production
+app/.venv/
+app/backend/__pycache__/
+app/backend/routers/__pycache__/
+app/backend/*.pyc
+app/backend/routers/*.pyc
+
+# Screenshots / artifacts
+/screenshots/
+/records-*.png
+/tilian-*.png
+/wrong-questions-*.png
