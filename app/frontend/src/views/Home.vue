@@ -77,7 +77,7 @@
       </el-form>
       <el-divider>题目</el-divider>
       <article v-for="question in editingQuestions" :key="question.id" class="question-editor">
-        <div class="question-index">{{ question.type === 'single' ? '单选题' : '多选题' }}</div>
+        <div class="question-index">{{ typeLabel(question.type) }}</div>
         <el-input v-model="question.stem" type="textarea" autosize />
         <div v-for="option in question.options" :key="option.label" class="option-edit">
           <b>{{ option.label }}</b>
@@ -156,8 +156,15 @@ const load = async () => {
   }
 }
 
-const typeText = (types) =>
-  (types || []).map((type) => (type === 'single' ? '单选' : '多选')).join(' · ') || '暂无题目'
+const typeText = (types) => {
+  const map = { single: '单选', multiple: '多选', judgment: '判断' }
+  return (types || []).map((type) => map[type] || type).join(' · ') || '暂无题目'
+}
+
+const typeLabel = (type) => {
+  const map = { single: '单选题', multiple: '多选题', judgment: '判断题' }
+  return map[type] || type
+}
 
 const practice = (id) => router.push(`/practice/${id}`)
 

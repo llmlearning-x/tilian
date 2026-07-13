@@ -44,7 +44,7 @@
       </aside>
       <article class="question-paper">
         <div class="question-head">
-          <span class="question-type">{{ current.type === 'single' ? '单选题' : '多选题' }}</span>
+          <span class="question-type">{{ typeLabel(current.type) }}</span>
           <el-button v-if="!mastered" size="small" type="success" plain @click="master(true)">
             ✓ 斩题
           </el-button>
@@ -52,7 +52,7 @@
         </div>
         <h2>{{ current.stem }}</h2>
         <el-radio-group
-          v-if="current.type === 'single'"
+          v-if="current.type === 'single' || current.type === 'judgment'"
           v-model="singleAnswer"
           :disabled="Boolean(feedback)"
           class="option-list"
@@ -240,11 +240,11 @@ const abandon = async (id) => {
 
 const submit = async () => {
   const answer =
-    current.value.type === 'single'
-      ? singleAnswer.value
+    current.value.type === 'multiple'
+      ? multipleAnswer.value
+      : singleAnswer.value
         ? [singleAnswer.value]
         : []
-      : multipleAnswer.value
   if (!answer.length) return ElMessage.warning('请先选择答案')
   busy.value = true
   try {
@@ -295,6 +295,11 @@ const restart = () => {
   result.value = null
   localStorage.removeItem(storageKey)
   loadUnfinishedSessions()
+}
+
+const typeLabel = (type) => {
+  const map = { single: '单选题', multiple: '多选题', judgment: '判断题' }
+  return map[type] || type
 }
 
 onMounted(load)

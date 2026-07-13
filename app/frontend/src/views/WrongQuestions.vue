@@ -78,6 +78,7 @@
           <el-select v-model="filters.type" placeholder="全部题型" clearable @change="onFilterChange">
             <el-option label="单选题" value="single" />
             <el-option label="多选题" value="multiple" />
+            <el-option label="判断题" value="judgment" />
           </el-select>
           <el-select v-model="filters.min_wrong_count" placeholder="错误次数" clearable @change="onFilterChange">
             <el-option label="1 次" :value="1" />
@@ -136,8 +137,8 @@
               @change="(val) => toggleSelect(q.question_id, val)"
             />
             <div class="question-meta">
-              <el-tag size="small" :type="q.type === 'single' ? 'primary' : 'warning'">
-                {{ q.type === 'single' ? '单选题' : '多选题' }}
+              <el-tag size="small" :type="q.type === 'multiple' ? 'warning' : 'primary'">
+                {{ typeLabel(q.type) }}
               </el-tag>
               <span class="bank-name">{{ q.bank_name }}</span>
               <span class="wrong-count">错 {{ q.wrong_count }} 次</span>
@@ -396,6 +397,11 @@ const formatTime = (iso) => {
   if (!iso) return '-'
   const d = new Date(iso)
   return d.toLocaleString('zh-CN', { month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit' })
+}
+
+const typeLabel = (type) => {
+  const map = { single: '单选题', multiple: '多选题', judgment: '判断题' }
+  return map[type] || type
 }
 
 onMounted(() => {
