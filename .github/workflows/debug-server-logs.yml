@@ -14,10 +14,11 @@ jobs:
           username: ${{ secrets.PROD_USERNAME }}
           key: ${{ secrets.PROD_DEPLOY_KEY }}
           script: |
-            journalctl -u tilian-backend -n 40 --no-pager
-            echo "--- app stderr tail ---"
-            tail -n 120 /data/logs/tilian/error.log 2>/dev/null || true
-            echo "--- quiz start errors ---"
-            grep -n -A8 "start_quiz\|IntegrityError\|UNIQUE" /data/logs/tilian/error.log | tail -80 || true
+            journalctl -u tilian-backend -n 20 --no-pager
+            echo "--- latest quiz start error details ---"
+            LATEST=$(grep -n "start_quiz" /data/logs/tilian/error.log | tail -1 | cut -d: -f1)
+            if [ -n "$LATEST" ]; then
+              sed -n "$((LATEST-15)),$((LATEST+30))p" /data/logs/tilian/error.log
+            fi
             echo "--- nginx error ---"
-            tail -n 20 /var/log/nginx/error.log
+            tail -n 10 /var/log/nginx/error.log
