@@ -14,8 +14,10 @@ jobs:
           username: ${{ secrets.PROD_USERNAME }}
           key: ${{ secrets.PROD_DEPLOY_KEY }}
           script: |
-            journalctl -u tilian-backend -n 200 --no-pager
-            echo "--- app stderr ---"
-            tail -n 100 /data/logs/tilian/error.log 2>/dev/null || true
+            journalctl -u tilian-backend -n 40 --no-pager
+            echo "--- app stderr tail ---"
+            tail -n 120 /data/logs/tilian/error.log 2>/dev/null || true
+            echo "--- quiz start errors ---"
+            grep -n -A8 "start_quiz\|IntegrityError\|UNIQUE" /data/logs/tilian/error.log | tail -80 || true
             echo "--- nginx error ---"
-            tail -n 60 /var/log/nginx/error.log
+            tail -n 20 /var/log/nginx/error.log
