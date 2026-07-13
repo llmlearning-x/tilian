@@ -1,7 +1,9 @@
 <template>
   <div class="landing">
     <!-- Hero -->
-    <section class="hero">
+    <section class="hero" :style="{ backgroundImage: 'url(' + baseUrl + 'bg.jpg)' }">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
       <div class="hero-inner">
         <div class="hero-badge">TILIAN 题炼</div>
         <h1>
@@ -32,6 +34,7 @@
           <el-icon><Collection /></el-icon>
           <span>专属题库练习</span>
         </div>
+      </div>
       </div>
     </section>
 
@@ -85,6 +88,7 @@ import { useRouter } from 'vue-router'
 import { Document, Collection, MagicStick, DataAnalysis } from '@element-plus/icons-vue'
 
 const router = useRouter()
+const baseUrl = import.meta.env.BASE_URL
 const user = computed(() => {
   try {
     return JSON.parse(localStorage.getItem('user') || 'null')
@@ -101,14 +105,32 @@ const start = () => {
 <style scoped>
 .hero {
   position: relative;
+  padding: var(--space-16) var(--space-8);
+  min-height: calc(100vh - var(--header-height));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.62);
+  backdrop-filter: blur(2px);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
   max-width: var(--page-max-width);
   margin: 0 auto;
-  padding: var(--space-16) var(--space-8);
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
   gap: var(--space-10);
   align-items: center;
-  min-height: calc(100vh - var(--header-height));
 }
 
 .hero-inner {
@@ -134,6 +156,7 @@ const start = () => {
   margin: 0 0 var(--space-6);
   color: var(--gray-900);
   letter-spacing: -0.03em;
+  text-shadow: 0 2px 12px rgba(255, 255, 255, 0.7);
 }
 
 .hero-desc {
@@ -276,9 +299,12 @@ const start = () => {
 
 @media (max-width: 1024px) {
   .hero {
-    grid-template-columns: 1fr;
     text-align: center;
     padding: var(--space-12) var(--space-6);
+  }
+
+  .hero-content {
+    grid-template-columns: 1fr;
   }
 
   .hero-inner {
