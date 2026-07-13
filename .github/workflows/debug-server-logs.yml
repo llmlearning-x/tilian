@@ -18,7 +18,7 @@ jobs:
             echo "--- latest quiz start error details ---"
             LATEST=$(grep -n "start_quiz" /data/logs/tilian/error.log | tail -1 | cut -d: -f1)
             if [ -n "$LATEST" ]; then
-              sed -n "$((LATEST-15)),$((LATEST+30))p" /data/logs/tilian/error.log
+              sed -n "$((LATEST-5)),$((LATEST+60))p" /data/logs/tilian/error.log
             fi
             echo "--- nginx error ---"
             tail -n 10 /var/log/nginx/error.log
