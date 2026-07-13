@@ -7,18 +7,18 @@ jobs:
   logs:
     runs-on: ubuntu-latest
     steps:
-      - name: Fetch backend logs
+      - name: Inspect service and permissions
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.PROD_HOST }}
           username: ${{ secrets.PROD_USERNAME }}
           key: ${{ secrets.PROD_DEPLOY_KEY }}
           script: |
-            journalctl -u tilian-backend -n 20 --no-pager
-            echo "--- latest quiz start error details ---"
-            LATEST=$(grep -n "start_quiz" /data/logs/tilian/error.log | tail -1 | cut -d: -f1)
-            if [ -n "$LATEST" ]; then
-              sed -n "$((LATEST-5)),$((LATEST+60))p" /data/logs/tilian/error.log
-            fi
-            echo "--- nginx error ---"
-            tail -n 10 /var/log/nginx/error.log
+            systemctl cat tilian-backend
+            echo "--- /data/tilian permissions ---"
+            ls -la /data/tilian/
+            ls -la /data/tilian/backend/
+            echo "--- process user ---"
+            ps -o user,pid,cmd -p $(pgrep -f "gunicorn.*tilian" | head -1) 2>/dev/null || true
+            echo "--- latest backend errors ---"
+            tail -n 30 /data/logs/tilian/error.log 2>/dev/null || true
