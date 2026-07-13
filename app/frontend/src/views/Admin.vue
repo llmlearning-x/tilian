@@ -14,7 +14,12 @@
         <!-- 标准 JSON 导入 -->
     <section class="paper-panel">
       <h2 class="panel-title">标准 JSON 导入</h2>
-      <p class="panel-desc">使用标准 JSON 文件维护基础题库。系统会先全量校验，再一次性导入。</p>
+      <p class="panel-desc">
+        使用标准 JSON 文件维护基础题库。系统会先全量校验，再一次性导入。
+        <el-link type="primary" :href="baseUrl + 'bank-import-template.json'" download style="margin-left: 8px;">
+          <el-icon><Download /></el-icon> 下载模板
+        </el-link>
+      </p>
       <el-upload
         drag
         :auto-upload="false"
@@ -217,12 +222,13 @@
 <script setup>
 import { onMounted, ref } from 'vue'
 import { ElMessage, ElMessageBox } from 'element-plus'
-import { UploadFilled, Cpu, Refresh, Plus, CopyDocument, Delete } from '@element-plus/icons-vue'
+import { UploadFilled, Cpu, Refresh, Plus, CopyDocument, Delete, Download } from '@element-plus/icons-vue'
 import { adminApi } from '@/api/modules'
 
 const jsonFile = ref(null)
 const validation = ref(null)
 const busy = ref(false)
+const baseUrl = import.meta.env.BASE_URL
 
 const agentFile = ref(null)
 const agentBusy = ref(false)
