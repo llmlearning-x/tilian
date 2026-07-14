@@ -146,26 +146,10 @@ const unfinishedSessions = ref([])
 const mastered = ref(false)
 const autoNextOnCorrect = ref(false)
 
-const storageKey = `practice_session_${bankId}`
-
 const load = async () => {
   try {
     bank.value = (await bankApi.get(bankId)).data
     await loadUnfinishedSessions()
-    // 如果 localStorage 中保存了当前题库的 session_id，尝试恢复
-    const savedSessionId = localStorage.getItem(storageKey)
-    if (savedSessionId && !sessionId.value) {
-      try {
-        const res = await quizApi.resume(Number(savedSessionId))
-        sessionId.value = res.data.session_id
-        total.value = res.data.total_count
-        current.value = res.data.question
-        await checkMastered(current.value.id)
-        unfinishedSessions.value = []
-      } catch {
-        localStorage.removeItem(storageKey)
-      }
-    }
   } catch {
     ElMessage.error('题库不存在')
     router.push('/banks')
@@ -202,7 +186,6 @@ const start = async () => {
     feedback.value = null
     singleAnswer.value = ''
     multipleAnswer.value = []
-    localStorage.setItem(storageKey, sessionId.value)
     await checkMastered(current.value.id)
   } catch (error) {
     ElMessage.error(error.response?.data?.detail || '无法开始练习')
@@ -222,7 +205,6 @@ const resume = async (id) => {
     feedback.value = null
     singleAnswer.value = ''
     multipleAnswer.value = []
-    localStorage.setItem(storageKey, sessionId.value)
     await checkMastered(current.value.id)
     unfinishedSessions.value = []
   } catch (error) {
@@ -236,10 +218,7 @@ const resume = async (id) => {
 const abandon = async (id) => {
   try {
     await ElMessageBox.confirm('放弃后进度将丢失，确定要继续吗？', '提示', { type: 'warning' })
-    // 服务端没有单独放弃接口，直接删除 localStorage 并刷新列表
-    if (Number(localStorage.getItem(storageKey)) === id) {
-      localStorage.removeItem(storageKey)
-    }
+    // 当前仅在前端移除未完成的练习记录（服务端保留历史数据）
     unfinishedSessions.value = unfinishedSessions.value.filter((s) => s.session_id !== id)
   } catch {
     // 取消
@@ -277,7 +256,6 @@ const next = async () => {
   if (!feedback.value.can_continue) {
     result.value = (await quizApi.result(sessionId.value)).data
     current.value = null
-    localStorage.removeItem(storageKey)
     return
   }
   const res = await quizApi.next(sessionId.value)
@@ -304,7 +282,6 @@ const restart = () => {
   current.value = null
   feedback.value = null
   result.value = null
-  localStorage.removeItem(storageKey)
   loadUnfinishedSessions()
 }
 
