@@ -26,7 +26,7 @@ class Settings(BaseSettings):
     # 默认使用本地 Kimi / Moonshot 环境变量；也可在 .env 中显式覆盖
     LLM_PROVIDER: str = "moonshot"
     LLM_API_URL: str = "https://api.moonshot.cn/v1/chat/completions"
-    LLM_API_KEY: str = Field(default_factory=lambda: os.getenv("MOONSHOT_API_KEY", ""))
+    LLM_API_KEY: str = Field(default="", alias="MOONSHOT_API_KEY")
     LLM_MODEL: str = "moonshot-v1-8k"
     # DeepAgents 题库整理 Agent 专用模型，建议 32k 以上上下文
     AGENT_LLM_MODEL: str = Field(default_factory=lambda: os.getenv("AGENT_LLM_MODEL", "moonshot-v1-32k"))
