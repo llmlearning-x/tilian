@@ -81,9 +81,7 @@
           </el-tabs>
         </el-card>
 
-        <div class="login-footer">
-          <p>演示账号：demo / demo123</p>
-        </div>
+
       </div>
     </div>
   </div>
@@ -151,7 +149,7 @@ const handleLogin = async () => {
       localStorage.setItem('access_token', res.data.access_token)
       localStorage.setItem('user', JSON.stringify(res.data.user))
       ElMessage.success('登录成功')
-      router.push({ name: 'Banks' })
+      router.push('/')
     } catch (error) {
       ElMessage.error(error.response?.data?.detail || '登录失败')
     } finally {

@@ -19,6 +19,7 @@ from models import (
     QuestionBank,
     QuizItem,
     QuizSession,
+    SourceDocument,
     User,
     UserQuestionStat,
 )
@@ -601,5 +602,55 @@ def delete_invite_code(
     if invite.used_by is not None:
         raise HTTPException(status_code=400, detail="已使用的邀请码不可删除")
     db.delete(invite)
+    db.commit()
+
+
+# =====================================================================
+# 用户管理（删除演示账号等）
+# =====================================================================
+admin_user_router = APIRouter(prefix="/api/admin/users", tags=["admin"])
+
+
+@admin_user_router.delete("/{user_id}", status_code=204)
+def delete_user(
+    user_id: int,
+    db: Session = Depends(get_db),
+    current_admin: User = Depends(get_current_admin),
+):
+    """删除指定用户及其关联数据（练习记录、生成任务、源文档等）。"""
+    user = db.get(User, user_id)
+    if not user:
+        raise HTTPException(status_code=404, detail="用户不存在")
+    if user.id == current_admin.id:
+        raise HTTPException(status_code=403, detail="不能删除当前登录的管理员")
+
+    session_ids = [
+        s.id for s in db.query(QuizSession.id).filter(QuizSession.user_id == user.id).all()
+    ]
+    if session_ids:
+        db.query(QuizItem).filter(QuizItem.session_id.in_(session_ids)).delete(
+            synchronize_session=False
+        )
+        db.query(QuizSession).filter(QuizSession.id.in_(session_ids)).delete(
+            synchronize_session=False
+        )
+
+    db.query(UserQuestionStat).filter(UserQuestionStat.user_id == user.id).delete(
+        synchronize_session=False
+    )
+    db.query(GenerationJob).filter(GenerationJob.owner_id == user.id).delete(
+        synchronize_session=False
+    )
+    db.query(SourceDocument).filter(SourceDocument.owner_id == user.id).delete(
+        synchronize_session=False
+    )
+    db.query(InvitationCode).filter(InvitationCode.created_by == user.id).update(
+        {InvitationCode.created_by: None}, synchronize_session=False
+    )
+    db.query(InvitationCode).filter(InvitationCode.used_by == user.id).update(
+        {InvitationCode.used_by: None}, synchronize_session=False
+    )
+
+    db.delete(user)
     db.commit()
     return

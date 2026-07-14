@@ -3,7 +3,8 @@ import api from './index'
 export const authApi = {
   register: (data) => api.post('/auth/register', data),
   login: (data) => api.post('/auth/login', data),
-  getProfile: () => api.get('/auth/profile')
+  getProfile: () => api.get('/auth/profile'),
+  changePassword: (data) => api.post('/auth/change-password', data)
 }
 
 export const bankApi = {
@@ -72,5 +73,6 @@ export const adminApi = {
   deleteBank: (id) => api.delete(`/admin/banks/${id}`),
   listInviteCodes: (status = 'all') => api.get('/admin/invite-codes', { params: { status } }),
   createInviteCodes: (data) => api.post('/admin/invite-codes', data),
-  deleteInviteCode: (id) => api.delete(`/admin/invite-codes/${id}`)
+  deleteInviteCode: (id) => api.delete(`/admin/invite-codes/${id}`),
+  deleteUser: (id) => api.delete(`/admin/users/${id}`)
 }

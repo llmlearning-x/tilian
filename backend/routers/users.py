@@ -6,7 +6,7 @@ from datetime import datetime, timedelta
 from fastapi import APIRouter, Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordRequestForm
 from sqlalchemy.orm import Session
-from pydantic import BaseModel, EmailStr
+from pydantic import BaseModel, EmailStr, Field
 
 from crud import get_user_by_username, get_user_by_email
 from schemas import UserResponse
@@ -27,6 +27,11 @@ router = APIRouter(prefix="/api/auth", tags=["auth"])
 class LoginRequest(BaseModel):
     username: str
     password: str
+
+
+class ChangePasswordRequest(BaseModel):
+    current_password: str
+    new_password: str = Field(..., min_length=6)
 
 
 class RegisterRequest(BaseModel):
@@ -193,6 +198,25 @@ async def login(request: LoginRequest, db: Session = Depends(get_db)):
             created_at=user.created_at
         )
     )
+
+
+@router.post("/change-password")
+async def change_password(
+    request: ChangePasswordRequest,
+    db: Session = Depends(get_db),
+    current_user: UserModel = Depends(get_current_active_user),
+):
+    """
+    修改当前登录用户密码
+    """
+    if not verify_password(request.current_password, current_user.hashed_password):
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="当前密码错误"
+        )
+    current_user.hashed_password = get_password_hash(request.new_password)
+    db.commit()
+    return {"message": "密码修改成功"}
 
 
 @router.get("/profile", response_model=UserResponse)

@@ -54,6 +54,9 @@
                   <el-dropdown-item v-if="user?.role === 'admin'" @click="navigate('/admin')">
                     <el-icon><Setting /></el-icon>平台题库管理
                   </el-dropdown-item>
+                  <el-dropdown-item @click="passwordVisible = true">
+                    <el-icon><Lock /></el-icon>修改密码
+                  </el-dropdown-item>
                   <el-dropdown-item divided @click="logout">
                     <el-icon><SwitchButton /></el-icon>退出登录
                   </el-dropdown-item>
@@ -105,19 +108,88 @@
         <p class="qr-hint">进群交流、产品反馈、问题咨询</p>
       </div>
     </el-dialog>
+
+    <el-dialog
+      v-model="passwordVisible"
+      title="修改密码"
+      width="400px"
+      align-center
+      class="password-dialog"
+    >
+      <el-form
+        ref="passwordFormRef"
+        :model="passwordForm"
+        :rules="passwordRules"
+        label-position="top"
+      >
+        <el-form-item label="当前密码" prop="currentPassword">
+          <el-input
+            v-model="passwordForm.currentPassword"
+            type="password"
+            placeholder="请输入当前密码"
+            show-password
+          />
+        </el-form-item>
+        <el-form-item label="新密码" prop="newPassword">
+          <el-input
+            v-model="passwordForm.newPassword"
+            type="password"
+            placeholder="请输入新密码（至少6位）"
+            show-password
+          />
+        </el-form-item>
+        <el-form-item label="确认新密码" prop="confirmPassword">
+          <el-input
+            v-model="passwordForm.confirmPassword"
+            type="password"
+            placeholder="请再次输入新密码"
+            show-password
+          />
+        </el-form-item>
+      </el-form>
+      <template #footer>
+        <el-button @click="passwordVisible = false">取消</el-button>
+        <el-button type="primary" @click="submitChangePassword">确定</el-button>
+      </template>
+    </el-dialog>
   </div>
 </template>
 
 <script setup>
 import { onMounted, ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import { UserFilled, Setting, Menu, SwitchButton, ArrowDown, Service } from '@element-plus/icons-vue'
+import { UserFilled, Setting, Menu, SwitchButton, ArrowDown, Service, Lock } from '@element-plus/icons-vue'
+import { ElMessage } from 'element-plus'
+import { authApi } from '@/api/modules'
 
 const route = useRoute()
 const router = useRouter()
 const baseUrl = import.meta.env.BASE_URL
 const user = ref(null)
 const qrVisible = ref(false)
+const passwordVisible = ref(false)
+const passwordFormRef = ref()
+const passwordForm = ref({ currentPassword: '', newPassword: '', confirmPassword: '' })
+const passwordRules = {
+  currentPassword: [{ required: true, message: '请输入当前密码', trigger: 'blur' }],
+  newPassword: [
+    { required: true, message: '请输入新密码', trigger: 'blur' },
+    { min: 6, message: '密码长度不能少于6位', trigger: 'blur' }
+  ],
+  confirmPassword: [
+    { required: true, message: '请确认新密码', trigger: 'blur' },
+    {
+      validator: (rule, value, callback) => {
+        if (value !== passwordForm.value.newPassword) {
+          callback(new Error('两次输入的密码不一致'))
+        } else {
+          callback()
+        }
+      },
+      trigger: 'blur'
+    }
+  ]
+}
 
 const loadUser = () => {
   try {
@@ -143,5 +215,24 @@ const logout = () => {
   user.value = null
   menuOpen.value = false
   router.push('/login')
+}
+
+const submitChangePassword = async () => {
+  if (!passwordFormRef.value) return
+  passwordFormRef.value.validate(async (valid) => {
+    if (!valid) return
+    try {
+      await authApi.changePassword({
+        current_password: passwordForm.value.currentPassword,
+        new_password: passwordForm.value.newPassword
+      })
+      ElMessage.success('密码修改成功，请重新登录')
+      passwordVisible.value = false
+      passwordForm.value = { currentPassword: '', newPassword: '', confirmPassword: '' }
+      logout()
+    } catch (error) {
+      ElMessage.error(error.response?.data?.detail || '密码修改失败')
+    }
+  })
 }
 </script>

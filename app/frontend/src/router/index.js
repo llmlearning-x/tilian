@@ -40,7 +40,7 @@ router.beforeEach((to) => {
   const user = JSON.parse(localStorage.getItem('user') || 'null')
   if (to.meta.requiresAuth && !token) return { name: 'Login' }
   if (to.meta.admin && user?.role !== 'admin') return { name: 'Banks' }
-  if (to.path === '/login' && token) return { name: 'Banks' }
+  if (to.path === '/login' && token) return '/'
 })
 
 export default router

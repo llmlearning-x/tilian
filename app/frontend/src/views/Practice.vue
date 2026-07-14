@@ -45,10 +45,17 @@
       <article class="question-paper">
         <div class="question-head">
           <span class="question-type">{{ typeLabel(current.type) }}</span>
-          <el-button v-if="!mastered" size="small" type="success" plain @click="master(true)">
-            ✓ 斩题
-          </el-button>
-          <el-tag v-else type="success" size="small">已斩题</el-tag>
+          <div class="question-actions">
+            <el-switch
+              v-model="autoNextOnCorrect"
+              active-text="答对自动下一题"
+              inline-prompt
+            />
+            <el-button v-if="!mastered" size="small" type="success" plain @click="master(true)">
+              ✓ 斩题
+            </el-button>
+            <el-tag v-else type="success" size="small">已斩题</el-tag>
+          </div>
         </div>
         <h2>{{ current.stem }}</h2>
         <el-radio-group
@@ -137,6 +144,7 @@ const singleAnswer = ref('')
 const multipleAnswer = ref([])
 const unfinishedSessions = ref([])
 const mastered = ref(false)
+const autoNextOnCorrect = ref(false)
 
 const storageKey = `practice_session_${bankId}`
 
@@ -255,6 +263,9 @@ const submit = async () => {
         answer
       })
     ).data
+    if (feedback.value?.is_correct && autoNextOnCorrect.value) {
+      setTimeout(() => next(), 600)
+    }
   } catch (error) {
     ElMessage.error(error.response?.data?.detail || '提交失败')
   } finally {
@@ -328,5 +339,11 @@ onMounted(load)
   align-items: center;
   justify-content: space-between;
   margin-bottom: var(--space-3);
+}
+.question-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
 }
 </style>
