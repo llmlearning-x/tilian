@@ -4,27 +4,32 @@
       <div>
         <p class="eyebrow">PRACTICE RECORDS</p>
         <h1>练习记录</h1>
-        <p>查看你完成的练习，了解每套题库的正确率与进步情况。</p>
+        <p>查看你的练习记录，包含已完成和进行中的练习。</p>
       </div>
     </header>
 
     <section v-if="records.length" class="records-list">
       <article v-for="record in records" :key="record.session_id" class="record-card">
         <div class="record-main">
-          <h3>{{ record.bank_name }}</h3>
+          <h3>
+            {{ record.bank_name }}
+            <el-tag v-if="record.finished" type="success" size="small">已完成</el-tag>
+            <el-tag v-else type="warning" size="small">进行中</el-tag>
+          </h3>
           <div class="record-meta">
             <span>{{ modeText(record.mode) }}</span>
             <span>{{ record.total_count }} 题</span>
-            <span>{{ formatTime(record.finished_at) }}</span>
+            <span v-if="record.finished">完成于 {{ formatTime(record.finished_at) }}</span>
+            <span v-else>进度 {{ record.current_index }} / {{ record.total_count }}</span>
           </div>
         </div>
         <div class="record-score" :class="scoreClass(record.accuracy)">
           <strong>{{ record.accuracy }}%</strong>
-          <span>正确率</span>
+          <span>{{ record.finished ? '正确率' : '当前正确率' }}</span>
         </div>
         <div class="record-actions">
-          <el-button type="primary" @click="practice(record.bank_id)">
-            再练一次
+          <el-button type="primary" @click="practice(record)">
+            {{ record.finished ? '再练一次' : '继续练习' }}
           </el-button>
           <el-button type="danger" text @click="remove(record.session_id)">
             删除
@@ -75,7 +80,7 @@ const formatTime = (iso) => {
   return d.toLocaleString('zh-CN', { month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit' })
 }
 
-const practice = (bankId) => router.push(`/practice/${bankId}`)
+const practice = (record) => router.push(`/practice/${record.bank_id}`)
 
 const remove = async (sessionId) => {
   try {
@@ -124,6 +129,11 @@ onMounted(load)
   margin: 0 0 var(--space-2);
   font: 700 var(--text-lg) var(--font-sans);
   color: var(--gray-900);
+}
+
+.record-main h3 .el-tag {
+  margin-left: var(--space-2);
+  vertical-align: middle;
 }
 
 .record-meta {

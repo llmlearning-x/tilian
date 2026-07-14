@@ -217,11 +217,12 @@ const resume = async (id) => {
 
 const abandon = async (id) => {
   try {
-    await ElMessageBox.confirm('放弃后进度将丢失，确定要继续吗？', '提示', { type: 'warning' })
-    // 当前仅在前端移除未完成的练习记录（服务端保留历史数据）
+    await ElMessageBox.confirm('放弃后该练习记录将被删除，确定要继续吗？', '提示', { type: 'warning' })
+    await quizApi.deleteSession(id)
     unfinishedSessions.value = unfinishedSessions.value.filter((s) => s.session_id !== id)
-  } catch {
-    // 取消
+  } catch (error) {
+    if (error === 'cancel' || error?.toString().includes('cancel')) return
+    ElMessage.error(error.response?.data?.detail || '删除失败')
   }
 }
 

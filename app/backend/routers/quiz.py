@@ -5,7 +5,7 @@ import random
 from fastapi import APIRouter, Depends, HTTPException
 from pydantic import BaseModel
 from sqlalchemy import case, func, or_
-from sqlalchemy.orm import Session
+from sqlalchemy.orm import Session, joinedload
 
 from database import get_db
 from models import Question, QuestionBank, QuizItem, QuizSession, User, UserQuestionStat
@@ -229,25 +229,39 @@ def result(session_id: int, db: Session = Depends(get_db), user: User = Depends(
 
 @router.get("/sessions")
 def list_sessions(db: Session = Depends(get_db), user: User = Depends(get_current_active_user)):
+    """获取当前用户的所有练习记录（包含已完成和进行中的）。"""
     sessions = (
         db.query(QuizSession)
-        .filter(QuizSession.user_id == user.id, QuizSession.finished.is_(True))
-        .order_by(QuizSession.finished_at.desc())
+        .options(joinedload(QuizSession.bank))
+        .filter(QuizSession.user_id == user.id)
+        .order_by(QuizSession.started_at.desc())
         .all()
     )
-    return [
-        {
-            "session_id": s.id,
-            "bank_id": s.bank_id,
-            "bank_name": s.bank.name if s.bank else "未知题库",
-            "mode": s.mode,
-            "total_count": s.total_count,
-            "correct_count": s.correct_count,
-            "accuracy": round(s.correct_count / s.total_count * 100, 2) if s.total_count else 0,
-            "finished_at": s.finished_at.isoformat() if s.finished_at else None,
-        }
-        for s in sessions
-    ]
+    result = []
+    for s in sessions:
+        answered = s.current_index if s.current_index is not None else 0
+        total = s.total_count or 0
+        correct = s.correct_count or 0
+        # 已完成：按总题数计算正确率；进行中：按已答题数计算当前正确率
+        accuracy_base = total if s.finished else (answered if answered > 0 else 0)
+        accuracy = round(correct / accuracy_base * 100, 2) if accuracy_base else 0
+        result.append(
+            {
+                "session_id": s.id,
+                "bank_id": s.bank_id,
+                "bank_name": s.bank.name if s.bank else "未知题库",
+                "mode": s.mode,
+                "total_count": total,
+                "current_index": answered,
+                "correct_count": correct,
+                "finished": s.finished,
+                "progress": round(answered / total * 100, 2) if total else 0,
+                "accuracy": accuracy,
+                "started_at": s.started_at.isoformat() if s.started_at else None,
+                "finished_at": s.finished_at.isoformat() if s.finished_at else None,
+            }
+        )
+    return result
 
 
 @router.delete("/sessions/{session_id}")
@@ -256,6 +270,7 @@ def delete_session(session_id: int, db: Session = Depends(get_db), user: User = 
     session = db.query(QuizSession).filter(QuizSession.id == session_id, QuizSession.user_id == user.id).first()
     if not session:
         raise HTTPException(status_code=404, detail="练习不存在")
+    db.query(QuizItem).filter(QuizItem.session_id == session.id).delete(synchronize_session=False)
     db.delete(session)
     db.commit()
     return {"message": "练习记录已删除"}
