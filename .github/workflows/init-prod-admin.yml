@@ -1,0 +1,50 @@
+name: Init Production Admin
+
+on:
+  workflow_dispatch:
+
+jobs:
+  init-admin:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create admin account on production DB
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.PROD_HOST }}
+          username: ${{ secrets.PROD_USERNAME }}
+          key: ${{ secrets.PROD_DEPLOY_KEY }}
+          script: |
+            set -e
+            cd /data/tilian/backend
+            source /data/tilian/venv/bin/activate
+            python3 - <<'PY'
+            import sys, os
+            sys.path.insert(0, '/data/tilian/backend')
+            from database import SessionLocal, init_db
+            from models import User
+            from security import get_password_hash
+
+            init_db()
+            db = SessionLocal()
+            try:
+                admin = db.query(User).filter(User.username == "tilianadmin").first()
+                if not admin:
+                    admin = User(
+                        username="tilianadmin",
+                        email="admin@tilian.local",
+                        hashed_password=get_password_hash("${{ secrets.TILIAN_ADMIN_PASSWORD }}"),
+                        is_active=True,
+                        role="admin"
+                    )
+                    db.add(admin)
+                    db.commit()
+                    print("Created admin tilianadmin")
+                else:
+                    admin.hashed_password = get_password_hash("${{ secrets.TILIAN_ADMIN_PASSWORD }}")
+                    admin.role = "admin"
+                    admin.is_active = True
+                    db.commit()
+                    print("Reset admin tilianadmin")
+            finally:
+                db.close()
+            PY
