@@ -61,8 +61,11 @@ def start_quiz(payload: QuizStartRequest, db: Session = Depends(get_db), user: U
     session = QuizSession(bank_id=bank.id, user_id=user.id, mode=payload.mode, total_count=len(questions))
     db.add(session)
     db.flush()
-    for seq, question in enumerate(questions):
-        db.add(QuizItem(session_id=session.id, question_id=question.id, seq=seq))
+    items = [
+        {"session_id": session.id, "question_id": question.id, "seq": seq}
+        for seq, question in enumerate(questions)
+    ]
+    db.execute(QuizItem.__table__.insert(), items)
     db.commit()
     db.refresh(session)
     return {"session_id": session.id, "total_count": len(questions), "first_question": _format_question(questions[0], 0)}
