@@ -12,7 +12,16 @@ from pydantic import BaseModel, ConfigDict, Field, ValidationError
 from sqlalchemy.orm import Session
 
 from database import get_db
-from models import InvitationCode, Question, QuestionBank, User
+from models import (
+    GenerationJob,
+    InvitationCode,
+    Question,
+    QuestionBank,
+    QuizItem,
+    QuizSession,
+    User,
+    UserQuestionStat,
+)
 from schemas import BankImportPayload, QuestionBankResponse
 from security import get_current_admin
 
@@ -468,11 +477,31 @@ def delete_admin_bank(
     db: Session = Depends(get_db),
     _: User = Depends(get_current_admin),
 ):
-    """删除平台题库及其下所有题目。"""
+    """删除平台题库及其下所有题目、练习记录与生成任务关联。"""
     bank = db.get(QuestionBank, bank_id)
     if not bank or bank.source_type != "platform":
         raise HTTPException(status_code=404, detail="题库不存在")
-    db.query(Question).filter(Question.bank_id == bank.id).delete()
+
+    question_ids = [
+        q.id for q in db.query(Question.id).filter(Question.bank_id == bank.id).all()
+    ]
+    if question_ids:
+        db.query(QuizItem).filter(QuizItem.question_id.in_(question_ids)).delete(
+            synchronize_session=False
+        )
+        db.query(UserQuestionStat).filter(
+            UserQuestionStat.question_id.in_(question_ids)
+        ).delete(synchronize_session=False)
+
+    db.query(QuizSession).filter(QuizSession.bank_id == bank.id).delete(
+        synchronize_session=False
+    )
+    db.query(GenerationJob).filter(GenerationJob.bank_id == bank.id).update(
+        {GenerationJob.bank_id: None}, synchronize_session=False
+    )
+    db.query(Question).filter(Question.bank_id == bank.id).delete(
+        synchronize_session=False
+    )
     db.delete(bank)
     db.commit()
 
