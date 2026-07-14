@@ -101,11 +101,22 @@ jobs:
               rm -rf "$BACKUP_DIR"
             fi
 
+            # 根据 GitHub Secrets 更新关键环境变量（不会覆盖 .env 中其它配置）
+            cd "$REMOTE_DIR/backend"
+            if [ -n "${{ secrets.TILIAN_DATABASE_URL }}" ]; then
+              sed -i '/^DATABASE_URL=/d' .env
+              echo "DATABASE_URL=${{ secrets.TILIAN_DATABASE_URL }}" >> .env
+            fi
+            if [ -n "${{ secrets.TILIAN_MOONSHOT_API_KEY }}" ]; then
+              sed -i '/^MOONSHOT_API_KEY=/d' .env
+              echo "MOONSHOT_API_KEY=${{ secrets.TILIAN_MOONSHOT_API_KEY }}" >> .env
+            fi
+
             # 创建目录并修复权限
             mkdir -p "$REMOTE_DIR/uploads" /data/logs/tilian
             chown -R www-data:www-data "$REMOTE_DIR/backend"
             chown -R www-data:www-data "$REMOTE_DIR/uploads"
-            chmod 660 "$REMOTE_DIR/backend/aiquiz.db"
+            [ -f "$REMOTE_DIR/backend/aiquiz.db" ] && chmod 660 "$REMOTE_DIR/backend/aiquiz.db"
             chmod 755 /data/logs/tilian
 
             # 创建/更新虚拟环境
