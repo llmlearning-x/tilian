@@ -1,0 +1,84 @@
+name: Import Platform Banks
+
+on:
+  workflow_dispatch:
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Upload JSON files to server
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.PROD_HOST }}
+          username: ${{ secrets.PROD_USERNAME }}
+          key: ${{ secrets.PROD_DEPLOY_KEY }}
+          source: "docs/aliyun_acp_899题.json,docs/天翼云架构师_312题.json"
+          target: "/tmp/tilian-import/"
+
+      - name: Import into production MySQL
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.PROD_HOST }}
+          username: ${{ secrets.PROD_USERNAME }}
+          key: ${{ secrets.PROD_DEPLOY_KEY }}
+          command_timeout: 20m
+          script: |
+            set -e
+            cd /data/tilian/backend
+            source /data/tilian/venv/bin/activate
+            python3 - <<'PY'
+            import json, sys
+            sys.path.insert(0, '/data/tilian/backend')
+            from database import SessionLocal, init_db
+            from models import QuestionBank, Question
+            from schemas import BankImportPayload
+
+            FILES = [
+                '/tmp/tilian-import/docs/aliyun_acp_899题.json',
+                '/tmp/tilian-import/docs/天翼云架构师_312题.json',
+            ]
+
+            init_db()
+            db = SessionLocal()
+            try:
+                for path in FILES:
+                    with open(path, 'r', encoding='utf-8') as f:
+                        data = json.load(f)
+                    name = data['name']
+                    # skip if already imported
+                    existing = db.query(QuestionBank).filter(QuestionBank.name == name, QuestionBank.source_type == 'platform').first()
+                    if existing:
+                        print(f'Skip existing: {name}')
+                        continue
+                    payload = BankImportPayload.model_validate(data)
+                    bank = QuestionBank(
+                        name=payload.name,
+                        description=payload.description,
+                        source_type='platform',
+                        status='ready',
+                        owner_id=None,
+                    )
+                    db.add(bank)
+                    db.flush()
+                    for item in payload.questions:
+                        q = Question(
+                            type=item.type,
+                            stem=item.stem,
+                            options=[opt.model_dump() for opt in item.options],
+                            answer=list(item.answer),
+                            explanation=item.explanation or '',
+                            difficulty=item.difficulty,
+                            source_type='import',
+                            bank_id=bank.id,
+                        )
+                        db.add(q)
+                    db.commit()
+                    print(f'Imported {name}: {len(payload.questions)} questions -> bank_id={bank.id}')
+            finally:
+                db.close()
+            PY
+            rm -rf /tmp/tilian-import
